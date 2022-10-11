@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+figcaption, figure, main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: inherit;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+audio, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details, menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+nav {
+  padding: 15px 0px 15px 0px;
+  border-bottom: 1px solid #F2F4F7;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+nav ul li {
+  list-style: none;
+  margin-left: 15px;
+  font-weight: 600;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #475467;
+}
+nav ul li .salaryButton {
+  background: #475467;
+  border: 1px solid #475467;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px 18px 10px 18px;
+  cursor: pointer;
+  font-weight: 600;
+}
+nav ul .salarySubmit {
+  margin-left: auto;
+}
+
+.emailVerification {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.emailCard {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  justify-content: center;
+  box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+  border-radius: 12px;
+}
+.emailCard .emailInput {
+  width: 50%;
+  padding: 15px;
+}
+.emailCard .emailInput .emailInputTextContainer {
+  padding-top: 40px;
+}
+.emailCard .emailInput .emailInputTextContainer span {
+  text-transform: uppercase;
+  color: #F04438;
+}
+.emailCard .emailInput .emailInputTextContainer p {
+  margin-bottom: 32px;
+  color: #475467;
+}
+.emailCard .emailInput .formContainer form {
+  display: flex;
+  flex-direction: column;
+}
+.emailCard .emailInput .formContainer form input {
+  margin: 5px 0px 20px 0px;
+  background: #FFFFFF;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.emailCard .emailInput .formContainer form button {
+  background: #475467;
+  border: 1px solid #475467;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  padding: 10px 18px;
+  color: #fff;
+  margin-top: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.emailCard .emailInput .contactContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 120px;
+  width: 100%;
+  font-weight: 400;
+  color: #475467;
+}
+.emailCard .emailInput .contactContainer .salaryBandTrademark {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+}
+.emailCard .emailInput .contactContainer .contactEmail {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+.emailCard .infoCard {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(45deg, #101828 0%, #475467 100%);
+  border-radius: 0px 8px 8px 0px;
+}
+.emailCard .infoCard .infoImgContainer {
+  height: 40%;
+}
+.emailCard .infoCard .infoCardTextContainer {
+  height: 60%;
+  padding: 25px;
+  color: #EAECF0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}

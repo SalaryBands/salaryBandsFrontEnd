@@ -1,0 +1,94 @@
+.emailVerification {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.emailCard {
+    display: flex; 
+    flex-direction: row;
+    width: 70%;
+    justify-content: center;
+    box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+    border-radius: 12px;
+    .emailInput {
+        width: 50%; 
+        padding: 15px;
+        .emailInputTextContainer {
+            padding-top: 40px; 
+            span {
+                text-transform: uppercase;
+                color: #F04438;
+            }
+            p {
+                margin-bottom: 32px;
+                color: #475467;
+            }
+        }
+        .formContainer {
+            form {
+                display: flex;
+                flex-direction: column;
+                input {
+                    margin: 5px 0px 20px 0px;
+                    background: #FFFFFF;
+                    border: 1px solid #D0D5DD;
+                    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                    border-radius: 8px;
+                    padding: 10px 14px;
+
+                }
+                button {
+                    background: #475467;
+                    border: 1px solid #475467;
+                    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                    border-radius: 8px;
+                    padding: 10px 18px;
+                    color: #fff;
+                    margin-top: 4px;
+                    cursor: pointer; 
+                    font-weight: 600;
+                }
+            }
+        }
+        .contactContainer {
+            display: flex; 
+            flex-direction: row;
+            margin-top: 120px; 
+            width: 100%; 
+            font-weight: 400;
+            color: #475467;
+            .salaryBandTrademark {
+                display: flex; 
+                justify-content: flex-start;
+                width: 50%;
+            }
+            .contactEmail {
+                display: flex;
+                justify-content: flex-end;
+                width: 50%; 
+            }
+        }
+    }
+    .infoCard {
+        width: 50%; 
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(45deg, #101828 0%, #475467 100%);
+        border-radius: 0px 8px 8px 0px;
+        .infoImgContainer {
+            height: 40%; 
+        }
+        .infoCardTextContainer {
+            height: 60%; 
+            padding: 25px;
+            color: #EAECF0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+    }
+}

@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/styles.css';
+import { Route, Routes, Link } from 'react-router-dom';
+import Header from "./components/Header";
+import EmailVerification from './pages/EmailVerification'
+import UserFlow from './components/ProfessionalDetails';
+import UserPathway from './pages/UserPathway';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Link to={'/UserPathway'}>
+        <button type="button" className='salaryButton'>UserFlow</button>
+      </Link>
+      <Routes>
+        <Route
+          path="/EmailVerification"
+          element={<EmailVerification />}
+        />
+
+        <Route
+          path="/UserPathway"
+          element={<UserPathway />}
+        />
+
+      </Routes>
     </div>
   );
 }
