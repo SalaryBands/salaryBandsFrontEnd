@@ -1,0 +1,33 @@
+.tellUsCard {
+    .detailsCard {
+        .professionalDetails {
+            width: 100%; 
+            font-size: 14px;
+            .companyAndLocationContainer {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    justify-content: space-between;
+                    .companyContainer {
+                        display: flex;
+                        flex-direction: column;
+                        width: 50%;
+                    }
+                    .locationContainer {
+                        display: flex;
+                        flex-direction: column;
+                        width: 50%;
+                    }
+                }
+                .jobTitleContainer {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .salaryQuestion {
+                    display: flex; 
+                    flex-direction: row;
+                }
+            }
+
+    }
+}

@@ -1,5 +1,6 @@
-import {useState, useEffect} from 'react';
-
+import {useState} from 'react';
+import ProfessionalDetails from '../../src/components/ProfessionalDetails';
+import UploadDetails from '../components/UploadDetails';
 
 function UserPathway () {
 
@@ -18,36 +19,38 @@ function UserPathway () {
 
     return (
         <section className="userFlowContainer">
-            <div className='tellUsCard'>
+            <div className='userCard'>
                 <div className="detailsCard">
 
                     {
-                    upload && manual === false ?
+                    !upload && !manual ?
 
                         <div>
                             <div className="detailsTextContainer">
-                                <h2>Tell us about your role</h2>
-                                <p>Share your professional details.</p>
+                                <h2>Help build an accurate database</h2>
+                                <p>Upload a PDF of your OFFER LETTER to get <span>verified</span>.</p>
                             </div>
                             <div className="professionalDetails">
                                 <form action="#">
 
-                                    <button onClick={handlePDF} className="userFlowButton">Upload a PDF</button>
+                                    <div className="uploadContainer"></div>
 
-                                    <button onClick={handleManual} className='userFlowButton'>Enter Manually</button>
+                                    <button onClick={handlePDF} className='verifyButton'>Upload a PDF</button>
+
+                                    <div className='orContainer'>
+                                        <p>or</p>
+                                    </div>
+
+                                    <button onClick={handleManual} className='verifyButton'>Enter Manually</button>
                                 </form>
                             </div> 
                         </div>
 
                         : upload ?
-                        <div>
-                            <h1>upload</h1>
-                        </div>
+                        <UploadDetails />
                         
                         : manual ?
-                        <div className="">
-                            <h1>manual</h1>
-                        </div>
+                        <ProfessionalDetails />
 
                         : null
                     }

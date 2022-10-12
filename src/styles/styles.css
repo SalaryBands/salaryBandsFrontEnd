@@ -232,6 +232,37 @@ html {
   margin: 0 auto;
 }
 
+button {
+  background: #475467;
+  border: 1px solid #475467;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  padding: 10px 18px;
+  color: #fff;
+  margin-top: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.contactContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 120px;
+  width: 100%;
+  font-weight: 400;
+  color: #475467;
+}
+.contactContainer .salaryBandTrademark {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+}
+.contactContainer .contactEmail {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
 nav {
   padding: 15px 0px 15px 0px;
   border-bottom: 1px solid #F2F4F7;
@@ -276,7 +307,7 @@ nav ul .salarySubmit {
   align-items: center;
 }
 
-.emailCard {
+.userCard {
   display: flex;
   flex-direction: row;
   width: 70%;
@@ -284,26 +315,26 @@ nav ul .salarySubmit {
   box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
   border-radius: 12px;
 }
-.emailCard .emailInput {
+.userCard .emailInput {
   width: 50%;
   padding: 15px;
 }
-.emailCard .emailInput .emailInputTextContainer {
+.userCard .emailInput .emailInputTextContainer {
   padding-top: 40px;
 }
-.emailCard .emailInput .emailInputTextContainer span {
+.userCard .emailInput .emailInputTextContainer span {
   text-transform: uppercase;
   color: #F04438;
 }
-.emailCard .emailInput .emailInputTextContainer p {
+.userCard .emailInput .emailInputTextContainer p {
   margin-bottom: 32px;
   color: #475467;
 }
-.emailCard .emailInput .formContainer form {
+.userCard .emailInput .formContainer form {
   display: flex;
   flex-direction: column;
 }
-.emailCard .emailInput .formContainer form input {
+.userCard .emailInput .formContainer form input {
   margin: 5px 0px 20px 0px;
   background: #FFFFFF;
   border: 1px solid #D0D5DD;
@@ -311,7 +342,7 @@ nav ul .salarySubmit {
   border-radius: 8px;
   padding: 10px 14px;
 }
-.emailCard .emailInput .formContainer form button {
+.userCard .emailInput .formContainer form button {
   background: #475467;
   border: 1px solid #475467;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
@@ -322,7 +353,7 @@ nav ul .salarySubmit {
   cursor: pointer;
   font-weight: 600;
 }
-.emailCard .emailInput .contactContainer {
+.userCard .emailInput .contactContainer {
   display: flex;
   flex-direction: row;
   margin-top: 120px;
@@ -330,31 +361,96 @@ nav ul .salarySubmit {
   font-weight: 400;
   color: #475467;
 }
-.emailCard .emailInput .contactContainer .salaryBandTrademark {
+.userCard .emailInput .contactContainer .salaryBandTrademark {
   display: flex;
   justify-content: flex-start;
   width: 50%;
 }
-.emailCard .emailInput .contactContainer .contactEmail {
+.userCard .emailInput .contactContainer .contactEmail {
   display: flex;
   justify-content: flex-end;
   width: 50%;
 }
-.emailCard .infoCard {
+.userCard .infoCard {
   width: 50%;
   display: flex;
   flex-direction: column;
   background: linear-gradient(45deg, #101828 0%, #475467 100%);
   border-radius: 0px 8px 8px 0px;
 }
-.emailCard .infoCard .infoImgContainer {
+.userCard .infoCard .infoImgContainer {
   height: 40%;
 }
-.emailCard .infoCard .infoCardTextContainer {
+.userCard .infoCard .infoCardTextContainer {
   height: 60%;
   padding: 25px;
   color: #EAECF0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+.userFlowContainer {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.userFlowContainer .userCard {
+  min-width: 90%;
+}
+.userFlowContainer .userCard .detailsCard {
+  width: 100%;
+  padding: 15px;
+  height: 100%;
+}
+.userFlowContainer .userCard .detailsCard .professionalDetails {
+  display: flex;
+  flex-direction: column;
+}
+.userFlowContainer .userCard .detailsCard .professionalDetails .uploadContainer {
+  width: 100%;
+  height: 120px;
+  border: 1px solid black;
+}
+.userFlowContainer .userCard .detailsCard .professionalDetails .verifyButton {
+  width: 100%;
+}
+.userFlowContainer .userCard .detailsCard .professionalDetails .orContainer {
+  width: 100%;
+  text-align: center;
+}
+.userFlowContainer .userCard .infoCard {
+  width: 100%;
+}
+
+.tellUsCard .detailsCard .professionalDetails {
+  width: 100%;
+  font-size: 14px;
+}
+.tellUsCard .detailsCard .professionalDetails .companyAndLocationContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.tellUsCard .detailsCard .professionalDetails .companyAndLocationContainer .companyContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.tellUsCard .detailsCard .professionalDetails .companyAndLocationContainer .locationContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.tellUsCard .detailsCard .professionalDetails .jobTitleContainer {
+  display: flex;
+  flex-direction: column;
+}
+.tellUsCard .detailsCard .professionalDetails .salaryQuestion {
+  display: flex;
+  flex-direction: row;
 }

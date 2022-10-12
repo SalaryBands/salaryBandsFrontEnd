@@ -1,10 +1,14 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Header } from '../components/Header';
 
 function EmailVerification() {
 
-    const [userEmail, setUserEmail] = useState([]); 
+    const [userEmail, setUserEmail] = useState([]);
+    const [errors, setErrors] = useState({email: ''}); 
     const [userVerify, setUserVerify] = useState(false)
+
+
+    
     
     const handleInput = function(e) {
        setUserEmail(e.target.value)
@@ -13,15 +17,14 @@ function EmailVerification() {
     const setTrue = useCallback( (e) => {
         e.preventDefault();
         setUserVerify(!userVerify); 
-        console.log(userEmail)
+        console.log(userEmail);
     }, [userVerify])
-
     
     return (
         <section className='emailVerification'>
-            <div className='emailCard'>
+            <div className='userCard'>
                 <div className="emailInput">
-                        {userVerify === false ?
+                        { !userVerify ?
                         <>
                         <div className="emailInputTextContainer">
                             <h2>Verify your work email</h2>
@@ -30,7 +33,7 @@ function EmailVerification() {
                         <div className="formContainer">
                             <form onSubmit={setTrue} action="#">
                                 <label htmlFor="">Work Email*</label>
-                                <input onInput={handleInput}type="email" placeholder='Enter your work email'/>
+                                <input onInput={handleInput}type="email" placeholder='Enter your work email' />
                                 <button type="submit" className='verifyButton'>Verify</button>
                             </form>
                         </div>

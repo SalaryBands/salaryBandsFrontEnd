@@ -1,9 +1,27 @@
 import {useState} from 'react';
+import PromoteTransparency from './PromoteTransparency';
 
 function ProfessionalDetails() {
 
+    const [verifyDetails, setVerifyDetails] = useState(false)
+
+    const [companyName, setCompanyName] = useState([])
+    const [location, setLocation] = useState([])
+
+    const handleVerifyDetails = function (e) {
+        e.preventDefault()
+        setVerifyDetails(true)
+    }
+
+
+
+
     return (
-        <section className="userFlowContainer">
+        <div>
+
+            {
+                !verifyDetails ?
+
             <div className='tellUsCard'>
                 <div className="detailsCard">
                     <div className="detailsTextContainer">
@@ -11,26 +29,33 @@ function ProfessionalDetails() {
                         <p>Share your professional details.</p>
                     </div>
                     <div className="professionalDetails">
-                        <form action="#">
-                            <label htmlFor="company">What company do you work at?</label>
-                            <input type="text" name='company' placeholder='Company Name'/>
+                        <form onSubmit={handleVerifyDetails} action="#">
+                            <div className="companyAndLocationContainer">
+                                <div className="companyContainer">
+                                    <label htmlFor="company">What company do you work at?</label>
+                                    <input type="text" name='company' placeholder='Company Name'/>
+                                </div>
 
-                            <label htmlFor="location">Where do you work?</label>
-                            <input type="text" name='location' placeholder='City, State, Country'/>
+                                <div className="locationContainer">
+                                    <label htmlFor="location">Where do you work?</label>
+                                    <input type="text" name='location' placeholder='City, State, Country'/>
+                                </div>
 
-                            <label htmlFor="title">What is your job title?*</label>
-                            <input type="text" name='title' placeholder='Job Title (i.e. Designer)' />
+                            </div>
+                            <div className="jobTitleContainer">
+                                <label htmlFor="title">What is your job title?</label>
+                                <input type="text" name='title' placeholder='Job Title (i.e. Designer)' />
+                            </div>
 
-
-                            <label htmlFor="years">Years of Professional Experience?</label>
-                            <input type="text" name='years' placeholder='YoE Total or at Company'/>
-
-                            <div className="salaryQuestion">
-                                <label htmlFor="">How much do you make?</label>
-                                <input type="text" name='company' placeholder='$00.00' />
-
-                                <label htmlFor="">Type</label>
-                                <input type="" />
+                            <div className="salaryQuestionContainer">
+                                <div className="salaryContainer">
+                                    <label htmlFor="">How much do you make?</label>
+                                    <input type="text" name='company' placeholder='$00.00' />
+                                </div>
+                                <div className="typeContainer">
+                                    <label htmlFor="">Type</label>
+                                    <input type="" />
+                                </div>
                             </div>
 
                             <div className="yearsAndWorkContainer">
@@ -46,26 +71,17 @@ function ProfessionalDetails() {
                                 <input type="radio" name="negotiate" id="" />
                             </div>
 
-                            <button type="submit" className='verifyButton'>Enter Manually</button>
+                            <button type="submit" className='verifyButton'>Next Step</button>
                         </form>
-                    </div>
-                    <div className="contactContainer">
-                        <div className="salaryBandTrademark"><p>&copy; SalaryBands 2022</p></div>
-                        <div className="contactEmail"><p>help@salarybands.com</p></div>
-                    </div>
-                </div>
-
-                <div className="infoCard">
-                    <div className="infoImgContainer">
-
-                    </div>
-                    <div className="infoCardTextContainer">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet modi nulla rem magni explicabo deserunt, et unde in ullam necessitatibus eius ipsa esse autem sunt natus sapiente libero dolorem labore!</p>
                     </div>
                 </div>
             </div>
-        </section>
+
+            : <PromoteTransparency />
+
+            }
+        </div>
     )
 }
 
-export default ProfessionalDetails; 
+export default ProfessionalDetails 
