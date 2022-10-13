@@ -5,12 +5,29 @@ function ProfessionalDetails() {
 
     const [verifyDetails, setVerifyDetails] = useState(false)
 
-    const [companyName, setCompanyName] = useState([])
-    const [location, setLocation] = useState([])
+    const [professionalDetails, setProfessionalDetails] = useState({
+        company: '',
+        location: '',
+        title: '',
+        salary: 0,
+        type: '',
+        years: 0,
+        workArrangement: '',
+        negotiate: '',
+        negotiatePercent: 0
+    })
 
     const handleVerifyDetails = function (e) {
         e.preventDefault()
         setVerifyDetails(true)
+    }
+
+    function handleInput(e) {
+        const value = e.target.value;
+        setProfessionalDetails({
+            ...professionalDetails,
+            [e.target.name]: value
+        })
     }
 
 
@@ -33,42 +50,52 @@ function ProfessionalDetails() {
                             <div className="companyAndLocationContainer">
                                 <div className="companyContainer">
                                     <label htmlFor="company">What company do you work at?</label>
-                                    <input type="text" name='company' placeholder='Company Name'/>
+                                    <input onInput={handleInput}type="text" name='company' placeholder='Company Name'/>
                                 </div>
 
                                 <div className="locationContainer">
                                     <label htmlFor="location">Where do you work?</label>
-                                    <input type="text" name='location' placeholder='City, State, Country'/>
+                                    <input onInput={handleInput}type="text" name='location' placeholder='City, State, Country'/>
                                 </div>
 
                             </div>
                             <div className="jobTitleContainer">
                                 <label htmlFor="title">What is your job title?</label>
-                                <input type="text" name='title' placeholder='Job Title (i.e. Designer)' />
+                                <input onInput={handleInput} type="text" name='title' placeholder='Job Title (i.e. Designer)' />
                             </div>
 
                             <div className="salaryQuestionContainer">
                                 <div className="salaryContainer">
-                                    <label htmlFor="">How much do you make?</label>
-                                    <input type="text" name='company' placeholder='$00.00' />
+                                    <label htmlFor="salary">How much do you make?</label>
+                                    <input onInput={handleInput} type="text" name='salary' placeholder='$00.00' />
                                 </div>
                                 <div className="typeContainer">
                                     <label htmlFor="">Type</label>
-                                    <input type="" />
+                                    <input onInput={handleInput} type="text" />
                                 </div>
                             </div>
 
                             <div className="yearsAndWorkContainer">
-                                <label htmlFor="years">Years of Professional Experience?</label>
-                                <input type="text" name='years' placeholder='YoE Total or at Company' />
-
-                                <label htmlFor="arrangement">Work Arrangement</label>
-                                <input type="text" />
+                                <div className="yearsContainer">
+                                    <label htmlFor="years">Years of Experience?</label>
+                                    <input onInput={handleInput} type="text" name='years' placeholder='YoE Total or at Company' />
+                                </div>
+                                <div className="workContainer">
+                                    <label htmlFor="arrangement">Work Arrangement</label>
+                                    <input onInput={handleInput} type="text" name='workArrangement' />
+                                </div>
                             </div>
 
                             <div className="negotiateContainer">
-                                <label htmlFor="negotiate">Did you negotiate for this salary?</label>
-                                <input type="radio" name="negotiate" id="" />
+                                <div className="negotiateContainer">
+                                    <label htmlFor="negotiate">Did you negotiate for this salary?</label>
+                                    <input onInput={handleInput} type="radio" name="negotiate" id=""  />
+                                    <input onInput={handleInput} type="radio" name="negotiate" id="" />
+                                </div>
+                                <div className="negotiatePercentContainer">
+                                    <label htmlFor="negotiatePercent">If yes, how much more?</label>
+                                    <input onInput={handleInput} type="text" name='negotiatePercent' />
+                                </div>
                             </div>
 
                             <button type="submit" className='verifyButton'>Next Step</button>

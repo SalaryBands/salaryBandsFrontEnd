@@ -426,31 +426,94 @@ nav ul .salarySubmit {
   width: 100%;
 }
 
-.tellUsCard .detailsCard .professionalDetails {
+.professionalDetails {
   width: 100%;
   font-size: 14px;
 }
-.tellUsCard .detailsCard .professionalDetails .companyAndLocationContainer {
+.professionalDetails input {
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 5px;
+}
+.professionalDetails .companyAndLocationContainer {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
-.tellUsCard .detailsCard .professionalDetails .companyAndLocationContainer .companyContainer {
+.professionalDetails .companyAndLocationContainer .companyContainer {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+.professionalDetails .companyAndLocationContainer .locationContainer {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
-.tellUsCard .detailsCard .professionalDetails .companyAndLocationContainer .locationContainer {
+.professionalDetails .jobTitleContainer {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  margin-bottom: 20px;
 }
-.tellUsCard .detailsCard .professionalDetails .jobTitleContainer {
-  display: flex;
-  flex-direction: column;
-}
-.tellUsCard .detailsCard .professionalDetails .salaryQuestion {
+.professionalDetails .salaryQuestionContainer {
   display: flex;
   flex-direction: row;
+  margin-bottom: 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+.professionalDetails .salaryQuestionContainer .salaryContainer {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+.professionalDetails .salaryQuestionContainer .typeContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.professionalDetails .yearsAndWorkContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.professionalDetails .yearsAndWorkContainer .yearsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+.professionalDetails .yearsAndWorkContainer .workContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.payItForwardFormContainer form {
+  display: flex;
+  flex-direction: column;
+}
+.payItForwardFormContainer form label {
+  font-size: 14px;
+}
+.payItForwardFormContainer form textarea {
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  resize: none;
+  margin-top: 5px;
+  height: 72px;
+}
+.payItForwardFormContainer form .adviceContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.payItForwardFormContainer form .negotiateContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }

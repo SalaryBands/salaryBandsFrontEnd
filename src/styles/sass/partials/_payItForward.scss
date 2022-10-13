@@ -1,0 +1,30 @@
+.payItForwardFormContainer {
+        form {
+            display: flex; 
+            flex-direction: column;
+            label {
+                font-size: 14px; 
+            }
+            textarea {
+                border: 1px solid #D0D5DD;
+                box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                border-radius: 8px;
+                resize: none;
+                margin-top: 5px;
+                height: 72px;
+            }
+            .adviceContainer {
+                display: flex;
+                flex-direction: column;  
+                margin-bottom: 20px;
+            }
+            .negotiateContainer {
+                display: flex; 
+                flex-direction: column;
+                margin-bottom: 20px; 
+            }        
+        }
+    }
+
+            
+            

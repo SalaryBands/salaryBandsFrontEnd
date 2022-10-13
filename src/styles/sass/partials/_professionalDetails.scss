@@ -1,17 +1,23 @@
-.tellUsCard {
-    .detailsCard {
         .professionalDetails {
             width: 100%; 
             font-size: 14px;
+            input {
+                border: 1px solid #D0D5DD;
+                box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                border-radius: 8px;
+                padding: 10px 14px;
+                margin-top: 5px; 
+            }
             .companyAndLocationContainer {
                     display: flex;
                     flex-direction: row;
                     width: 100%;
                     justify-content: space-between;
+                    margin-bottom: 20px; 
                     .companyContainer {
                         display: flex;
                         flex-direction: column;
-                        width: 50%;
+                        width: 45%;
                     }
                     .locationContainer {
                         display: flex;
@@ -22,12 +28,38 @@
                 .jobTitleContainer {
                     display: flex;
                     flex-direction: column;
+                    margin-bottom: 20px;
                 }
-                .salaryQuestion {
+                .salaryQuestionContainer {
                     display: flex; 
                     flex-direction: row;
+                    margin-bottom: 20px;
+                    width: 100%;
+                    justify-content: space-between;
+                    .salaryContainer {
+                        display: flex; 
+                        flex-direction: column;
+                        width: 45%; 
+                    }
+                    .typeContainer {
+                        display: flex; 
+                        flex-direction: column;
+                        width: 50%;
+                    }
+                }
+                .yearsAndWorkContainer {
+                    display: flex;
+                    justify-content: space-between; 
+                    width: 100%;
+                    .yearsContainer {
+                        display: flex; 
+                        flex-direction: column;
+                        width: 45%;
+                    }
+                    .workContainer {
+                        display: flex; 
+                        flex-direction: column;
+                        width: 50%;
+                    }
                 }
             }
-
-    }
-}
