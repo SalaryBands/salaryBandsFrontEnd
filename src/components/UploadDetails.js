@@ -13,6 +13,12 @@ function UploadDetails () {
                         <Link>Explore All Data</Link>
                     </div>
                 </div>
+                <div className="heroImgContainer">
+                    <div className="ImgOne">
+
+                    </div>
+                    
+                </div>
             </div>
 
         </header>

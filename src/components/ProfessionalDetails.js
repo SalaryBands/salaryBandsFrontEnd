@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import Select from 'react-select';
 import PromoteTransparency from './PromoteTransparency';
+import House from '../assets/house.png';
 
 function ProfessionalDetails() {
 
@@ -54,7 +55,7 @@ function ProfessionalDetails() {
 
 
     return (
-        <div>
+        <div className='professionalDetailsContainer'>
 
             {
                 !verifyDetails ?
@@ -129,8 +130,13 @@ function ProfessionalDetails() {
                             <button type="submit" className='verifyButton'>Next Step</button>
                         </form>
                     </div>
+                    <div className="contactContainer">
+                        <div className="salaryBandTrademark"><p>&copy; SalaryBands 2022</p></div>
+                        <div className="contactEmail"><p>help@salarybands.com</p></div>
+                    </div>
                 </div>
             </div>
+            
 
             : <PromoteTransparency 
             userProfessionalDetails={professionalDetails}

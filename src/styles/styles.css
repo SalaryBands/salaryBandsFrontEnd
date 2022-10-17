@@ -430,7 +430,7 @@ nav ul .salarySubmit {
 
 .userFlowContainer {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -444,11 +444,14 @@ nav ul .salarySubmit {
   padding: 15px;
   height: 100%;
 }
-.userFlowContainer .userCard .detailsCard .professionalDetails {
+.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer {
+  height: 100%;
+}
+.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .professionalDetails {
   display: flex;
   flex-direction: column;
 }
-.userFlowContainer .userCard .detailsCard .professionalDetails .uploadContainer {
+.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .professionalDetails .uploadContainer {
   width: 100%;
   height: 120px;
   padding: 16px, 24px, 16px, 24px;
@@ -456,119 +459,137 @@ nav ul .salarySubmit {
   box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
   border-radius: 12px;
 }
-.userFlowContainer .userCard .detailsCard .professionalDetails .verifyButton {
+.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .professionalDetails .verifyButton {
   width: 100%;
 }
-.userFlowContainer .userCard .detailsCard .professionalDetails .orContainer {
+.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .professionalDetails .orContainer {
   width: 100%;
   text-align: center;
+}
+.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .contactContainer {
+  height: 25%;
+}
+.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .contactContainer .salaryBandTrademark {
+  align-self: end;
+}
+.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .contactContainer .contactEmail {
+  align-self: end;
 }
 .userFlowContainer .userCard .infoCard {
   width: 100%;
 }
 
-.professionalDetails {
+.userCard .detailsCard .professionalDetailsContainer {
+  height: 100%;
+}
+.userCard .detailsCard .professionalDetails {
   width: 100%;
   font-size: 14px;
 }
-.professionalDetails input {
+.userCard .detailsCard .professionalDetails input {
   border: 1px solid #D0D5DD;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   padding: 10px 14px;
   margin-top: 5px;
 }
-.professionalDetails .css-1s2u09g-control {
+.userCard .detailsCard .professionalDetails .css-1s2u09g-control {
   margin-top: 5px;
 }
-.professionalDetails .companyAndLocationContainer {
+.userCard .detailsCard .professionalDetails button {
+  width: 100%;
+}
+.userCard .detailsCard .professionalDetails .companyAndLocationContainer {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.professionalDetails .companyAndLocationContainer .companyContainer {
+.userCard .detailsCard .professionalDetails .companyAndLocationContainer .companyContainer {
   display: flex;
   flex-direction: column;
   width: 45%;
 }
-.professionalDetails .companyAndLocationContainer .locationContainer {
+.userCard .detailsCard .professionalDetails .companyAndLocationContainer .locationContainer {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
-.professionalDetails .jobTitleContainer {
+.userCard .detailsCard .professionalDetails .jobTitleContainer {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
 }
-.professionalDetails .salaryQuestionContainer {
+.userCard .detailsCard .professionalDetails .salaryQuestionContainer {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
   width: 100%;
   justify-content: space-between;
 }
-.professionalDetails .salaryQuestionContainer .salaryContainer {
+.userCard .detailsCard .professionalDetails .salaryQuestionContainer .salaryContainer {
   display: flex;
   flex-direction: column;
   width: 45%;
 }
-.professionalDetails .salaryQuestionContainer .typeContainer {
+.userCard .detailsCard .professionalDetails .salaryQuestionContainer .typeContainer {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
-.professionalDetails .yearsAndWorkContainer {
+.userCard .detailsCard .professionalDetails .yearsAndWorkContainer {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 20px;
 }
-.professionalDetails .yearsAndWorkContainer .yearsContainer {
+.userCard .detailsCard .professionalDetails .yearsAndWorkContainer .yearsContainer {
   display: flex;
   flex-direction: column;
   width: 45%;
 }
-.professionalDetails .yearsAndWorkContainer .workContainer {
+.userCard .detailsCard .professionalDetails .yearsAndWorkContainer .workContainer {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
-.professionalDetails .negotiateContainer {
+.userCard .detailsCard .professionalDetails .negotiateContainer {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.professionalDetails .negotiateContainer .negotiateQuestionContainer {
+.userCard .detailsCard .professionalDetails .negotiateContainer .negotiateQuestionContainer {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
-.professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer {
+.userCard .detailsCard .professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer {
   display: flex;
   margin-top: 5px;
 }
-.professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer .yesContainer {
+.userCard .detailsCard .professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer .yesContainer {
   align-self: center;
   width: 50%;
   margin-left: 20px;
 }
-.professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer .yesContainer label {
+.userCard .detailsCard .professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer .yesContainer label {
   margin-left: 5px;
 }
-.professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer .noContainer {
+.userCard .detailsCard .professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer .noContainer {
   align-self: center;
   width: 50%;
 }
-.professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer .noContainer label {
+.userCard .detailsCard .professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer .noContainer label {
   margin-left: 5px;
 }
-.professionalDetails .negotiateContainer .negotiatePercentContainer {
+.userCard .detailsCard .professionalDetails .negotiateContainer .negotiatePercentContainer {
   display: flex;
   flex-direction: column;
   width: 50%;
+}
+.userCard .detailsCard .contactContainer {
+  margin-top: 20px;
 }
 
 .payItForwardFormContainer form {
@@ -598,39 +619,42 @@ nav ul .salarySubmit {
   margin-bottom: 20px;
 }
 
-.submissionContainer .personalCharacteristics {
+.userCard {
+  height: 90%;
+}
+.userCard .submissionContainer .personalCharacteristics {
   font-size: 14px;
 }
-.submissionContainer .personalCharacteristics .genderContainer, .submissionContainer .personalCharacteristics .raceContainer, .submissionContainer .personalCharacteristics .yesDisabilityContainer {
+.userCard .submissionContainer .personalCharacteristics .genderContainer, .userCard .submissionContainer .personalCharacteristics .raceContainer, .userCard .submissionContainer .personalCharacteristics .yesDisabilityContainer {
   margin-bottom: 20px;
 }
-.submissionContainer .personalCharacteristics .genderContainer .css-1s2u09g-control, .submissionContainer .personalCharacteristics .raceContainer .css-1s2u09g-control, .submissionContainer .personalCharacteristics .yesDisabilityContainer .css-1s2u09g-control {
+.userCard .submissionContainer .personalCharacteristics .genderContainer .css-1s2u09g-control, .userCard .submissionContainer .personalCharacteristics .raceContainer .css-1s2u09g-control, .userCard .submissionContainer .personalCharacteristics .yesDisabilityContainer .css-1s2u09g-control {
   margin-top: 5px;
 }
-.submissionContainer .personalCharacteristics .disabilityContainer {
+.userCard .submissionContainer .personalCharacteristics .disabilityContainer {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
 }
-.submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer {
+.userCard .submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer {
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
 }
-.submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer .yesContainer {
+.userCard .submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer .yesContainer {
   align-self: center;
   width: 50%;
 }
-.submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer .yesContainer label {
+.userCard .submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer .yesContainer label {
   margin-left: 5px;
 }
-.submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer .noContainer {
+.userCard .submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer .noContainer {
   align-self: center;
   width: 50%;
 }
-.submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer .noContainer label {
+.userCard .submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer .noContainer label {
   margin-left: 5px;
 }
-.submissionContainer .personalCharacteristics button {
+.userCard .submissionContainer .personalCharacteristics button {
   width: 100%;
 }

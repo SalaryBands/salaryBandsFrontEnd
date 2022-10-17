@@ -1,41 +1,44 @@
-.submissionContainer {
-    .personalCharacteristics {
-        font-size: 14px;
-        .genderContainer, .raceContainer, .yesDisabilityContainer {
-            margin-bottom: 20px; 
-            .css-1s2u09g-control {
-                    margin-top: 5px;
-                }
-        }
-        .disabilityContainer {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 20px;
-            .yesOrNoContainer {
-                display: flex; 
-                justify-content: space-between;
-                margin-top: 5px;
-                .yesContainer {
-                        align-self: center;
-                        width: 50%;
-                
-                        label {
-                            margin-left: 5px;
-                        }
-                    }
-                
-                    .noContainer {
-                        align-self: center;
-                        width: 50%;
-                
-                        label {
-                            margin-left: 5px;
-                        }
+.userCard {
+    height: 90%;
+    .submissionContainer {
+        .personalCharacteristics {
+            font-size: 14px;
+            .genderContainer, .raceContainer, .yesDisabilityContainer {
+                margin-bottom: 20px; 
+                .css-1s2u09g-control {
+                        margin-top: 5px;
                     }
             }
-        }
-        button {
-            width: 100%;
+            .disabilityContainer {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 20px;
+                .yesOrNoContainer {
+                    display: flex; 
+                    justify-content: space-between;
+                    margin-top: 5px;
+                    .yesContainer {
+                            align-self: center;
+                            width: 50%;
+                    
+                            label {
+                                margin-left: 5px;
+                            }
+                        }
+                    
+                        .noContainer {
+                            align-self: center;
+                            width: 50%;
+                    
+                            label {
+                                margin-left: 5px;
+                            }
+                        }
+                }
+            }
+            button {
+                width: 100%;
+            }
         }
     }
 }

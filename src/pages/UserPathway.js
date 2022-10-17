@@ -22,11 +22,11 @@ function UserPathway () {
         <section className="userFlowContainer">
             <div className='userCard'>
                 <div className="detailsCard">
-
                     {
                     !upload && !manual ?
 
-                        <div>
+
+                        <div className='userPathwayComponentContainer'>
                             <div className="detailsTextContainer">
                                 <h2>Help build an accurate database</h2>
                                 <p>Upload a PDF of your OFFER LETTER to get <span>verified</span>.</p>
@@ -45,6 +45,12 @@ function UserPathway () {
                                     <button onClick={handleManual} className='verifyButton'>Enter Manually</button>
                                 </form>
                             </div> 
+
+                            <div className="contactContainer">
+                                <div className="salaryBandTrademark"><p>&copy; SalaryBands 2022</p></div>
+                                <div className="contactEmail"><p>help@salarybands.com</p></div>
+                            </div>
+
                         </div>
 
                         : upload ?
@@ -56,10 +62,6 @@ function UserPathway () {
                         : null
                     }
 
-                    <div className="contactContainer">
-                        <div className="salaryBandTrademark"><p>&copy; SalaryBands 2022</p></div>
-                        <div className="contactEmail"><p>help@salarybands.com</p></div>
-                    </div>
                 </div>
 
                 <div className="infoCard">
@@ -67,7 +69,8 @@ function UserPathway () {
                         <img src={magnifyingglass} alt="" />
                     </div>
                     <div className="infoCardTextContainer">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet modi nulla rem magni explicabo deserunt, et unde in ullam necessitatibus eius ipsa esse autem sunt natus sapiente libero dolorem labore!</p>
+                        <h3>Providing transparency and equity for tech</h3>
+                        <p>We provide insights for better decision-making by using accurate and comprehensive compensation information.</p>
                     </div>
                 </div>
             </div>

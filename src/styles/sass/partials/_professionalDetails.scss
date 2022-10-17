@@ -1,103 +1,122 @@
+.userCard {
+    .detailsCard {
+        .professionalDetailsContainer {
+            height: 100%;
+        }
         .professionalDetails {
-            width: 100%; 
-            font-size: 14px;
-            input {
-                border: 1px solid #D0D5DD;
-                box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-                border-radius: 8px;
-                padding: 10px 14px;
-                margin-top: 5px; 
-            }
-            .css-1s2u09g-control {
-                margin-top: 5px; 
-            }
-            .companyAndLocationContainer {
-                    display: flex;
-                    flex-direction: row;
-                    width: 100%;
-                    justify-content: space-between;
-                    margin-bottom: 20px; 
-                    .companyContainer {
-                        display: flex;
-                        flex-direction: column;
-                        width: 45%;
+                    width: 100%; 
+                    font-size: 14px;
+                    input {
+                        border: 1px solid #D0D5DD;
+                        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                        border-radius: 8px;
+                        padding: 10px 14px;
+                        margin-top: 5px; 
                     }
-                    .locationContainer {
-                        display: flex;
-                        flex-direction: column;
-                        width: 50%;
+                    .css-1s2u09g-control {
+                        margin-top: 5px; 
                     }
-                }
-                .jobTitleContainer {
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 20px;
-                }
-                .salaryQuestionContainer {
-                    display: flex; 
-                    flex-direction: row;
-                    margin-bottom: 20px;
-                    width: 100%;
-                    justify-content: space-between;
-                    .salaryContainer {
-                        display: flex; 
-                        flex-direction: column;
-                        width: 45%; 
+                    button {
+                        width: 100%;
                     }
-                    .typeContainer {
-                        display: flex; 
-                        flex-direction: column;
-                        width: 50%;
-                    }
-                }
-                .yearsAndWorkContainer {
-                    display: flex;
-                    justify-content: space-between; 
-                    width: 100%;
-                    margin-bottom: 20px;
-                    .yearsContainer {
-                        display: flex; 
-                        flex-direction: column;
-                        width: 45%;
-                    }
-                    .workContainer {
-                        display: flex; 
-                        flex-direction: column;
-                        width: 50%;
-                    } 
-                }
-                .negotiateContainer {
-                    display: flex;
-                    justify-content: space-between; 
-                    margin-bottom: 20px;
-                    .negotiateQuestionContainer {
-                        display: flex;
-                        flex-direction: column;
-                        width: 50%;
-                        .yesOrNoContainer {
+                    .companyAndLocationContainer {
                             display: flex;
-                            margin-top: 5px;
-                            .yesContainer {
-                                align-self: center;
+                            flex-direction: row;
+                            width: 100%;
+                            justify-content: space-between;
+                            margin-bottom: 20px; 
+                            .companyContainer {
+                                display: flex;
+                                flex-direction: column;
+                                width: 45%;
+                            }
+                            .locationContainer {
+                                display: flex;
+                                flex-direction: column;
                                 width: 50%;
-                                margin-left: 20px;
-                                label {
-                                    margin-left: 5px;
+                            }
+                        }
+                        .jobTitleContainer {
+                            display: flex;
+                            flex-direction: column;
+                            margin-bottom: 20px;
+                        }
+                        .salaryQuestionContainer {
+                            display: flex; 
+                            flex-direction: row;
+                            margin-bottom: 20px;
+                            width: 100%;
+                            justify-content: space-between;
+                            .salaryContainer {
+                                display: flex; 
+                                flex-direction: column;
+                                width: 45%; 
+                            }
+                            .typeContainer {
+                                display: flex; 
+                                flex-direction: column;
+                                width: 50%;
+                            }
+                        }
+                        .yearsAndWorkContainer {
+                            display: flex;
+                            justify-content: space-between; 
+                            width: 100%;
+                            margin-bottom: 20px;
+                            .yearsContainer {
+                                display: flex; 
+                                flex-direction: column;
+                                width: 45%;
+                            }
+                            .workContainer {
+                                display: flex; 
+                                flex-direction: column;
+                                width: 50%;
+                            } 
+                        }
+                        .negotiateContainer {
+                            display: flex;
+                            justify-content: space-between; 
+                            margin-bottom: 20px;
+                            .negotiateQuestionContainer {
+                                display: flex;
+                                flex-direction: column;
+                                width: 50%;
+                                .yesOrNoContainer {
+                                    display: flex;
+                                    margin-top: 5px;
+                                    .yesContainer {
+                                        align-self: center;
+                                        width: 50%;
+                                        margin-left: 20px;
+                                        label {
+                                            margin-left: 5px;
+                                        }
+                                    }
+                                    .noContainer {
+                                        align-self: center;
+                                        width: 50%;
+                                        label {
+                                                margin-left: 5px;
+                                            }
+                                    }
                                 }
                             }
-                            .noContainer {
-                                align-self: center;
+                            .negotiatePercentContainer {
+                                display: flex; 
+                                flex-direction: column;
                                 width: 50%;
-                                label {
-                                        margin-left: 5px;
-                                    }
                             }
                         }
                     }
-                    .negotiatePercentContainer {
-                        display: flex; 
-                        flex-direction: column;
-                        width: 50%;
+
+    }
+    
+    
+    
+                .detailsCard {
+                    .contactContainer {
+                        margin-top: 20px; 
                     }
                 }
-            }
+}
