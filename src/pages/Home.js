@@ -1,8 +1,12 @@
+import Hero from '../components/Hero'
+import UserChart from '../components/userSubmissionsChart';
+
 function Home () {
     return (
-        <header>
-            
-        </header>
+        <div>
+            <Hero />
+            <UserChart />
+        </div>
     )
 }
 

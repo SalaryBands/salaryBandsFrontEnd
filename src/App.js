@@ -12,9 +12,6 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Link to={'/UserPathway'}>
-        <button type="button" className='salaryButton'>UserFlow</button>
-      </Link>
       <Routes>
 
         <Route exact path='/'
@@ -31,6 +28,9 @@ function App() {
         />
 
       </Routes>
+      <Link to={'/UserPathway'}>
+        <button type="button" className='salaryButton'>UserFlow</button>
+      </Link>
     </div>
   );
 }

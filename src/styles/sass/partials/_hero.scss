@@ -1,0 +1,61 @@
+header {
+    height: 90vh; 
+    background-color: #155B75;
+    .wrapper {
+        height: 100%;
+    }
+    .heroContainer {
+        display: flex;
+        height: 100%; 
+        .heroTextContainer {
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            justify-content: center;
+            h1 {
+                font-size: 48px;
+                color: #fff; 
+                line-height: 60px;
+                margin-bottom: 0;
+                font-weight: 600;
+                letter-spacing: -0.02em;
+            }
+            h4 {
+                font-size: 20px;
+                color: #A5F0FC;
+                line-height: 30px;
+                font-weight: 400; 
+            }
+            .buttonLinksContainer {
+                display: flex;
+                justify-content: space-between;
+                width: 65%;
+                margin-top: 20px; 
+                .heroSubmitSalary {
+                    text-decoration: none;
+                    padding: 12px 20px;
+                    background-color: #fff;
+                    color: #344054;
+                    font-size: 16px;
+                    font-weight: 600;
+                    border: 1px solid #D0D5DD;
+                    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                    border-radius: 8px;
+                    line-height: 24px;
+                }
+                .heroExploreData {
+                    text-decoration: none;
+                    color: #fff; 
+                    background: #088AB2;
+                    border: 1px solid #088AB2;
+                    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                    border-radius: 8px;
+                    padding: 12px 20px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
