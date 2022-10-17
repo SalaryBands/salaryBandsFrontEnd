@@ -88,7 +88,7 @@ function ProfessionalDetails() {
                             <div className="salaryQuestionContainer">
                                 <div className="salaryContainer">
                                     <label htmlFor="salary">How much do you make?</label>
-                                    <input onInput={handleInput} type="text" name='salary' placeholder='$00.00' />
+                                    <input onInput={handleInput} type="number" name='salary' placeholder='$00.00' />
                                 </div>
                                 <div className="typeContainer">
                                     <label htmlFor="">Type</label>
