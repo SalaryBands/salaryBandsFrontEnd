@@ -1,21 +1,41 @@
 import {useState} from 'react';
+import Select from 'react-select';
 import PromoteTransparency from './PromoteTransparency';
 
 function ProfessionalDetails() {
 
     const [verifyDetails, setVerifyDetails] = useState(false)
-
+    const [type, setType] = useState({})
+    const [workArrangement, setWorkArrangement] = useState({})
+    const [percentNumber, setPercentNumber] = useState(0)
     const [professionalDetails, setProfessionalDetails] = useState({
         company: '',
         location: '',
         title: '',
         salary: 0,
-        type: '',
         years: 0,
-        workArrangement: '',
         negotiate: '',
         negotiatePercent: 0
     })
+
+    const types = [
+        { value: 'annual', label: 'Annual' },
+        { value: 'monthly', label: 'Monthly' },
+        { value: 'biweek', label: 'Bi-weekly' },
+    ]
+    
+    const workArr = [
+        { value: 'office', label: 'In office' },
+        { value: 'hybrid', label: 'Hybrid' },
+        { value: 'remote', label: 'Remote' },
+    ]
+
+    const percentNegotiate = [
+        { value: 2, label: '< 2' },
+        { value: 5, label: '< 5' },
+        { value: 10, label: '< 10' },
+        { value: 15, label: '< 15' },
+    ]
 
     const handleVerifyDetails = function (e) {
         e.preventDefault()
@@ -71,7 +91,7 @@ function ProfessionalDetails() {
                                 </div>
                                 <div className="typeContainer">
                                     <label htmlFor="">Type</label>
-                                    <input onInput={handleInput} type="text" />
+                                    <Select options={types} onChange={(salaryType) => setType(salaryType.value)}/>
                                 </div>
                             </div>
 
@@ -82,19 +102,27 @@ function ProfessionalDetails() {
                                 </div>
                                 <div className="workContainer">
                                     <label htmlFor="arrangement">Work Arrangement</label>
-                                    <input onInput={handleInput} type="text" name='workArrangement' />
+                                    <Select options={workArr} onChange={(arrangement) => setWorkArrangement(arrangement.value)} />
                                 </div>
                             </div>
 
                             <div className="negotiateContainer">
-                                <div className="negotiateContainer">
+                                <div className="negotiateQuestionContainer">
                                     <label htmlFor="negotiate">Did you negotiate for this salary?</label>
-                                    <input onInput={handleInput} type="radio" name="negotiate" id=""  />
-                                    <input onInput={handleInput} type="radio" name="negotiate" id="" />
+                                    <div className="yesOrNoContainer">
+                                        <div className="yesContainer">
+                                            <input onInput={handleInput} type="radio" name="negotiate" id="true" value='true' />
+                                            <label htmlFor="true">Yes</label>
+                                        </div>
+                                        <div className="noContainer">
+                                            <input onInput={handleInput} type="radio" name="negotiate" id="false" value='false' />
+                                            <label htmlFor="false">No</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="negotiatePercentContainer">
                                     <label htmlFor="negotiatePercent">If yes, how much more?</label>
-                                    <input onInput={handleInput} type="text" name='negotiatePercent' />
+                                    <Select options={percentNegotiate} onChange={(number) => setPercentNumber(number.value)} />
                                 </div>
                             </div>
 
@@ -104,7 +132,11 @@ function ProfessionalDetails() {
                 </div>
             </div>
 
-            : <PromoteTransparency />
+            : <PromoteTransparency 
+            userProfessionalDetails={professionalDetails}
+            userWorkType={type}
+            userWorkArrangement={workArrangement}
+            userPercentNumber={percentNumber}/>
 
             }
         </div>

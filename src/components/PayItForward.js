@@ -1,17 +1,16 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useCallback} from 'react';
+import axios from 'axios';
 
-function PayItForward () {
-    const [adviceBreak, setAdviceBreak] = useState([]);
-    const [adviceNegotiate, setAdviceNegotiate] = useState([]);
+function PayItForward (props) {
+
+    const baseURL = 'https://salarybandsapi.herokuapp.com/contributions'
+
+    const [submitInfo, setSubmitInfo] = useState(false)
 
     const [payItForward, setPayItForward] = useState({
         adviceBreak: '',
         adviceNegotiate: ''
     })
-
-    function preventDefault (e) {
-        e.preventDefault()
-    }
 
     function handleInput(e) {
         const value = e.target.value;
@@ -21,6 +20,28 @@ function PayItForward () {
         })
     }
 
+    const setTrue = useCallback((e) => {
+        e.preventDefault();
+        setSubmitInfo(true);
+        axios.post(baseURL, {
+            company: props.userDe.company,
+            country: props.userDe.location,
+            job_title: props.userDe.title,
+            salary: props.userDe.salary,
+            period: props.userWorkPer,
+            years_of_experience: props.userDe.years,
+            work_arrangement: props.userWorkArr,
+            negotiate_check: '',
+            negotiation_percentage: '',
+            gender: '',
+            race: '',
+            disability_check: '',
+            advice_break: payItForward.adviceBreak,
+            advice_negotiate: payItForward.adviceNegotiate
+        })
+
+    }, [submitInfo])
+
     return (
         <div className="payItForwardContainer">
             <div className="payItForwardTextContainer">
@@ -29,7 +50,7 @@ function PayItForward () {
             </div>
 
             <div className="payItForwardFormContainer">
-                <form onSubmit ={ preventDefault }action="#">
+                <form onSubmit ={ setTrue }action="#">
 
 
                     <div className="adviceContainer">

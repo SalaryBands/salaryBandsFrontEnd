@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import ProfessionalDetails from '../../src/components/ProfessionalDetails';
 import UploadDetails from '../components/UploadDetails';
+import magnifyingglass from '../assets/magnifyingglass.png'
 
 function UserPathway () {
 
@@ -63,7 +64,7 @@ function UserPathway () {
 
                 <div className="infoCard">
                     <div className="infoImgContainer">
-
+                        <img src={magnifyingglass} alt="" />
                     </div>
                     <div className="infoCardTextContainer">
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet modi nulla rem magni explicabo deserunt, et unde in ullam necessitatibus eius ipsa esse autem sunt natus sapiente libero dolorem labore!</p>

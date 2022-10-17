@@ -1,22 +1,26 @@
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 function Header() {
     return (
         <nav>
             <ul>
                 <li className='logo'>
+                    <div className='logoImageContainer'>
+                        <img src={logo} alt="" />
+                    </div>
                     <Link>SalaryBands</Link>
                 </li>
-                <li>
+                <li className='headerLinks'>
                     <Link>Home</Link>
                 </li>
-                <li>
+                <li className='headerLinks'>
                     <Link>Salaries</Link>
                 </li>
-                <li>
+                <li className='headerLinks'>
                     <Link>Resources</Link>
                 </li>
-                <li>
+                <li className='headerLinks'>
                     <Link>About Us</Link>
                 </li>
                 <li className='salarySubmit'>

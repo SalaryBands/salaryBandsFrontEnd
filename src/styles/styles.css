@@ -233,8 +233,8 @@ html {
 }
 
 button {
-  background: #475467;
-  border: 1px solid #475467;
+  background: #088AB2;
+  border: 1px solid #088AB2;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   padding: 10px 18px;
@@ -247,10 +247,10 @@ button {
 .contactContainer {
   display: flex;
   flex-direction: row;
-  margin-top: 120px;
   width: 100%;
   font-weight: 400;
   color: #475467;
+  font-size: 14px;
 }
 .contactContainer .salaryBandTrademark {
   display: flex;
@@ -277,21 +277,33 @@ nav ul {
 }
 nav ul li {
   list-style: none;
-  margin-left: 15px;
-  font-weight: 600;
 }
 nav ul li a {
   text-decoration: none;
   color: #475467;
 }
 nav ul li .salaryButton {
-  background: #475467;
-  border: 1px solid #475467;
+  background: #088AB2;
+  border: 1px solid #088AB2;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   color: #fff;
   padding: 10px 18px 10px 18px;
   cursor: pointer;
+  font-weight: 600;
+}
+nav ul .logo {
+  display: flex;
+  align-items: center;
+}
+nav ul .logo a {
+  margin-left: 10px;
+  font-weight: 900;
+  color: #101828;
+  text-transform: uppercase;
+}
+nav ul .headerLinks {
+  margin-left: 60px;
   font-weight: 600;
 }
 nav ul .salarySubmit {
@@ -318,6 +330,8 @@ nav ul .salarySubmit {
 .userCard .emailInput {
   width: 50%;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
 }
 .userCard .emailInput .emailInputTextContainer {
   padding-top: 40px;
@@ -329,6 +343,12 @@ nav ul .salarySubmit {
 .userCard .emailInput .emailInputTextContainer p {
   margin-bottom: 32px;
   color: #475467;
+}
+.userCard .emailInput .thankYouEmailInputTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
 }
 .userCard .emailInput .formContainer form {
   display: flex;
@@ -343,8 +363,8 @@ nav ul .salarySubmit {
   padding: 10px 14px;
 }
 .userCard .emailInput .formContainer form button {
-  background: #475467;
-  border: 1px solid #475467;
+  background: #088AB2;
+  border: 1px solid #088AB2;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   padding: 10px 18px;
@@ -356,30 +376,44 @@ nav ul .salarySubmit {
 .userCard .emailInput .contactContainer {
   display: flex;
   flex-direction: row;
-  margin-top: 120px;
   width: 100%;
   font-weight: 400;
   color: #475467;
+  height: 100%;
 }
 .userCard .emailInput .contactContainer .salaryBandTrademark {
   display: flex;
   justify-content: flex-start;
   width: 50%;
+  align-self: end;
+}
+.userCard .emailInput .contactContainer .salaryBandTrademark p {
+  margin-bottom: 0px;
 }
 .userCard .emailInput .contactContainer .contactEmail {
   display: flex;
   justify-content: flex-end;
   width: 50%;
+  align-self: end;
+}
+.userCard .emailInput .contactContainer .contactEmail p {
+  margin-bottom: 0px;
 }
 .userCard .infoCard {
   width: 50%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(45deg, #101828 0%, #475467 100%);
+  background: #164C63;
   border-radius: 0px 8px 8px 0px;
 }
 .userCard .infoCard .infoImgContainer {
   height: 40%;
+  width: 100%;
+  text-align: center;
+  padding-top: 20%;
+}
+.userCard .infoCard .infoImgContainer img {
+  width: 70%;
 }
 .userCard .infoCard .infoCardTextContainer {
   height: 60%;
@@ -388,6 +422,10 @@ nav ul .salarySubmit {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  text-align: center;
+}
+.userCard .infoCard .infoCardTextContainer h3 {
+  margin-bottom: 0px;
 }
 
 .userFlowContainer {
@@ -413,7 +451,10 @@ nav ul .salarySubmit {
 .userFlowContainer .userCard .detailsCard .professionalDetails .uploadContainer {
   width: 100%;
   height: 120px;
-  border: 1px solid black;
+  padding: 16px, 24px, 16px, 24px;
+  border: 1px solid #EAECF0;
+  box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
+  border-radius: 12px;
 }
 .userFlowContainer .userCard .detailsCard .professionalDetails .verifyButton {
   width: 100%;
@@ -435,6 +476,9 @@ nav ul .salarySubmit {
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   padding: 10px 14px;
+  margin-top: 5px;
+}
+.professionalDetails .css-1s2u09g-control {
   margin-top: 5px;
 }
 .professionalDetails .companyAndLocationContainer {
@@ -480,6 +524,7 @@ nav ul .salarySubmit {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 20px;
 }
 .professionalDetails .yearsAndWorkContainer .yearsContainer {
   display: flex;
@@ -487,6 +532,40 @@ nav ul .salarySubmit {
   width: 45%;
 }
 .professionalDetails .yearsAndWorkContainer .workContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.professionalDetails .negotiateContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.professionalDetails .negotiateContainer .negotiateQuestionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer {
+  display: flex;
+  margin-top: 5px;
+}
+.professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer .yesContainer {
+  align-self: center;
+  width: 50%;
+  margin-left: 20px;
+}
+.professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer .yesContainer label {
+  margin-left: 5px;
+}
+.professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer .noContainer {
+  align-self: center;
+  width: 50%;
+}
+.professionalDetails .negotiateContainer .negotiateQuestionContainer .yesOrNoContainer .noContainer label {
+  margin-left: 5px;
+}
+.professionalDetails .negotiateContainer .negotiatePercentContainer {
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -506,6 +585,7 @@ nav ul .salarySubmit {
   resize: none;
   margin-top: 5px;
   height: 72px;
+  padding: 10px 14px;
 }
 .payItForwardFormContainer form .adviceContainer {
   display: flex;
@@ -516,4 +596,41 @@ nav ul .salarySubmit {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+}
+
+.submissionContainer .personalCharacteristics {
+  font-size: 14px;
+}
+.submissionContainer .personalCharacteristics .genderContainer, .submissionContainer .personalCharacteristics .raceContainer, .submissionContainer .personalCharacteristics .yesDisabilityContainer {
+  margin-bottom: 20px;
+}
+.submissionContainer .personalCharacteristics .genderContainer .css-1s2u09g-control, .submissionContainer .personalCharacteristics .raceContainer .css-1s2u09g-control, .submissionContainer .personalCharacteristics .yesDisabilityContainer .css-1s2u09g-control {
+  margin-top: 5px;
+}
+.submissionContainer .personalCharacteristics .disabilityContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer .yesContainer {
+  align-self: center;
+  width: 50%;
+}
+.submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer .yesContainer label {
+  margin-left: 5px;
+}
+.submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer .noContainer {
+  align-self: center;
+  width: 50%;
+}
+.submissionContainer .personalCharacteristics .disabilityContainer .yesOrNoContainer .noContainer label {
+  margin-left: 5px;
+}
+.submissionContainer .personalCharacteristics button {
+  width: 100%;
 }

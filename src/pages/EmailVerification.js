@@ -1,6 +1,9 @@
 import { useCallback, useState } from 'react';
 import { Header } from '../components/Header';
 
+import verifyEmail from '../assets/verifyEmail.png'
+import emailSuccess from '../assets/emailSuccess.png'
+
 function EmailVerification() {
 
     const [userEmail, setUserEmail] = useState([]);
@@ -39,7 +42,7 @@ function EmailVerification() {
                         </div>
                         </>
                         :
-                        <div className="emailInputTextContainer">
+                        <div className="thankYouEmailInputTextContainer">
                             <h2>Check your email</h2>
                             <p>You will receive a special link to submit your compensation and demographics data anonymously.</p>
                         </div>
@@ -51,12 +54,29 @@ function EmailVerification() {
                 </div>
 
                 <div className="infoCard">
-                    <div className="infoImgContainer">
-                    
-                    </div>
-                    <div className="infoCardTextContainer">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet modi nulla rem magni explicabo deserunt, et unde in ullam necessitatibus eius ipsa esse autem sunt natus sapiente libero dolorem labore!</p>
-                    </div>
+                    { !userVerify ?
+                    <>
+                        <div className="infoImgContainer">
+                            <img src={verifyEmail} alt="" />
+                        </div>
+                        <div className="infoCardTextContainer">
+                            <h3>Lorem ipsum dolor sit amet</h3>
+                            <p>By verifying your email, you help ensure that SalaryBands provides an accurate and comprehensive database worth trusting.</p>
+                        </div>
+                    </>
+
+                        :
+                        <>
+                            <div className="infoImgContainer">
+                                <img src={emailSuccess} alt="" />
+                            </div>
+                            <div className="infoCardTextContainer">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet modi nulla rem magni explicabo deserunt, et unde in ullam necessitatibus eius ipsa esse autem sunt natus sapiente libero dolorem labore!</p>
+                            </div>       
+                        </>
+
+                    }
                 </div>
             </div>
         </section>

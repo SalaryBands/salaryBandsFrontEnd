@@ -1,13 +1,18 @@
 import {useState} from 'react'
-
-
+import Select from 'react-select'
 import PayItForward from './PayItForward';
 
 
 
-function PromoteTransparency () {
+
+function PromoteTransparency (props) {
 
     const [nextStep, setNextStep] = useState(false)
+    const [userGender, setUserGender] = useState({})
+    const [userRace, setUserRace] = useState({})
+    const [userDisability, setUserDisability] = useState({})
+
+
 
 
     const handleNextStep = function (e) {
@@ -15,37 +20,44 @@ function PromoteTransparency () {
         setNextStep(true)
     }
 
+    const handleMultiRaces = (races) => {
+        setUserRace(races)
+    }
+
+    const handleMultiDisability = (disabilities) => {
+        setUserDisability(disabilities)
+    }
+
     const genders = [
-        'Male',
-        'Female',
-        'Transgender',
-        'Non binary', 
-        'Other'
+        {value: 'male', label: 'Male'},
+        { value: 'female', label: 'Female' },
+        { value: 'transgender', label: 'Transgender' },
+        { value: 'nonBinary', label: 'Non Binary' },
+        { value: 'other', label: 'Other' }
     ]
 
     const races = [
-        'Caucasian',
-        'Native American or Alaska Native',
-        'Black or African American',
-        'Asian',
-        'Hispanic or Latino',
-        'Two or more races',
-        'Other'
+        {value: 'caucasian', label: 'Caucasian'},
+        { value: 'native', label: 'Native American or Alaska Native' },
+        { value: 'black', label: 'Black or African American' },
+        { value: 'asian', label: 'Asian' },
+        { value: 'latino', label: 'Hispanic or Latino' },
+        { value: 'two', label: 'Two or more races' },
+        { value: 'other', label: 'Other' }
     ]
 
     const disabilities = [
-        'Autism', 
-        'ADHD',
-        'Aspergers',
-        'Dyslexia',
-        'Dyspraxia',
-        'Dyscalculia',
-        'Epilepsy',
-        'FASD',
-        'Hyperlexia',
-        'Obsessive-compulsive disorder (OCD)',
-        'Tourettes',
-        'Other'
+        { value: 'autism', label: 'Autism' },
+        { value: 'adhd', label: 'ADHD' },
+        { value: 'aspergers', label: 'Aspergers' },
+        { value: 'dyslexia', label: 'Dyslexia' },
+        { value: 'dyspraxia', label: 'Dyspraxia' },
+        { value: 'dyscalculia', label: 'Dyscalculia' },
+        { value: 'fasd', label: 'FASD' },
+        { value: 'hyperlexia', label: 'Hyperlexia' },
+        { value: 'ocd', label: 'Obsessive-compulsive disorder (OCD' },
+        { value: 'tourettes', label: 'Tourettes' },
+        { value: 'other', label: 'Other' },
     ]
 
     return (
@@ -61,19 +73,35 @@ function PromoteTransparency () {
                 <p>Demographic responses are NOT required. Providing this information helps us identify compensation discrepancies.</p>
             </div>
             <div className="submissionContainer">
-                <div className="uploadOfferContainer">
+                <div className="personalCharacteristics">
                     <form onSubmit={ handleNextStep } action="#">
-                        <label htmlFor="">What is your gender?</label>
-                        <input type="text" />
+                        <div className="genderContainer">
+                            <label htmlFor="">What is your gender?</label>
+                            <Select options={genders} onChange={(genderType) => setUserGender(genderType.value)} />
+                        </div>
+                        <div className="raceContainer">
+                            <label htmlFor="">What is your race(s)?</label>
+                            <Select options={races} isMulti onChange={handleMultiRaces} />
+                        </div>
 
-                        <label htmlFor="">What is your race(s)?</label>
-                        <input type="text" />
+                        <div className="disabilityContainer">
+                            <label htmlFor="">Do you have a disability?</label>
+                            <div className="yesOrNoContainer">
+                                <div className="yesContainer">
+                                    <input type="radio" name="" id="" />  
+                                    <label htmlFor="">Yes</label>                  
+                                </div>
+                                <div className="noContainer">
+                                    <input type="radio" />
+                                    <label htmlFor="">No</label>
+                                </div>
+                            </div>
+                        </div>
 
-                        <label htmlFor="">Do you have a disability?</label>
-                        <input type="radio" name="" id="" />  
-                        <label htmlFor="">Yes</label>                  
-                        <input type="radio" />
-                        <label htmlFor="">No</label>
+                        <div className="yesDisabilityContainer">
+                            <label htmlFor="">If yes, what disability do you identify as having?</label>
+                            <Select options={disabilities} isMulti onChange={handleMultiDisability}/>
+                        </div>
 
                         <button type="submit">Next Step</button>
                     </form>
@@ -82,7 +110,14 @@ function PromoteTransparency () {
             </>
 
             : nextStep ?
-            <PayItForward/>
+            <PayItForward 
+            userWorkT={props.userWorkType}
+            userWorkArr={props.userWorkArrangement}
+            userWorkPer={props.userPercentNumber}
+            userDe={props.userProfessionalDetails}
+            userG={userGender}
+            userD={userDisability}
+            userR={userRace}/>
 
             : null
         }
