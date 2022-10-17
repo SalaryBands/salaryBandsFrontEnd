@@ -28,9 +28,6 @@ function App() {
         />
 
       </Routes>
-      <Link to={'/UserPathway'}>
-        <button type="button" className='salaryButton'>UserFlow</button>
-      </Link>
     </div>
   );
 }

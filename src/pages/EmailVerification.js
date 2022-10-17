@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Header } from '../components/Header';
-
+import {Link} from 'react-router-dom';
 import verifyEmail from '../assets/verifyEmail.png'
 import emailSuccess from '../assets/emailSuccess.png'
 
@@ -45,6 +45,9 @@ function EmailVerification() {
                         <div className="thankYouEmailInputTextContainer">
                             <h2>Check your email</h2>
                             <p>You will receive a special link to submit your compensation and demographics data anonymously.</p>
+                            <Link to={'/UserPathway'}>
+                                <button type="button" className='salaryButton'>UserFlow</button>
+                            </Link>
                         </div>
                     }
                         <div className="contactContainer">

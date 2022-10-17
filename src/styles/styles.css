@@ -400,6 +400,23 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
   line-height: 30px;
   color: #475467;
 }
+.userSubmissionChartContainer .userSubmissionTable {
+  margin: 50px 0px;
+}
+.userSubmissionChartContainer .userSubmissionTable table {
+  width: 100%;
+  border-spacing: 0;
+}
+.userSubmissionChartContainer .userSubmissionTable table thead {
+  background-color: #164C63;
+  color: #EAECF0;
+}
+.userSubmissionChartContainer .userSubmissionTable table thead .tableHeadings th {
+  padding: 12px 24px;
+}
+.userSubmissionChartContainer .userSubmissionTable table tbody td {
+  text-align: center;
+}
 
 .emailVerification {
   width: 100vw;

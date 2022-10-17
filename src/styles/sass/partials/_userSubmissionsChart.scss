@@ -25,4 +25,25 @@
             color: #475467;
         }
     }
+    .userSubmissionTable {
+        margin: 50px 0px;
+        table {
+            width: 100%;
+            border-spacing: 0; 
+            thead {
+                background-color: #164C63;
+                color: #EAECF0;
+                .tableHeadings {
+                    th {
+                        padding: 12px 24px;
+                    }
+                }
+            }
+            tbody {
+                td {
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
