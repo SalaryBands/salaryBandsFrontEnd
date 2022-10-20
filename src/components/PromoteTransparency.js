@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Select from 'react-select'
 import PayItForward from './PayItForward';
+import MagLetter from '../assets/MagLetter.png';
 
 
 
@@ -61,67 +62,79 @@ function PromoteTransparency (props) {
     ]
 
     return (
-        <div className="transparencyContainer">
+        <>
 
-        {
-            !nextStep ?
+            {
+                !nextStep ?
+                <>
 
-            <>
+            <div className="transparencyContainer">
+                <div className="detailsTextContainer">
+                    <h2>Promote pay transparency</h2>
+                    <p>Demographic responses are NOT required. Providing this information helps us identify compensation discrepancies.</p>
+                </div>
+                <div className="submissionContainer">
+                    <div className="personalCharacteristics">
+                        <form onSubmit={ handleNextStep } action="#">
+                            <div className="genderContainer">
+                                <label htmlFor="">What is your gender?</label>
+                                <Select options={genders} onChange={(genderType) => setUserGender(genderType.value)} />
+                            </div>
+                            <div className="raceContainer">
+                                <label htmlFor="">What is your race(s)?</label>
+                                <Select options={races} isMulti onChange={handleMultiRaces} />
+                            </div>
 
-            <div className="detailsTextContainer">
-                <h2>Promote pay transparency</h2>
-                <p>Demographic responses are NOT required. Providing this information helps us identify compensation discrepancies.</p>
-            </div>
-            <div className="submissionContainer">
-                <div className="personalCharacteristics">
-                    <form onSubmit={ handleNextStep } action="#">
-                        <div className="genderContainer">
-                            <label htmlFor="">What is your gender?</label>
-                            <Select options={genders} onChange={(genderType) => setUserGender(genderType.value)} />
-                        </div>
-                        <div className="raceContainer">
-                            <label htmlFor="">What is your race(s)?</label>
-                            <Select options={races} isMulti onChange={handleMultiRaces} />
-                        </div>
-
-                        <div className="disabilityContainer">
-                            <label htmlFor="">Do you have a disability?</label>
-                            <div className="yesOrNoContainer">
-                                <div className="yesContainer">
-                                    <input type="radio" name="" id="" />  
-                                    <label htmlFor="">Yes</label>                  
-                                </div>
-                                <div className="noContainer">
-                                    <input type="radio" />
-                                    <label htmlFor="">No</label>
+                            <div className="disabilityContainer">
+                                <label htmlFor="">Do you have a disability?</label>
+                                <div className="yesOrNoContainer">
+                                    <div className="yesContainer">
+                                        <input type="radio" name="" id="" />  
+                                        <label htmlFor="">Yes</label>                  
+                                    </div>
+                                    <div className="noContainer">
+                                        <input type="radio" />
+                                        <label htmlFor="">No</label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div className="yesDisabilityContainer">
-                            <label htmlFor="">If yes, what disability do you identify as having?</label>
-                            <Select options={disabilities} isMulti onChange={handleMultiDisability}/>
-                        </div>
+                            <div className="yesDisabilityContainer">
+                                <label htmlFor="">If yes, what disability do you identify as having?</label>
+                                <Select options={disabilities} isMulti onChange={handleMultiDisability}/>
+                            </div>
 
-                        <button type="submit">Next Step</button>
-                    </form>
+                            <button type="submit">Next Step</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            </>
+                </div>
 
-            : nextStep ?
-            <PayItForward 
-            userWorkT={props.userWorkType}
-            userWorkArr={props.userWorkArrangement}
-            userWorkPer={props.userPercentNumber}
-            userDe={props.userProfessionalDetails}
-            userG={userGender}
-            userD={userDisability}
-            userR={userRace}/>
+                <div className="infoCard">
+                        <div className="infoImgContainer">
+                            <img src={MagLetter} alt="" />
+                        </div>
+                        <div className="infoCardTextContainer">
+                            <h3>Bridge the tech industry pay gap, one data point at a time</h3>
+                            <p>Public salary data is an important, and often under-utilized, tool in eliminating the gender, race, and disability wage gaps.</p>
+                        </div>
+                    </div>
+                </>
 
-            : null
-        }
-        </div>
+                : nextStep ?
+                <PayItForward 
+                userWorkT={props.userWorkType}
+                userWorkArr={props.userWorkArrangement}
+                userWorkPer={props.userPercentNumber}
+                userDe={props.userProfessionalDetails}
+                userG={userGender}
+                userD={userDisability}
+                userR={userRace}/>
+
+                : null
+            }
+        
+        </>
     )
 }
 

@@ -1,7 +1,6 @@
-.userCard {
-    .detailsCard {
         .professionalDetailsContainer {
             height: 100%;
+            width: 50%;
         }
         .professionalDetails {
                     width: 100%; 
@@ -110,7 +109,7 @@
                         }
                     }
 
-    }
+    
     
     
     
@@ -119,4 +118,8 @@
                         margin-top: 20px; 
                     }
                 }
+
+.professionalDetailsCardandImageContainer {
+    display: flex;
+    width: 100%;
 }

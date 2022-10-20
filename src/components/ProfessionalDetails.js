@@ -3,6 +3,7 @@ import Select from 'react-select';
 import PromoteTransparency from './PromoteTransparency';
 import House from '../assets/house.png';
 
+
 function ProfessionalDetails() {
 
     const [verifyDetails, setVerifyDetails] = useState(false)
@@ -31,13 +32,6 @@ function ProfessionalDetails() {
         { value: 'remote', label: 'Remote' },
     ]
 
-    const percentNegotiate = [
-        { value: 2, label: '< 2' },
-        { value: 5, label: '< 5' },
-        { value: 10, label: '< 10' },
-        { value: 15, label: '< 15' },
-    ]
-
     const handleVerifyDetails = function (e) {
         e.preventDefault()
         setVerifyDetails(true)
@@ -55,10 +49,15 @@ function ProfessionalDetails() {
 
 
     return (
+    <div className='professionalDetailsCardandImageContainer'>
+
+        {
+            !verifyDetails ?
+                
+            <>
+            
         <div className='professionalDetailsContainer'>
 
-            {
-                !verifyDetails ?
 
             <div className='tellUsCard'>
                 <div className="detailsCard">
@@ -123,7 +122,7 @@ function ProfessionalDetails() {
                                 </div>
                                 <div className="negotiatePercentContainer">
                                     <label htmlFor="negotiatePercent">If yes, how much more?</label>
-                                    <Select options={percentNegotiate} onChange={(number) => setPercentNumber(number.value)} />
+                                    <input onInput={handleInput} type="text" name='negotiatePercent' placeholder='2%' />
                                 </div>
                             </div>
 
@@ -138,14 +137,26 @@ function ProfessionalDetails() {
             </div>
             
 
-            : <PromoteTransparency 
-            userProfessionalDetails={professionalDetails}
-            userWorkType={type}
-            userWorkArrangement={workArrangement}
-            userPercentNumber={percentNumber}/>
-
+            
+            </div>
+            <div className="infoCard">
+                    <div className="infoImgContainer">
+                        <img src={House}  alt="" />
+                    </div>
+                    <div className="infoCardTextContainer">
+                        <h3>Figure out what you're worth and how to get paid what you're worth</h3>
+                        <p> We want to help people gain clarity on what they should expect to be paid at their job title and location, thereby creating a better market for both employees and employers.</p>
+                    </div>
+                </div>
+            </>
+    
+                : <PromoteTransparency 
+                userProfessionalDetails={professionalDetails}
+                userWorkType={type}
+                userWorkArrangement={workArrangement}
+                userPercentNumber={percentNumber}/>
             }
-        </div>
+            </div>
     )
 }
 

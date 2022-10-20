@@ -717,6 +717,9 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
   width: 100%;
 }
 
+.payItForwardFormContainer {
+  padding: 15px;
+}
 .payItForwardFormContainer form {
   display: flex;
   flex-direction: column;

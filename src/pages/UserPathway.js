@@ -21,11 +21,11 @@ function UserPathway () {
     return (
         <section className="userFlowContainer">
             <div className='userCard'>
-                <div className="detailsCard">
                     {
                     !upload && !manual ?
-
-
+                <>
+                
+                <div className="detailsCard">
                         <div className='userPathwayComponentContainer'>
                             <div className="detailsTextContainer">
                                 <h2>Help build an accurate database</h2>
@@ -52,16 +52,6 @@ function UserPathway () {
                             </div>
 
                         </div>
-
-                        : upload ?
-                        <UploadDetails />
-                        
-                        : manual ?
-                        <ProfessionalDetails />
-
-                        : null
-                    }
-
                 </div>
 
                 <div className="infoCard">
@@ -73,6 +63,15 @@ function UserPathway () {
                         <p>We provide insights for better decision-making by using accurate and comprehensive compensation information.</p>
                     </div>
                 </div>
+                </>
+                    : upload ?
+                    <UploadDetails />
+                    
+                    : manual ?
+                    <ProfessionalDetails />
+
+                    : null
+                }
             </div>
         </section>
     )
