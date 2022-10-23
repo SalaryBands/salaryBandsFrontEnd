@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import ProfessionalDetails from '../../src/components/ProfessionalDetails';
-import UploadDetails from '../components/UploadDetails';
 import magnifyingglass from '../assets/magnifyingglass.png'
 
 function UserPathway () {
@@ -25,7 +24,7 @@ function UserPathway () {
                     !upload && !manual ?
                 <>
                 
-                <div className="detailsCard">
+                <div className="userPathwayCard">
                         <div className='userPathwayComponentContainer'>
                             <div className="detailsTextContainer">
                                 <h2>Help build an accurate database</h2>
@@ -46,12 +45,12 @@ function UserPathway () {
                                 </form>
                             </div> 
 
+
+                        </div>
                             <div className="contactContainer">
                                 <div className="salaryBandTrademark"><p>&copy; SalaryBands 2022</p></div>
                                 <div className="contactEmail"><p>help@salarybands.com</p></div>
                             </div>
-
-                        </div>
                 </div>
 
                 <div className="infoCard">
@@ -65,7 +64,7 @@ function UserPathway () {
                 </div>
                 </>
                     : upload ?
-                    <UploadDetails />
+                    <ProfessionalDetails />
                     
                     : manual ?
                     <ProfessionalDetails />

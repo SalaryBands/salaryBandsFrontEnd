@@ -26,7 +26,7 @@ function PayItForward (props) {
         e.preventDefault();
         setSubmitInfo(true);
         axios.post(baseURL, {
-            company: props.userDe.company,
+           company: props.userDe.company,
             country: props.userDe.location,
             job_title: props.userDe.title,
             salary: props.userDe.salary,

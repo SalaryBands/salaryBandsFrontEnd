@@ -2,6 +2,8 @@ import axios from 'axios';
 import {useState, useEffect} from 'react';
 
 
+
+
 function UserSubmissionChart () {
 
     const [userSubmissionData, setUserSubmissionData] = useState([])
@@ -26,23 +28,66 @@ function UserSubmissionChart () {
                 </div>  
 
                 <div className="userSubmissionTable">
+                    <div className="searchAndRecentDataContainer">
+                        <div className="searchContainer">
+                            <label htmlFor="search"></label>
+                            <input className='searchFilter' type="text" name='search' placeholder='Search title, company, city, ect'/>
+                        </div>
+                        <div className="recentData">
+                            <div className="recentDataTextContainer">
+                                <h3 className='recentDataText'>Recent Data</h3>
+                                <p><span className='totalSubmissions'>{userSubmissionData.length} total submissions</span></p>
+                            </div>
+                            <div className="paidWorthContainer">
+                                <p className='paidWorth'>SalaryBands is here to help you figure out how to get paid what you're worth.</p>
+                            </div>
+                        </div>
+                    </div>
                     <table>
                         <thead>
-                            <tr className='tableHeadings'>
-                                <th>Title/Position</th>
-                                <th>Company</th>
-                                <th>YoE</th>
-                                <th>Compensation</th>
+                            <tr>
+                                <th className='tableHeadContainer'>
+                                    <div>
+                                        <div><p className='tableHeadText'>Title/Position</p></div>
+                                        <div><p className='tableHeadText'>Location</p></div>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div className='tableHeadContainer'>
+                                        <div><p className='tableHeadText'>Company</p></div>
+                                        <div><p className='tableHeadText'>Industry</p></div>
+                                    </div>
+                                </th>
+                                <th className='tableHeadContainer'><p className='tableHeadText'>YoE</p></th>
+                                <th className='tableHeadContainer'><p className='tableHeadText'>Gender</p></th>
+                                <th>
+                                    <div className='tableHeadContainer'>
+                                        <div><p className='tableHeadText'>Compensation</p></div>
+                                        <div><p className='tableHeadText'>Base, % Negotiated</p></div>
+                                    </div>
+                                </th>
+                                <th className='tableHeadContainer tags'><p className='tableHeadText'>Tags</p></th>
                             </tr>
                         </thead>
                         <tbody>
-                            {userSubmissionData.map( (val, key) => {
+                            {userSubmissionData.reverse().map( (val, key) => {
                                 return (
-                                    <tr key={key}>
-                                        <td>{val.job_title}</td>
-                                        <td>{val.company}</td>
-                                        <td>{val.years_of_experience}</td>
-                                        <td>{val.salary}</td>
+                                    <tr  className='tableRow'key={key}>
+                                        <td>
+                                            <div className="">
+                                                <div className='topText'>{val.job_title}</div>
+                                                <div className='bottomText'>{val.country}</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className="">
+                                                <div className='topText'>{val.company}</div>
+                                                <div className='bottomText'>{val.company}</div>
+                                            </div>
+                                        </td>
+                                        <td>{val.years_of_experience} </td>
+                                        <td><span className='genderText'>{val.gender.slice(0, 1)}</span></td>
+                                        <td>${val.salary}</td>
                                     </tr>
                                 )
                             })}

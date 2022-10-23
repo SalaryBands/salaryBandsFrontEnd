@@ -30,7 +30,7 @@ function PromoteTransparency (props) {
     }
 
     const genders = [
-        {value: 'male', label: 'Male'},
+        { value: 'male', label: 'Male'},
         { value: 'female', label: 'Female' },
         { value: 'transgender', label: 'Transgender' },
         { value: 'nonBinary', label: 'Non Binary' },
@@ -38,7 +38,7 @@ function PromoteTransparency (props) {
     ]
 
     const races = [
-        {value: 'caucasian', label: 'Caucasian'},
+        { value: 'caucasian', label: 'Caucasian'},
         { value: 'native', label: 'Native American or Alaska Native' },
         { value: 'black', label: 'Black or African American' },
         { value: 'asian', label: 'Asian' },
@@ -89,11 +89,11 @@ function PromoteTransparency (props) {
                                 <label htmlFor="">Do you have a disability?</label>
                                 <div className="yesOrNoContainer">
                                     <div className="yesContainer">
-                                        <input type="radio" name="" id="" />  
+                                        <input type="radio" name="disability" id="" />  
                                         <label htmlFor="">Yes</label>                  
                                     </div>
                                     <div className="noContainer">
-                                        <input type="radio" />
+                                        <input type="radio" name='disability'/>
                                         <label htmlFor="">No</label>
                                     </div>
                                 </div>
@@ -107,6 +107,10 @@ function PromoteTransparency (props) {
                             <button type="submit">Next Step</button>
                         </form>
                     </div>
+                </div>
+                <div className="contactContainer">
+                    <div className="salaryBandTrademark"><p>&copy; SalaryBands 2022</p></div>
+                    <div className="contactEmail"><p>help@salarybands.com</p></div>
                 </div>
                 </div>
 

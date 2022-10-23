@@ -414,21 +414,120 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
 }
 .userSubmissionChartContainer .userSubmissionTable {
   margin: 50px 0px;
+  border: 1px solid #EAECF0;
 }
 .userSubmissionChartContainer .userSubmissionTable table {
   width: 100%;
-  border-spacing: 0;
+  border-collapse: collapse;
 }
 .userSubmissionChartContainer .userSubmissionTable table thead {
   background-color: #164C63;
   color: #EAECF0;
+  font-size: 12px; 
+  text-align: left;
+}
+.userSubmissionChartContainer .userSubmissionTable table thead .tableHeadContainer {
+  padding-left: 10px;
 }
 .userSubmissionChartContainer .userSubmissionTable table thead .tableHeadings th {
   padding: 12px 24px;
+  text-align: left;
 }
+
+.userSubmissionChartContainer .userSubmissionTable table tbody .tableRow {
+  border-bottom: 1px solid #EAECF0;
+}
+
 .userSubmissionChartContainer .userSubmissionTable table tbody td {
+  padding: 18px 10px;
+  text-align: left;
+  font-size: 14px; 
+  color: #475467;
+}
+
+.userSubmissionChartContainer .userSubmissionTable table tbody td .topText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #101828;
+}
+
+.userSubmissionChartContainer .userSubmissionTable table tbody td .bottomText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #475467;
+}
+
+.searchAndRecentDataContainer {
+  display: flex; 
+  padding: 14px;
+}
+.searchContainer {
+  width: 50%;
+  align-self: center;
+}
+
+.recentData {
+  width: 50%;
+}
+
+.recentDataText {
+  margin: 0px 15px 0px 0px; 
+}
+
+.recentDataTextContainer {
+  display: flex; 
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.paidWorthContainer {
+  display: flex; 
+  justify-content: flex-end;
+}
+
+.paidWorth {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #475467;
+  margin: 0; 
+}
+
+.searchFilter {
+  padding: 10px 14px; 
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  font-size: 14px;
+  width: 70%;
+}
+
+.totalSubmissions {
+  padding: 2px 8px;
+  background-color: #ECFDFF;
+  color: #0E7090;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
   text-align: center;
 }
+
+.genderText {
+  padding: 2px 8px;
+  background: #ECFDFF;
+  mix-blend-mode: multiply;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #0E7090;
+  text-transform: uppercase;
+}
+
+
 
 .emailVerification {
   width: 100vw;
@@ -559,19 +658,25 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
 .userFlowContainer .userCard {
   min-width: 90%;
 }
+.userFlowContainer .userCard .userPathwayCard {
+  width: 50%;
+  padding: 15px;
+  height: 90%;
+}
+
 .userFlowContainer .userCard .detailsCard {
   width: auto;
   padding: 15px;
   height: 100%;
 }
-.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer {
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer {
   height: 100%;
 }
-.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .professionalDetails {
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .professionalDetails {
   display: flex;
   flex-direction: column;
 }
-.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .professionalDetails .uploadContainer {
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .professionalDetails .uploadContainer {
   width: 100%;
   height: 120px;
   padding: 16px, 24px, 16px, 24px;
@@ -788,6 +893,9 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
 .transparencyContainer {
   width: 50%;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .finishContainer .finishTextContainer {

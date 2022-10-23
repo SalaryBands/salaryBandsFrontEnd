@@ -1,49 +1,58 @@
 .userSubmissionChartContainer {
     margin-top: 70px; 
     .userSubmissionTextContainer {
-        display: flex;
-        flex-direction: column;
-        width: 100%; 
-        align-items: center;
-        h4 {
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 24px;
-            color: #088AB2
-        }
-        h2 {
-            font-weight: 600;
-            font-size: 48px;
-            line-height: 60px;
-            color: #101828;
-            margin: 0px 
-        }
-        p {
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 30px;
-            color: #475467;
+            display: flex;
+            flex-direction: column;
+            width: 100%; 
+            align-items: center;
+            h4 {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+                color: #088AB2
+            }
+            h2 {
+                font-weight: 600;
+                font-size: 48px;
+                line-height: 60px;
+                color: #101828;
+                margin: 0px 
+            }
+            p {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+                color: #475467;
+            }
         }
     }
     .userSubmissionTable {
         margin: 50px 0px;
-        table {
-            width: 100%;
-            border-spacing: 0; 
-            thead {
-                background-color: #164C63;
-                color: #EAECF0;
-                .tableHeadings {
-                    th {
-                        padding: 12px 24px;
-                    }
+    }
+table {
+        width: 100%;
+        border-collapse: collapse; 
+        thead {
+            background-color: #164C63;
+            color: #EAECF0;
+            text-align: left;
+            tr {
+                .tableHeadContainer {
+                    padding: 12px 24px;
                 }
+
             }
-            tbody {
+        }
+        tbody {
+            tr {
+                border-bottom: 1px solid black;
                 td {
                     text-align: center;
                 }
             }
         }
     }
-}
+
+
+
+
