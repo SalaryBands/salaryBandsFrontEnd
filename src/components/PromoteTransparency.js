@@ -29,6 +29,8 @@ function PromoteTransparency (props) {
         setUserDisability(disabilities)
     }
 
+    console.log(userDisability)
+
     const genders = [
         { value: 'male', label: 'Male'},
         { value: 'female', label: 'Female' },
@@ -81,8 +83,8 @@ function PromoteTransparency (props) {
                                 <Select options={genders} onChange={(genderType) => setUserGender(genderType.value)} />
                             </div>
                             <div className="raceContainer">
-                                <label htmlFor="">What is your race(s)?</label>
-                                <Select options={races} isMulti onChange={handleMultiRaces} />
+                                <label htmlFor="">What is your race?</label>
+                                <Select options={races} onChange={handleMultiRaces} />
                             </div>
 
                             <div className="disabilityContainer">

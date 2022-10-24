@@ -17,7 +17,8 @@ function ProfessionalDetails() {
         salary: 0,
         years: 0,
         negotiate: '',
-        negotiatePercent: 0
+        negotiatePercent: 0,
+        industry: ''
     })
 
     const types = [
@@ -74,14 +75,20 @@ function ProfessionalDetails() {
                                 </div>
 
                                 <div className="locationContainer">
-                                    <label htmlFor="location">Where do you work?</label>
-                                    <input onInput={handleInput}type="text" name='location' placeholder='City, State, Country'/>
+                                    <label htmlFor="industry">What industry do you work in?</label>
+                                    <input onInput={handleInput} type="text" name='industry' placeholder='Software, Ecommerce, ect'/>
                                 </div>
 
                             </div>
-                            <div className="jobTitleContainer">
-                                <label htmlFor="title">What is your job title?</label>
-                                <input onInput={handleInput} type="text" name='title' placeholder='Job Title (i.e. Designer)' />
+                            <div className='titleAndLocationContainer'>
+                                <div className="jobTitleContainer">
+                                    <label htmlFor="title">What is your job title?</label>
+                                    <input onInput={handleInput} type="text" name='title' placeholder='Job Title (i.e. Designer)' />
+                                </div>
+                                <div className="locationContainer">
+                                    <label htmlFor="location">Where do you work?</label>
+                                    <input onInput={handleInput} type="text" name='location' placeholder='City, State, Country' />
+                                </div>
                             </div>
 
                             <div className="salaryQuestionContainer">
@@ -112,7 +119,7 @@ function ProfessionalDetails() {
                                     <div className="yesOrNoContainer">
                                         <div className="yesContainer">
                                             <input onInput={handleInput} type="radio" name="negotiate" id="true" value='true' />
-                                            <label htmlFor="true">Yes</label>
+                                            <label htmlFor="true" value>Yes</label>
                                         </div>
                                         <div className="noContainer">
                                             <input onInput={handleInput} type="radio" name="negotiate" id="false" value='false' />

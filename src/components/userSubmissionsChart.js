@@ -8,6 +8,8 @@ function UserSubmissionChart () {
 
     const [userSubmissionData, setUserSubmissionData] = useState([])
 
+    const [searchTerm, setSearchTerm] = useState("")
+
     useEffect( () => {
         axios({
             method: 'get',
@@ -16,6 +18,10 @@ function UserSubmissionChart () {
             setUserSubmissionData(apiData.data)
         })
     }, [])
+
+    const handleChange = function (e) {
+        setSearchTerm(e.target.value)
+    }
     
     console.log(userSubmissionData);
     return (
@@ -31,7 +37,7 @@ function UserSubmissionChart () {
                     <div className="searchAndRecentDataContainer">
                         <div className="searchContainer">
                             <label htmlFor="search"></label>
-                            <input className='searchFilter' type="text" name='search' placeholder='Search title, company, city, ect'/>
+                            <input className='searchFilter' type="text" name='search' placeholder='Search title, company, city, ect' value={searchTerm} onChange={handleChange}/>
                         </div>
                         <div className="recentData">
                             <div className="recentDataTextContainer">
@@ -70,7 +76,13 @@ function UserSubmissionChart () {
                             </tr>
                         </thead>
                         <tbody>
-                            {userSubmissionData.reverse().map( (val, key) => {
+                            {userSubmissionData
+                            .filter((userData) => 
+                                userData.job_title.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                userData.company.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                userData.country.toString().toLowerCase().includes(searchTerm.toLowerCase())
+                                )
+                            .reverse().map( (val, key) => {
                                 return (
                                     <tr  className='tableRow'key={key}>
                                         <td>
@@ -85,9 +97,24 @@ function UserSubmissionChart () {
                                                 <div className='bottomText'>{val.company}</div>
                                             </div>
                                         </td>
-                                        <td>{val.years_of_experience} </td>
-                                        <td><span className='genderText'>{val.gender.slice(0, 1)}</span></td>
-                                        <td>${val.salary}</td>
+                                        <td>{val.years_of_experience}</td>
+                                        <td><span className='genderText'>{val.gender}</span></td>
+                                        <td>
+                                            <div className="salaryNegotiationContainer">
+                                                <div className="salaryNumber">${val.salary}</div>
+                                                <div className="percentIncrease"><span className='increasedPercentage'>&#8593; {val.negotiation_percentage}%</span></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className="tagsContainer">
+                                                <div className="workArrangementContainer"><span className='workArr'>{val.work_arrangement}</span></div>
+
+                                                {
+                                                    
+                                                }
+                                                <div className="disabilityContainer"><span className="disabilityText"></span></div>
+                                            </div>
+                                        </td>
                                     </tr>
                                 )
                             })}
