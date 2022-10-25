@@ -1,26 +1,44 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState, useRef } from 'react';
 import { Header } from '../components/Header';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 import verifyEmail from '../assets/verifyEmail.png'
 import emailSuccess from '../assets/emailSuccess.png'
 
 function EmailVerification() {
 
-    const [userEmail, setUserEmail] = useState([]);
     const [errors, setErrors] = useState({email: ''}); 
     const [userVerify, setUserVerify] = useState(false)
 
+    const emailRef = useRef(null)
 
     
-    
-    const handleInput = function(e) {
-       setUserEmail(e.target.value)
-    }
+    // const handleInput = function(e) {
+    //     setUserEmail(e.target.value)
+    //     console.log(userEmail);
+    // }
 
+    console.log(emailRef);
+    
     const setTrue = useCallback( (e) => {
         e.preventDefault();
         setUserVerify(!userVerify); 
-        console.log(userEmail);
+        var formdata = new FormData();
+        formdata.append("user[email]", emailRef.current.value);
+
+        console.log(emailRef.current.value);
+
+        var requestOptions = {
+            method: 'POST',
+            body: formdata,
+            redirect: 'follow'
+        };
+
+        fetch("https://salarybandsapi.fly.dev/authentication/create", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
     }, [userVerify])
     
     return (
@@ -35,8 +53,8 @@ function EmailVerification() {
                         </div>
                         <div className="formContainer">
                             <form onSubmit={setTrue} action="#">
-                                <label htmlFor="">Work Email*</label>
-                                <input onInput={handleInput}type="email" placeholder='Enter your work email' />
+                                <label htmlFor="workEmail">Work Email*</label>
+                                <input ref={emailRef} type="email" placeholder='Enter your work email' name="workEmail"/>
                                 <button type="submit" className='verifyButton'>Verify</button>
                             </form>
                         </div>

@@ -21,10 +21,6 @@ function PromoteTransparency (props) {
         setNextStep(true)
     }
 
-    const handleMultiRaces = (races) => {
-        setUserRace(races)
-    }
-
     const handleMultiDisability = (disabilities) => {
         setUserDisability(disabilities)
     }
@@ -84,7 +80,7 @@ function PromoteTransparency (props) {
                             </div>
                             <div className="raceContainer">
                                 <label htmlFor="">What is your race?</label>
-                                <Select options={races} onChange={handleMultiRaces} />
+                                <Select options={races} onChange={(raceType) => setUserRace(raceType.label)} />
                             </div>
 
                             <div className="disabilityContainer">

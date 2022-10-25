@@ -5,6 +5,7 @@ import EmailVerification from './pages/EmailVerification'
 import UserFlow from './components/ProfessionalDetails';
 import UserPathway from './pages/UserPathway';
 import Home from './pages/Home';
+import URLVerification from './components/URLVerification';
 
 
 
@@ -25,6 +26,11 @@ function App() {
         <Route
           path="/UserPathway"
           element={<UserPathway />}
+        />
+
+        <Route 
+          path="/sessions/create"
+          element={<URLVerification />}
         />
 
       </Routes>

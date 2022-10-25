@@ -80,7 +80,8 @@ function UserSubmissionChart () {
                             .filter((userData) => 
                                 userData.job_title.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
                                 userData.company.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                userData.country.toString().toLowerCase().includes(searchTerm.toLowerCase())
+                                userData.country.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                userData.work_arrangement.toString().toLowerCase().includes(searchTerm.toLowerCase())
                                 )
                             .reverse().map( (val, key) => {
                                 return (

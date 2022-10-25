@@ -34,12 +34,13 @@ function PayItForward (props) {
             years_of_experience: props.userDe.years,
             work_arrangement: props.userWorkArr,
             negotiate_check: '',
-            negotiation_percentage: props.userWorkPer,
+            negotiation_percentage: props.userDe.negotiatePercent,
             gender: props.userG,
             race: '',
             disability_check: '',
             advice_break: payItForward.adviceBreak,
-            advice_negotiate: payItForward.adviceNegotiate
+            advice_negotiate: payItForward.adviceNegotiate,
+            industry: props.userDe.industry
         })
 
     }, [submitInfo])
