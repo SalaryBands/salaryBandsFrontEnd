@@ -9,10 +9,10 @@ function Header() {
                     <div className='logoImageContainer'>
                         <img src={logo} alt="" />
                     </div>
-                    <Link>SalaryBands</Link>
+                    <Link to={'/'}>SalaryBands</Link>
                 </li>
                 <li className='headerLinks'>
-                    <Link>Home</Link>
+                    <Link to={'/'}>Home</Link>
                 </li>
                 <li className='headerLinks'>
                     <Link>Salaries</Link>
