@@ -63,9 +63,6 @@ function EmailVerification() {
                         <div className="thankYouEmailInputTextContainer">
                             <h2>Check your email</h2>
                             <p>You will receive a special link to submit your compensation and demographics data anonymously.</p>
-                            <Link to={'/UserPathway'}>
-                                <button type="button" className='salaryButton'>UserFlow</button>
-                            </Link>
                         </div>
                     }
                         <div className="contactContainer">

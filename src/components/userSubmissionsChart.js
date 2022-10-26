@@ -13,7 +13,7 @@ function UserSubmissionChart () {
     useEffect( () => {
         axios({
             method: 'get',
-            url: 'https://salarybandsapi.herokuapp.com/contributions'
+            url: 'https://salarybandsapi.fly.dev/contributions'
         }).then( (apiData) => {
             setUserSubmissionData(apiData.data)
         })

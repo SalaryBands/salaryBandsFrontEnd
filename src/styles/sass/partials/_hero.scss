@@ -57,5 +57,13 @@ header {
                 }
             }
         }
+        .heroImageContainer {
+            display: flex; 
+            flex-direction: column;
+            .firstLineImages {
+                display: flex; 
+                
+            }
+        }
     }
 }

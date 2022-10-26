@@ -5,7 +5,7 @@ import Ladder from '../assets/ladder.png';
 
 function PayItForward (props) {
 
-    const baseURL = 'https://salarybandsapi.herokuapp.com/contributions'
+    const baseURL = 'https://salarybandsapi.fly.dev/contributions'
 
     const [submitInfo, setSubmitInfo] = useState(false)
 
@@ -14,6 +14,8 @@ function PayItForward (props) {
         adviceNegotiate: ''
     })
 
+    let tokenAccess = localStorage.getItem('token')
+
     function handleInput(e) {
         const value = e.target.value;
         setPayItForward({
@@ -21,6 +23,8 @@ function PayItForward (props) {
             [e.target.name]: value
         })
     }
+
+    console.log(tokenAccess);
 
     const setTrue = useCallback((e) => {
         e.preventDefault();
@@ -41,7 +45,9 @@ function PayItForward (props) {
             advice_break: payItForward.adviceBreak,
             advice_negotiate: payItForward.adviceNegotiate,
             industry: props.userDe.industry
-        })
+        }, {headers: {
+            'Authorization': tokenAccess
+        }})
 
     }, [submitInfo])
 

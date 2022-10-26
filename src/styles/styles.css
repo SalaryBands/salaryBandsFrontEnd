@@ -333,6 +333,36 @@ header .heroContainer {
   display: flex;
   height: 100%;
 }
+
+header .heroContainer .heroImageContainer {
+  display: flex; 
+  flex-direction: column;
+  width: 55%;
+  align-items: center;
+  justify-content: center;
+}
+
+header .heroContainer .heroImageContainer .firstLineImages {
+  display: flex; 
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+header .heroContainer .heroImageContainer .firstLineImages .imgTwo {
+  margin-left: 20px;
+}
+
+header .heroContainer .heroImageContainer .firstLineImages .imgOne {
+  align-self: flex-end;
+}
+
+header .heroContainer .heroImageContainer .secondLineImages .imgFour {
+  margin: 0px 20px;
+}
+
+header .heroContainer .heroImageContainer .secondLineImages {
+  display: flex;
+}
 header .heroContainer .heroTextContainer {
   display: flex;
   flex-direction: column;

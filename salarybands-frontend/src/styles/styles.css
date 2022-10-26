@@ -383,6 +383,13 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
   font-size: 16px;
   line-height: 24px;
 }
+header .heroContainer .heroImageContainer {
+  display: flex;
+  flex-direction: column;
+}
+header .heroContainer .heroImageContainer .firstLineImages {
+  display: flex;
+}
 
 .userSubmissionChartContainer {
   margin-top: 70px;

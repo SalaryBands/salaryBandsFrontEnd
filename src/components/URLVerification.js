@@ -1,23 +1,30 @@
-import {useSearchParams} from 'react-router-dom';
+import { useSearchParams, useNavigate, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
 
+
 function URLVerification () {
 
+    const navigate = useNavigate();
 
-    const [searchParams, setSearchParams] = useSearchParams()
+    let params = new URLSearchParams(window.location.search)
 
-    console.log(searchParams);
+    let token = params.get('login_token');
+
+    console.log(token);
     
     useEffect(() => {
-        axios.post(`https://salarybandsapi.fly.dev/sessions/create?login_token=${searchParams}`, {
+        axios.post(`https://salarybandsapi.fly.dev/sessions/create?login_token=${token}`, {
 
         }).then( (response) => {
-            console.log(response);
+            console.log('this is the response', response.data);
+            localStorage.setItem('token', response.data['auth_token'])
+        }).then (() => {
+            navigate('/UserPathway')
         })
     }, [])
     return (
-        console.log('verification successful!')
+        console.log('verification successful!', token)
 
     )
 }
