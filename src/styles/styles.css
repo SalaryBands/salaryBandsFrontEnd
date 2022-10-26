@@ -747,9 +747,11 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
 .userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .professionalDetails .verifyButton {
   width: 100%;
 }
-.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .professionalDetails .orContainer {
+.orContainer {
   width: 100%;
   text-align: center;
+  text-transform: uppercase;
+  margin: 20px 0px;
 }
 .userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .contactContainer {
   height: 25%;
