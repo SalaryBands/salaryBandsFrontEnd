@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Logo from '../assets/salaryBandsLogo.png';
+import LogoText from '../assets/salarybandstext.png';
 
 function Header() {
     return (
@@ -9,7 +10,7 @@ function Header() {
                     <div className='logoImageContainer'>
                         <img src={Logo} alt="" />
                     </div>
-                    <Link to={'/'}>SalaryBands</Link>
+                    <Link to={'/'}><img src={LogoText} alt=""/></Link>
                 </li>
                 <li className='headerLinks'>
                     <Link to={'/'}>Home</Link>
