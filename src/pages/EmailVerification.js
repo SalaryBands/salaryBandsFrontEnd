@@ -34,7 +34,7 @@ function EmailVerification() {
             redirect: 'follow'
         };
 
-        fetch("https://salarybandsapi.fly.dev/authentication/create", requestOptions)
+        fetch("https://salarybandsapi.onrender.com/authentication/create", requestOptions)
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));

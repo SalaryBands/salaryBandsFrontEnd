@@ -80,11 +80,11 @@ function PromoteTransparency (props) {
                         <form onSubmit={ handleNextStep } action="#">
                             <div className="genderContainer">
                                 <label htmlFor="">What is your gender?</label>
-                                <Select options={genders} onChange={(genderType) => setUserGender(genderType.label)} />
+                                <Select options={genders} onChange={(genderType) => setUserGender(genderType.label)} required/>
                             </div>
                             <div className="raceContainer">
                                 <label htmlFor="">What is your race?</label>
-                                <Select options={races} onChange={(raceType) => setUserRace(raceType.label)} />
+                                <Select options={races} onChange={(raceType) => setUserRace(raceType.label)} required/>
                             </div>
 
                             <div className="disabilityContainer">
@@ -134,6 +134,7 @@ function PromoteTransparency (props) {
                 userWorkPer={props.userPercentNumber}
                 userDe={props.userProfessionalDetails}
                 userNegoCheck={props.userNegotiated}
+                userPosition={props.usersJobTitle}
                 userG={userGender}
                 userD={userDisability}
                 userR={userRace}/>
