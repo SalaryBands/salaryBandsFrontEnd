@@ -11,18 +11,21 @@ function PromoteTransparency (props) {
     const [nextStep, setNextStep] = useState(false)
     const [userGender, setUserGender] = useState({})
     const [userRace, setUserRace] = useState({})
-    const [userDisability, setUserDisability] = useState({})
+    const [userDisability, setUserDisability] = useState([])
+    const [inputDisabled, setInputDisabled] = useState(true)
 
 
-
+    const handleChecked = function () {
+        setInputDisabled(false)
+    }
 
     const handleNextStep = function (e) {
         e.preventDefault()
         setNextStep(true)
     }
 
-    const handleMultiDisability = (disabilities) => {
-        setUserDisability(disabilities)
+    const handleMultiDisability = (e) => {
+        setUserDisability(Array.isArray(e) ? e.map(x => x.label) : []);
     }
 
     console.log(userDisability)
@@ -32,7 +35,7 @@ function PromoteTransparency (props) {
         { value: 'female', label: 'Female' },
         { value: 'transgender', label: 'Transgender' },
         { value: 'nonBinary', label: 'Non Binary' },
-        { value: 'other', label: 'Other' }
+        { value: 'prefer', label: 'Prefer not to say' }
     ]
 
     const races = [
@@ -57,6 +60,7 @@ function PromoteTransparency (props) {
         { value: 'ocd', label: 'Obsessive-compulsive disorder (OCD' },
         { value: 'tourettes', label: 'Tourettes' },
         { value: 'other', label: 'Other' },
+        { value: 'prefer', label: 'Prefer not to say' },
     ]
 
     return (
@@ -76,7 +80,7 @@ function PromoteTransparency (props) {
                         <form onSubmit={ handleNextStep } action="#">
                             <div className="genderContainer">
                                 <label htmlFor="">What is your gender?</label>
-                                <Select options={genders} onChange={(genderType) => setUserGender(genderType.value)} />
+                                <Select options={genders} onChange={(genderType) => setUserGender(genderType.label)} />
                             </div>
                             <div className="raceContainer">
                                 <label htmlFor="">What is your race?</label>
@@ -87,11 +91,11 @@ function PromoteTransparency (props) {
                                 <label htmlFor="">Do you have a disability?</label>
                                 <div className="yesOrNoContainer">
                                     <div className="yesContainer">
-                                        <input type="radio" name="disability" id="" />  
+                                        <input type="radio" name="disability" value={inputDisabled} onChange={handleChecked}/>  
                                         <label htmlFor="">Yes</label>                  
                                     </div>
                                     <div className="noContainer">
-                                        <input type="radio" name='disability'/>
+                                        <input type="radio" name='disability' onChange={ () => setInputDisabled(true)}/>
                                         <label htmlFor="">No</label>
                                     </div>
                                 </div>
@@ -99,7 +103,7 @@ function PromoteTransparency (props) {
 
                             <div className="yesDisabilityContainer">
                                 <label htmlFor="">If yes, what disability do you identify as having?</label>
-                                <Select options={disabilities} isMulti onChange={handleMultiDisability}/>
+                                <Select options={disabilities} isMulti onChange={handleMultiDisability} isDisabled={inputDisabled} value={disabilities.filter(obj => userDisability.includes(obj.label))} />
                             </div>
 
                             <button type="submit">Next Step</button>
@@ -129,6 +133,7 @@ function PromoteTransparency (props) {
                 userWorkArr={props.userWorkArrangement}
                 userWorkPer={props.userPercentNumber}
                 userDe={props.userProfessionalDetails}
+                userNegoCheck={props.userNegotiated}
                 userG={userGender}
                 userD={userDisability}
                 userR={userRace}/>

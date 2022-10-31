@@ -8,6 +8,7 @@ function ProfessionalDetails() {
 
     const [verifyDetails, setVerifyDetails] = useState(false)
     const [type, setType] = useState({})
+    const [didNegotiate, setDidNegotiate] = useState(true)
     const [workArrangement, setWorkArrangement] = useState({})
     const [percentNumber, setPercentNumber] = useState(0)
     const [professionalDetails, setProfessionalDetails] = useState({
@@ -70,7 +71,7 @@ function ProfessionalDetails() {
                         <form onSubmit={handleVerifyDetails} action="#">
                             <div className="companyAndLocationContainer">
                                 <div className="companyContainer">
-                                    <label htmlFor="company">What company do you work at?</label>
+                                    <label htmlFor="company">What company do you work at?  <span className='optionalText'>(Optional)</span></label>
                                     <input onInput={handleInput}type="text" name='company' placeholder='Company Name'/>
                                 </div>
 
@@ -118,18 +119,18 @@ function ProfessionalDetails() {
                                     <label htmlFor="negotiate">Did you negotiate for this salary?</label>
                                     <div className="yesOrNoContainer">
                                         <div className="yesContainer">
-                                            <input onInput={handleInput} type="radio" name="negotiate" id="true" value='true' />
+                                        <input onChange={() => setDidNegotiate(false)} type="radio" name="negotiate" id="true" value={didNegotiate} />
                                             <label htmlFor="true" value>Yes</label>
                                         </div>
                                         <div className="noContainer">
-                                            <input onInput={handleInput} type="radio" name="negotiate" id="false" value='false' />
+                                            <input onChange={() => setDidNegotiate(true)} type="radio" name="negotiate" id="false" value='false' />
                                             <label htmlFor="false">No</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="negotiatePercentContainer">
                                     <label htmlFor="negotiatePercent">If yes, how much more?</label>
-                                    <input onInput={handleInput} type="text" name='negotiatePercent' placeholder='2%' />
+                                    <input onInput={handleInput} type="text" name='negotiatePercent' placeholder='2%' disabled={didNegotiate}/>
                                 </div>
                             </div>
 
@@ -161,7 +162,8 @@ function ProfessionalDetails() {
                 userProfessionalDetails={professionalDetails}
                 userWorkType={type}
                 userWorkArrangement={workArrangement}
-                userPercentNumber={percentNumber}/>
+                userPercentNumber={percentNumber}
+                userNegotiated={didNegotiate}/>
             }
             </div>
     )

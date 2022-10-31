@@ -58,12 +58,28 @@ header {
             }
         }
         .heroImageContainer {
-            display: flex; 
+            display: flex;
             flex-direction: column;
+            width: 55%;
+            align-items: center;
+            justify-content: center;
             .firstLineImages {
-                display: flex; 
-                
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 15px;
+                    .imgOne {
+                            align-self: flex-end;
+                        }
+                    .imgTwo {
+                            margin-left: 20px;
+                        }
+                }
+            .secondLineImages {
+                display: flex;
+                .imgFour {
+                        margin: 0px 20px;
+                    }
+                }
             }
         }
     }
-}

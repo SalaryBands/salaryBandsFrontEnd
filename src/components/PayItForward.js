@@ -30,18 +30,19 @@ function PayItForward (props) {
         e.preventDefault();
         setSubmitInfo(true);
         axios.post(baseURL, {
-           company: props.userDe.company,
+            company: props.userDe.company,
             country: props.userDe.location,
             job_title: props.userDe.title,
             salary: props.userDe.salary,
             period: props.userWorkPer,
             years_of_experience: props.userDe.years,
             work_arrangement: props.userWorkArr,
-            negotiate_check: '',
+            negotiate_check: props.userNegoCheck,
             negotiation_percentage: props.userDe.negotiatePercent,
             gender: props.userG,
-            race: '',
+            race: props.userR,
             disability_check: '',
+            disability: props.userD,
             advice_break: payItForward.adviceBreak,
             advice_negotiate: payItForward.adviceNegotiate,
             industry: props.userDe.industry

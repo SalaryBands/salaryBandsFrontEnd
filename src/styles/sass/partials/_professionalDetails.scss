@@ -28,6 +28,9 @@
                                 display: flex;
                                 flex-direction: column;
                                 width: 45%;
+                                .optionalText {
+                                    color: #98A2B3;
+                                }
                             }
                             .locationContainer {
                                 display: flex;
@@ -107,6 +110,23 @@
                                 width: 50%;
                             }
                         }
+                        .titleAndLocationContainer {
+                            display: flex;
+                            flex-direction: row;
+                            width: 100%;
+                            justify-content: space-between;
+                            .locationContainer {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 50%;
+                                }
+                            .jobTitleContainer {
+                                display: flex;
+                                flex-direction: column;
+                                width: 45%;
+                                margin-bottom: 20px;
+                            }
+                        }
                     }
 
     
@@ -114,6 +134,7 @@
     
     
                 .detailsCard {
+
                     .contactContainer {
                         margin-top: 20px; 
                     }

@@ -15,7 +15,7 @@ function Hero () {
                         <h4>SalaryBands is a free, open-source database of salary data for roles in tech. We make it easy as possible for you to find the market data by demographics.</h4>
                         <div className="buttonLinksContainer">
                             <Link to={'/EmailVerification'} className='heroSubmitSalary'>Submit Your Salary</Link>
-                            <Link className='heroExploreData'>Explore All Data</Link>
+                            <Link className='heroExploreData' >Explore All Data</Link>
                         </div>
                     </div>
                     <div className="heroImageContainer">

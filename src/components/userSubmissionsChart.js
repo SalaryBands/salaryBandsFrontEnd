@@ -13,7 +13,7 @@ function UserSubmissionChart () {
     useEffect( () => {
         axios({
             method: 'get',
-            url: 'https://salarybandsapi.fly.dev/contributions'
+            url: 'https://salarybandsapi.onrender.com/contributions'
         }).then( (apiData) => {
             setUserSubmissionData(apiData.data)
         })
@@ -33,7 +33,7 @@ function UserSubmissionChart () {
                     <p>SalaryBands is here to help you figure out how to get paid what you're worth.</p>
                 </div>  
 
-                <div className="userSubmissionTable">
+                <div className="userSubmissionTable" id="userSubmissionTable">
                     <div className="searchAndRecentDataContainer">
                         <div className="searchContainer">
                             <label htmlFor="search"></label>
@@ -77,12 +77,12 @@ function UserSubmissionChart () {
                         </thead>
                         <tbody>
                             {userSubmissionData
-                            .filter((userData) => 
-                                userData.job_title.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                userData.company.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                userData.country.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                userData.work_arrangement.toString().toLowerCase().includes(searchTerm.toLowerCase())
-                                )
+                            // .filter((userData) => 
+                            //     userData.job_title.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            //     userData.company.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            //     userData.country.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            //     userData.work_arrangement.toString().toLowerCase().includes(searchTerm.toLowerCase())
+                            //     )
                             .reverse().map( (val, key) => {
                                 return (
                                     <tr  className='tableRow'key={key}>
@@ -95,7 +95,7 @@ function UserSubmissionChart () {
                                         <td>
                                             <div className="">
                                                 <div className='topText'>{val.company}</div>
-                                                <div className='bottomText'>{val.company}</div>
+                                                <div className='bottomText'>{val.industry}</div>
                                             </div>
                                         </td>
                                         <td>{val.years_of_experience}</td>
@@ -103,17 +103,31 @@ function UserSubmissionChart () {
                                         <td>
                                             <div className="salaryNegotiationContainer">
                                                 <div className="salaryNumber">${val.salary}</div>
-                                                <div className="percentIncrease"><span className='increasedPercentage'>&#8593; {val.negotiation_percentage}%</span></div>
+                                                {
+                                                    val.negotiation_percentage ?
+
+                                                    <div className="percentIncrease"><span className='increasedPercentage'>&#8593; {val.negotiation_percentage}%</span></div>
+
+                                                    : null
+                                                }
                                             </div>
                                         </td>
                                         <td>
                                             <div className="tagsContainer">
-                                                <div className="workArrangementContainer"><span className='workArr'>{val.work_arrangement}</span></div>
-
                                                 {
-                                                    
+                                                    !val.negotiate_check ?
+                                                    <div className="negotiateContainer"><span className="negotiateText">Negotiated Salary</span></div>
+                                                    : null
                                                 }
-                                                <div className="disabilityContainer"><span className="disabilityText"></span></div>
+                                                <div className="workArrangementContainer"><span className='workArr'>{val.work_arrangement}</span></div>
+                                                {
+                                                    val.disability.map( (userDisability) => {
+                                                        console.log(userDisability);
+                                                        return (
+                                                            <div className="disabilityContainer"><span className="disabilityText">{userDisability}</span></div>
+                                                        )
+                                                    })
+                                                }
                                             </div>
                                         </td>
                                     </tr>

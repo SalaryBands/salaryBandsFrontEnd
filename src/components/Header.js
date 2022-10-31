@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import Logo from '../assets/salaryBandsLogo.png';
 
 function Header() {
     return (
@@ -7,7 +7,7 @@ function Header() {
             <ul>
                 <li className='logo'>
                     <div className='logoImageContainer'>
-                        <img src={logo} alt="" />
+                        <img src={Logo} alt="" />
                     </div>
                     <Link to={'/'}>SalaryBands</Link>
                 </li>

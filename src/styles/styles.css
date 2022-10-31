@@ -333,36 +333,6 @@ header .heroContainer {
   display: flex;
   height: 100%;
 }
-
-header .heroContainer .heroImageContainer {
-  display: flex; 
-  flex-direction: column;
-  width: 55%;
-  align-items: center;
-  justify-content: center;
-}
-
-header .heroContainer .heroImageContainer .firstLineImages {
-  display: flex; 
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-header .heroContainer .heroImageContainer .firstLineImages .imgTwo {
-  margin-left: 20px;
-}
-
-header .heroContainer .heroImageContainer .firstLineImages .imgOne {
-  align-self: flex-end;
-}
-
-header .heroContainer .heroImageContainer .secondLineImages .imgFour {
-  margin: 0px 20px;
-}
-
-header .heroContainer .heroImageContainer .secondLineImages {
-  display: flex;
-}
 header .heroContainer .heroTextContainer {
   display: flex;
   flex-direction: column;
@@ -385,7 +355,8 @@ header .heroContainer .heroTextContainer h4 {
 }
 header .heroContainer .heroTextContainer .buttonLinksContainer {
   display: flex;
-  min-width: 10%;
+  justify-content: space-between;
+  width: 65%;
   margin-top: 20px;
 }
 header .heroContainer .heroTextContainer .buttonLinksContainer .heroSubmitSalary {
@@ -399,7 +370,6 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroSubmitSalary
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   line-height: 24px;
-  margin-right: 20px;
 }
 header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData {
   text-decoration: none;
@@ -412,6 +382,30 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
+}
+header .heroContainer .heroImageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  align-items: center;
+  justify-content: center;
+}
+header .heroContainer .heroImageContainer .firstLineImages {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+header .heroContainer .heroImageContainer .firstLineImages .imgOne {
+  align-self: flex-end;
+}
+header .heroContainer .heroImageContainer .firstLineImages .imgTwo {
+  margin-left: 20px;
+}
+header .heroContainer .heroImageContainer .secondLineImages {
+  display: flex;
+}
+header .heroContainer .heroImageContainer .secondLineImages .imgFour {
+  margin: 0px 20px;
 }
 
 .userSubmissionChartContainer {
@@ -442,99 +436,39 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
   line-height: 30px;
   color: #475467;
 }
-.userSubmissionChartContainer .userSubmissionTable {
+
+.userSubmissionTable {
   margin: 50px 0px;
   border: 1px solid #EAECF0;
 }
-.userSubmissionChartContainer .userSubmissionTable table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.userSubmissionChartContainer .userSubmissionTable table thead {
-  background-color: #164C63;
-  color: #EAECF0;
-  font-size: 12px; 
-  text-align: left;
-}
-.userSubmissionChartContainer .userSubmissionTable table thead .tableHeadContainer {
-  padding-left: 10px;
-}
-.userSubmissionChartContainer .userSubmissionTable table thead .tableHeadings th {
-  padding: 12px 24px;
-  text-align: left;
-}
-
-.userSubmissionChartContainer .userSubmissionTable table tbody .tableRow {
-  border-bottom: 1px solid #EAECF0;
-}
-
-.userSubmissionChartContainer .userSubmissionTable table tbody td {
-  padding: 18px 10px;
-  text-align: left;
-  font-size: 14px; 
-  color: #475467;
-}
-
-.userSubmissionChartContainer .userSubmissionTable table tbody td .topText {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #101828;
-}
-
-.userSubmissionChartContainer .userSubmissionTable table tbody td .bottomText {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #475467;
-}
-
-.searchAndRecentDataContainer {
-  display: flex; 
+.userSubmissionTable .searchAndRecentDataContainer {
+  display: flex;
   padding: 14px;
 }
-.searchContainer {
+.userSubmissionTable .searchAndRecentDataContainer .searchContainer {
   width: 50%;
   align-self: center;
 }
-
-.recentData {
-  width: 50%;
-}
-
-.recentDataText {
-  margin: 0px 15px 0px 0px; 
-}
-
-.recentDataTextContainer {
-  display: flex; 
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.paidWorthContainer {
-  display: flex; 
-  justify-content: flex-end;
-}
-
-.paidWorth {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #475467;
-  margin: 0; 
-}
-
-.searchFilter {
-  padding: 10px 14px; 
+.userSubmissionTable .searchAndRecentDataContainer .searchContainer .searchFilter {
+  padding: 10px 14px;
   border: 1px solid #D0D5DD;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   font-size: 14px;
   width: 70%;
 }
-
-.totalSubmissions {
+.userSubmissionTable .searchAndRecentDataContainer .recentData {
+  width: 50%;
+}
+.userSubmissionTable .searchAndRecentDataContainer .recentData .recentDataTextContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.userSubmissionTable .searchAndRecentDataContainer .recentData .recentDataTextContainer .recentDataText {
+  margin: 0px 15px 0px 0px;
+}
+.userSubmissionTable .searchAndRecentDataContainer .recentData .recentDataTextContainer .totalSubmissions {
   padding: 2px 8px;
   background-color: #ECFDFF;
   color: #0E7090;
@@ -543,8 +477,65 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
   line-height: 18px;
   text-align: center;
 }
-
-.genderText {
+.userSubmissionTable .searchAndRecentDataContainer .recentData .paidWorthContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.userSubmissionTable .searchAndRecentDataContainer .recentData .paidWorthContainer .paidWorth {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #475467;
+  margin: 0;
+}
+.userSubmissionTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.userSubmissionTable table thead {
+  background-color: #164C63;
+  color: #EAECF0;
+  font-size: 12px;
+  text-align: left;
+}
+.userSubmissionTable table thead tr .tableHeadContainer {
+  padding-left: 10px;
+}
+.userSubmissionTable table tbody .tableRow {
+  border-bottom: 1px solid #EAECF0;
+}
+.userSubmissionTable table tbody td {
+  padding: 18px 10px;
+  text-align: left;
+  font-size: 14px;
+  color: #475467;
+}
+.userSubmissionTable table tbody td .topText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #101828;
+}
+.userSubmissionTable table tbody td .bottomText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #475467;
+}
+.userSubmissionTable table tbody td .salaryNegotiationContainer {
+  display: flex;
+}
+.userSubmissionTable table tbody td .salaryNegotiationContainer .increasedPercentage {
+  padding: 2px 8px 2px 6px;
+  background: #ECFDF3;
+  mix-blend-mode: multiply;
+  border-radius: 16px;
+  color: #027A48;
+  text-align: center;
+  line-height: 18px;
+  font-size: 12px;
+}
+.userSubmissionTable table tbody td .genderText {
   padding: 2px 8px;
   background: #ECFDFF;
   mix-blend-mode: multiply;
@@ -556,27 +547,21 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
   color: #0E7090;
   text-transform: capitalize;
 }
-
-.salaryNegotiationContainer {
-  display: flex; 
+.userSubmissionTable table tbody td .tagsContainer {
+  display: flex;
+  justify-content: space-evenly;
 }
-
-.percentIncrease {
-  margin-left: 10px; 
-}
-
-.increasedPercentage {
-  padding: 2px 8px 2px 6px;
+.userSubmissionTable table tbody td .tagsContainer .negotiateContainer .negotiateText {
   background: #ECFDF3;
   mix-blend-mode: multiply;
   border-radius: 16px;
-  color: #027A48;
-  text-align: center;
-  line-height: 18px;
+  padding: 2px 8px;
+  font-weight: 500;
   font-size: 12px;
+  line-height: 18px;
+  color: #027A48;
 }
-
-.workArr {
+.userSubmissionTable table tbody td .tagsContainer .workArrangementContainer .workArr {
   padding: 2px 8px;
   background: #EEF4FF;
   mix-blend-mode: multiply;
@@ -586,8 +571,16 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
   line-height: 18px;
   color: #3538CD;
 }
-
-
+.userSubmissionTable table tbody td .tagsContainer .disabilityContainer .disabilityText {
+  background: #EFF8FF;
+  mix-blend-mode: multiply;
+  border-radius: 16px;
+  padding: 2px 8px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #175CD3;
+}
 
 .emailVerification {
   width: 100vw;
@@ -718,16 +711,15 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
 .userFlowContainer .userCard {
   min-width: 90%;
 }
-.userFlowContainer .userCard .userPathwayCard {
-  width: 50%;
-  padding: 15px;
-  height: 90%;
-}
-
 .userFlowContainer .userCard .detailsCard {
   width: auto;
   padding: 15px;
   height: 100%;
+}
+.userFlowContainer .userCard .userPathwayCard {
+  width: 50%;
+  padding: 15px;
+  height: 90%;
 }
 .userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer {
   height: 100%;
@@ -744,22 +736,22 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
   box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
   border-radius: 12px;
 }
-.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .professionalDetails .verifyButton {
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .professionalDetails .verifyButton {
   width: 100%;
 }
-.orContainer {
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .professionalDetails .orContainer {
   width: 100%;
   text-align: center;
   text-transform: uppercase;
   margin: 20px 0px;
 }
-.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .contactContainer {
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .contactContainer {
   height: 25%;
 }
-.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .contactContainer .salaryBandTrademark {
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .contactContainer .salaryBandTrademark {
   align-self: end;
 }
-.userFlowContainer .userCard .detailsCard .userPathwayComponentContainer .contactContainer .contactEmail {
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .contactContainer .contactEmail {
   align-self: end;
 }
 
@@ -797,28 +789,17 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
   flex-direction: column;
   width: 45%;
 }
+.professionalDetails .companyAndLocationContainer .companyContainer .optionalText {
+  color: #98A2B3;
+}
 .professionalDetails .companyAndLocationContainer .locationContainer {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
-.professionalDetails .titleAndLocationContainer {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.professionalDetails .titleAndLocationContainer .locationContainer {
+.professionalDetails .jobTitleContainer {
   display: flex;
   flex-direction: column;
-  width: 50%;
-}
-
-.professionalDetails .titleAndLocationContainer .jobTitleContainer {
-  display: flex;
-  flex-direction: column;
-  width: 45%;
   margin-bottom: 20px;
 }
 .professionalDetails .salaryQuestionContainer {
@@ -887,6 +868,23 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
   display: flex;
   flex-direction: column;
   width: 50%;
+}
+.professionalDetails .titleAndLocationContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.professionalDetails .titleAndLocationContainer .locationContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.professionalDetails .titleAndLocationContainer .jobTitleContainer {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin-bottom: 20px;
 }
 
 .detailsCard .contactContainer {
@@ -993,4 +991,87 @@ header .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData 
   text-decoration: none;
   text-align: center;
   color: #fff;
+}
+
+footer {
+  background-color: #1D2939;
+  color: #EAECF0;
+}
+footer .wrapper .footerNavNewsletterContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0px;
+}
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .logoContainer {
+  display: flex;
+}
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .logoContainer a {
+  margin-left: 10px;
+  font-weight: 900;
+  color: #FFF;
+  text-transform: lowercase;
+  text-decoration: none;
+  align-self: center;
+}
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer {
+  display: flex;
+}
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav {
+  border-bottom: none;
+  width: 100%;
+}
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul {
+  margin: 0;
+  padding-left: 0;
+}
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul li {
+  margin-right: 10px;
+}
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul li .footerNavLinks {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #EAECF0;
+}
+footer .wrapper .footerNavNewsletterContainer .newsletterContainer .signUp label {
+  display: block;
+  margin-bottom: 10px;
+}
+footer .wrapper .footerNavNewsletterContainer .newsletterContainer .signUp input {
+  background: #FFFFFF;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-right: 10px;
+}
+footer .wrapper .copyrightContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+footer .wrapper .copyrightContainer .copyright {
+  align-self: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #D0D5DD;
+}
+footer .wrapper .copyrightContainer .privacyTerms ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #667085;
+  text-decoration: none;
 }
