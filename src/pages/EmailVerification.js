@@ -22,7 +22,6 @@ function EmailVerification() {
     
     const setTrue = useCallback( (e) => {
         e.preventDefault();
-        setUserVerify(!userVerify); 
         var formdata = new FormData();
         formdata.append("user[email]", emailRef.current.value);
 
@@ -36,8 +35,8 @@ function EmailVerification() {
 
         fetch("https://salarybandsapi.onrender.com/authentication/create", requestOptions)
             .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
+            .then((result) => { setUserVerify(true); console.log('hello')})
+            .catch((error) => { setUserVerify(false); console.log(error)});
 
     }, [userVerify])
     

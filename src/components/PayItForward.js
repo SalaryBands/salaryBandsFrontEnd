@@ -5,7 +5,7 @@ import Ladder from '../assets/ladder.png';
 
 function PayItForward (props) {
 
-    const baseURL = 'https://salarybandsapi.fly.dev/contributions'
+    const baseURL = 'https://salarybandsapi.onrender.com/contributions'
 
     const [submitInfo, setSubmitInfo] = useState(false)
 
