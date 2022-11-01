@@ -549,7 +549,6 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 }
 .userSubmissionTable table tbody td .tagsContainer {
   display: flex;
-  justify-content: space-evenly;
 }
 .userSubmissionTable table tbody td .tagsContainer .negotiateContainer .negotiateText {
   background: #ECFDF3;
@@ -970,6 +969,72 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.tipsAndAdviceContainer {
+  display: flex;
+  flex-direction: column;
+}
+.tipsAndAdviceContainer .tipsTitleContainer {
+  width: 55%;
+}
+.tipsAndAdviceContainer .tipsTitleContainer h2 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+  color: #101828;
+}
+.tipsAndAdviceContainer .tipsSearchFilterResultsContainer {
+  display: flex;
+}
+.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .searchAndFilterContainer {
+  display: flex;
+  width: 50%;
+  align-items: center;
+}
+.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .searchAndFilterContainer .searchContainer {
+  width: 50%;
+}
+.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .searchAndFilterContainer .searchContainer input {
+  background: #FFFFFF;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  padding: 10px 14px;
+  width: 100%;
+}
+.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .searchAndFilterContainer .filterContainer {
+  width: 40%;
+  margin-left: 50px;
+}
+.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .searchAndFilterContainer .filterContainer .filterTips {
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #344054;
+}
+.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .recentDataContainer {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: flex-end;
+}
+.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .recentDataContainer h4 {
+  margin: 0px 15px 0px 0px;
+}
+.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .recentDataContainer .totalSubmissions {
+  padding: 2px 8px;
+  background-color: #ECFDFF;
+  color: #0E7090;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
 }
 
 .finishContainer .finishTextContainer {

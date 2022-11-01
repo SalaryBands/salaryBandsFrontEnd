@@ -7,6 +7,7 @@ import UserFlow from './components/ProfessionalDetails';
 import UserPathway from './pages/UserPathway';
 import Home from './pages/Home';
 import URLVerification from './components/URLVerification';
+import TipsAndAdvice from './pages/TipsAndAdvice';
 
 
 
@@ -34,6 +35,11 @@ function App() {
           path="/sessions/create"
           element={<URLVerification />}
           />
+        
+        <Route
+          path="/tipsandadvice"
+          element={<TipsAndAdvice />}
+        />
 
       </Routes>
       <Footer/>

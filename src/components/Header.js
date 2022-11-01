@@ -13,10 +13,10 @@ function Header() {
                     <Link to={'/'}><img src={LogoText} alt=""/></Link>
                 </li>
                 <li className='headerLinks'>
-                    <Link to={'/'}>Home</Link>
+                    <Link to={'/SalaryData'}>Salaries</Link>
                 </li>
                 <li className='headerLinks'>
-                    <Link>Salaries</Link>
+                    <Link to={'/TipsAndAdvice'}>Tips & Advice</Link>
                 </li>
                 <li className='headerLinks'>
                     <Link>Resources</Link>

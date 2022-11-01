@@ -52,21 +52,21 @@ function UserSubmissionChart () {
                     <table>
                         <thead>
                             <tr>
-                                <th className='tableHeadContainer'>
+                                <th className='tableHeadContainer title'>
                                     <div>
                                         <div><p className='tableHeadText'>Title/Position</p></div>
                                         <div><p className='tableHeadText'>Location</p></div>
                                     </div>
                                 </th>
                                 <th>
-                                    <div className='tableHeadContainer'>
+                                    <div className='tableHeadContaine company'>
                                         <div><p className='tableHeadText'>Company</p></div>
                                         <div><p className='tableHeadText'>Industry</p></div>
                                     </div>
                                 </th>
-                                <th className='tableHeadContainer'><p className='tableHeadText'>YoE</p></th>
-                                <th className='tableHeadContainer'><p className='tableHeadText'>Gender</p></th>
-                                <th>
+                                <th className='tableHeadContainer years'><p className='tableHeadText'>YoE</p></th>
+                                <th className='tableHeadContainer gender'><p className='tableHeadText'>Gender</p></th>
+                                <th className='compensation'>
                                     <div className='tableHeadContainer'>
                                         <div><p className='tableHeadText'>Compensation</p></div>
                                         <div><p className='tableHeadText'>Base, % Negotiated</p></div>

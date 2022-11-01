@@ -1,0 +1,65 @@
+.tipsAndAdviceContainer {
+    display: flex;
+    flex-direction: column;
+    .tipsTitleContainer {
+        width: 55%;
+        h2 {
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 44px;
+            letter-spacing: -0.02em;        
+            color: #101828;
+        }
+    }
+    .tipsSearchFilterResultsContainer {
+        display: flex; 
+        .searchAndFilterContainer {
+            display: flex;
+            width: 50%;
+            align-items: center;
+            .searchContainer {
+                width: 50%;
+                input {
+                    background: #FFFFFF;
+                    border: 1px solid #D0D5DD;
+                    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                    border-radius: 8px;
+                    padding: 10px 14px; 
+                    width: 100%;
+                }
+            }
+            .filterContainer {
+                width: 40%;
+                margin-left: 50px; 
+                .filterTips {
+                    padding: 10px 14px; 
+                    background: #FFFFFF;
+                    border: 1px solid #D0D5DD;
+                    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                    border-radius: 8px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: #344054;
+                }
+            }
+        }
+        .recentDataContainer {
+            display: flex; 
+            align-items: center;
+            width: 50%; 
+            justify-content: flex-end;
+            h4 {
+                margin: 0px 15px 0px 0px;
+            }
+            .totalSubmissions {
+                padding: 2px 8px;
+                background-color: #ECFDFF;
+                color: #0E7090;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+                text-align: center;
+            }
+        }
+    }
+}
