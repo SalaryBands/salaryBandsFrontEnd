@@ -45,7 +45,7 @@ function PayItForward (props) {
             disability: props.userD,
             advice_break: payItForward.adviceBreak,
             advice_negotiate: payItForward.adviceNegotiate,
-            industry: props.userDe.industry
+            industry: props.userI
         }, {headers: {
             'Authorization': tokenAccess
         }})

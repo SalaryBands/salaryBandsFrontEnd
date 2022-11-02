@@ -135,6 +135,7 @@ function PromoteTransparency (props) {
                 userDe={props.userProfessionalDetails}
                 userNegoCheck={props.userNegotiated}
                 userPosition={props.usersJobTitle}
+                userI={props.usersIndustry}
                 userG={userGender}
                 userD={userDisability}
                 userR={userRace}/>

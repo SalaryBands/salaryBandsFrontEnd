@@ -270,6 +270,7 @@ function ProfessionalDetails() {
                 userPercentNumber={percentNumber}
                 userNegotiated={didNegotiate}
                 usersJobTitle={userJobTitle}
+                usersIndustry={userIndustry}
                 />
             }
             </div>

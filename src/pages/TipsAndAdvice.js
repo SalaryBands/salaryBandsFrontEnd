@@ -1,4 +1,11 @@
+import axios from "axios";
+import {useState, useEffect} from 'react';
+
 function TipsAndAdvice() {
+    
+
+    const [userData, setUserData] = useState([])
+    
     return (
         <div className="wrapper">
             <div className="tipsAndAdviceContainer">
