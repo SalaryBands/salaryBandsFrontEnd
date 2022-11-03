@@ -378,36 +378,29 @@ function ProfessionalDetails() {
               </div>
             </div>
           </div>
-          <div className="infoCard">
-            <div className="infoImgContainer">
-              <img src={House} alt="" />
-            </div>
-            <div className="infoCardTextContainer">
-              <h3>
-                Figure out what you're worth and how to get paid what you're
-                worth
-              </h3>
-              <p>
-                {" "}
-                We want to help people gain clarity on what they should expect
-                to be paid at their job title and location, thereby creating a
-                better market for both employees and employers.
-              </p>
-            </div>
+<div className="infoCard">
+                    <div className="infoImgContainer">
+                      <img src={House} alt="" />
+                    </div>
+                    <div className="infoCardTextContainer">
+                      <h3>Figure out what you're worth and how to get paid what you're worth</h3>
+                      <p> We want to help people gain clarity on what they should expect to be paid at their job title and location, thereby creating a better market for both employees and employers.</p>
+                    </div>
+                  </div>
+                </>
+
+                : <PromoteTransparency
+                  userProfessionalDetails={professionalDetails}
+                  userWorkType={type}
+                  userWorkArrangement={workArrangement}
+                  userPercentNumber={percentNumber}
+                  userNegotiated={didNegotiate}
+                  usersJobTitle={userJobTitle}
+                  usersIndustry={userIndustry}
+                />
+            }
           </div>
-        </>
-      ) : (
-        <PromoteTransparency
-          userProfessionalDetails={professionalDetails}
-          userWorkType={type}
-          userWorkArrangement={workArrangement}
-          userPercentNumber={percentNumber}
-          userNegotiated={didNegotiate}
-          usersJobTitle={userJobTitle}
-        />
-      )}
-    </div>
-  );
+          )
 }
 
 export default ProfessionalDetails;

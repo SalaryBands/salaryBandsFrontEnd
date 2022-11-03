@@ -22,6 +22,15 @@ function UserSubmissionChart () {
     const handleChange = function (e) {
         setSearchTerm(e.target.value)
     }
+
+    const tokenAccess = localStorage.getItem('token')
+
+    const headers = {
+        'Authorization': tokenAccess
+    };
+
+    axios.delete('https://salarybandsapi.onrender.com/contributions/:1', { headers })
+
     
     console.log(userSubmissionData);
     return (
@@ -58,8 +67,8 @@ function UserSubmissionChart () {
                                         <div><p className='tableHeadText'>Location</p></div>
                                     </div>
                                 </th>
-                                <th>
-                                    <div className='tableHeadContaine company'>
+                                <th className='company'>
+                                    <div className='tableHeadContainer'>
                                         <div><p className='tableHeadText'>Company</p></div>
                                         <div><p className='tableHeadText'>Industry</p></div>
                                     </div>
@@ -77,12 +86,12 @@ function UserSubmissionChart () {
                         </thead>
                         <tbody>
                             {userSubmissionData
-                            // .filter((userData) => 
-                            //     userData.job_title.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            //     userData.company.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            //     userData.country.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            //     userData.work_arrangement.toString().toLowerCase().includes(searchTerm.toLowerCase())
-                            //     )
+                            .filter((userData) => 
+                                userData.job_title.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                userData.company.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                userData.country.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                userData.work_arrangement.toString().toLowerCase().includes(searchTerm.toLowerCase())
+                                )
                             .reverse().map( (val, key) => {
                                 return (
                                     <tr  className='tableRow'key={key}>

@@ -113,6 +113,9 @@
                 }
                 .salaryNegotiationContainer {
                     display: flex;
+                    .salaryNumber {
+                        margin-right: 5px; 
+                    }
                     .increasedPercentage {
                         padding: 2px 8px 2px 6px;
                         background: #ECFDF3;
@@ -138,8 +141,9 @@
                 }
                 .tagsContainer {
                     display: flex;
-                    
+                    flex-wrap: wrap;
                     .negotiateContainer {
+                        margin: 0px 5px 5px 0px; 
                         .negotiateText {
                             background: #ECFDF3;
                             mix-blend-mode: multiply;
@@ -152,6 +156,7 @@
                         }
                     }
                     .workArrangementContainer {
+                        margin: 0px 5px 5px 0px;
                         .workArr {
                             padding: 2px 8px;
                             background: #EEF4FF;
@@ -161,9 +166,11 @@
                             font-size: 12px;
                             line-height: 18px;
                             color: #3538CD;
+                            text-transform: capitalize;
                         }
                     }
                     .disabilityContainer {
+                        margin: 0px 5px 5px 0px;
                         .disabilityText {
                             background: #EFF8FF;
                             mix-blend-mode: multiply;
@@ -180,6 +187,30 @@
 
         }
     }
+}
+
+.tags {
+    width: 25%;
+}
+
+.compensation {
+    width: 15%; 
+}
+
+.gender {
+    width: 15%; 
+}
+
+.years {
+    width: 10%
+}
+
+.company {
+    width: 15%; 
+}
+
+.title {
+    width: 20%; 
 }
 
 

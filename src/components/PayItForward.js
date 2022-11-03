@@ -15,13 +15,15 @@ function PayItForward(props) {
 
   let tokenAccess = localStorage.getItem("token");
 
-  function handleInput(e) {
-    const value = e.target.value;
-    setPayItForward({
-      ...payItForward,
-      [e.target.name]: value,
-    });
-  }
+const handleInput = useCallback((e) => {
+        const value = e.target.value
+        setPayItForward({
+            ...payItForward, 
+            [e.target.name]: value
+        })
+    }, [payItForward.adviceBreak, payItForward.adviceNegotiate])
+    console.log(payItForward.adviceBreak)
+    console.log(payItForward.adviceNegotiate)
 
   console.log(tokenAccess);
 
@@ -49,17 +51,14 @@ function PayItForward(props) {
           disability: props.userD,
           advice_break: payItForward.adviceBreak,
           advice_negotiate: payItForward.adviceNegotiate,
-          industry: props.userDe.industry,
-        },
-        {
-          headers: {
-            Authorization: tokenAccess,
-          },
-        }
-      );
-    },
-    [submitInfo]
-  );
+          industry: props.userI,
+         }, { headers: {
+            'Authorization': tokenAccess
+        }})
+        console.log(payItForward.adviceBreak)
+        console.log(payItForward.adviceNegotiate)
+        
+    }, [submitInfo, payItForward])
 
   return (
     <>
