@@ -24,9 +24,6 @@ function ProfessionalDetails() {
     negotiatePercent: 0,
   });
 
-  console.log(Country.getAllCountries());
-  console.log(State.getAllStates());
-
   const jobTitles = [
     { value: "Software Engineer", label: "Software Engineer" },
     { value: "Mobile Developer", label: "Mobile Developer" },
@@ -229,6 +226,7 @@ function ProfessionalDetails() {
                           name="country"
                           value={selectedCountry}
                           onChange={(e) => setSelectedCountry(e.target.value)}
+                          onInput={handleInput}
                         >
                           <option>--Choose Country--</option>
                           {Country.getAllCountries().map((value, key) => {
@@ -247,6 +245,7 @@ function ProfessionalDetails() {
                           name="state"
                           value={selectedState}
                           onChange={(e) => setSelectedState(e.target.value)}
+                          onInput={handleInput}
                         >
                           <option>--Choose State--</option>
                           {availableState.map((e, key) => {
@@ -265,6 +264,7 @@ function ProfessionalDetails() {
                           name="city"
                           value={selectedCity}
                           onChange={(e) => setSelectedCity(e.target.value)}
+                          onInput={handleInput}
                         >
                           <option>--Choose City--</option>
                           {availableCities.map((e, key) => {
