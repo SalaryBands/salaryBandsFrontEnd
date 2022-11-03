@@ -3,6 +3,7 @@ import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
 import PromoteTransparency from "./PromoteTransparency";
 import House from "../assets/house.png";
+import { Country, State, City } from "country-state-city";
 
 function ProfessionalDetails() {
   const [verifyDetails, setVerifyDetails] = useState(false);
@@ -22,6 +23,9 @@ function ProfessionalDetails() {
     negotiate: "",
     negotiatePercent: 0,
   });
+
+  console.log(Country.getAllCountries());
+  console.log(State.getAllStates());
 
   const jobTitles = [
     { value: "Software Engineer", label: "Software Engineer" },
@@ -152,41 +156,12 @@ function ProfessionalDetails() {
     });
   }
 
-  const data = {
-    countries: [
-      {
-        name: "Germany",
-        states: [
-          {
-            name: "A",
-            cities: ["Duesseldorf", "Leinfelden-Echterdingen", "Eschborn"],
-          },
-        ],
-      },
-      { name: "Spain", states: [{ name: "B", cities: ["Barcelona"] }] },
-
-      { name: "USA", states: [{ name: "C", cities: ["Downers Grove"] }] },
-      {
-        name: "Mexico",
-        states: [{ name: ["D", "F", "H"], cities: ["Puebla"] }],
-      },
-      {
-        name: "India",
-        states: [
-          { name: "E", cities: ["Delhi", "Kolkata", "Mumbai", "Bangalore"] },
-        ],
-      },
-    ],
-  };
-
   const [selectedCountry, setSelectedCountry] = useState();
   const [selectedState, setSelectedState] = useState();
   const [selectedCity, setSelectedCity] = useState();
 
-  const availableState = data.countries.find((c) => c.name === selectedCountry);
-  const availableCities = availableState?.states?.find(
-    (s) => s.name === selectedState
-  );
+  const availableState = State.getStatesOfCountry(selectedCountry);
+  const availableCities = City.getCitiesOfState(selectedCountry, selectedState);
 
   return (
     <div className="professionalDetailsCardandImageContainer">
@@ -244,6 +219,9 @@ function ProfessionalDetails() {
                           placeholder="Type or Select a Title"
                         />
                       </div>
+                    </div>
+
+                    <div className="titleAndLocationContainer">
                       <div className="locationContainer">
                         <label htmlFor="country">Where do you work?</label>
                         <select
@@ -253,9 +231,9 @@ function ProfessionalDetails() {
                           onChange={(e) => setSelectedCountry(e.target.value)}
                         >
                           <option>--Choose Country--</option>
-                          {data.countries.map((value, key) => {
+                          {Country.getAllCountries().map((value, key) => {
                             return (
-                              <option value={value.name} key={key}>
+                              <option value={value.isoCode} key={key}>
                                 {value.name}
                               </option>
                             );
@@ -271,9 +249,9 @@ function ProfessionalDetails() {
                           onChange={(e) => setSelectedState(e.target.value)}
                         >
                           <option>--Choose State--</option>
-                          {availableState?.states.map((e, key) => {
+                          {availableState.map((e, key) => {
                             return (
-                              <option value={e.name} key={key}>
+                              <option value={e.isoCode} key={key}>
                                 {e.name}
                               </option>
                             );
@@ -289,10 +267,10 @@ function ProfessionalDetails() {
                           onChange={(e) => setSelectedCity(e.target.value)}
                         >
                           <option>--Choose City--</option>
-                          {availableCities?.cities.map((e, key) => {
+                          {availableCities.map((e, key) => {
                             return (
                               <option value={e.name} key={key}>
-                                {e}
+                                {e.name}
                               </option>
                             );
                           })}
