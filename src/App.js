@@ -8,6 +8,7 @@ import UserPathway from './pages/UserPathway';
 import Home from './pages/Home';
 import URLVerification from './components/URLVerification';
 import TipsAndAdvice from './pages/TipsAndAdvice';
+import SalaryData from './components/SalaryData';
 
 
 
@@ -37,6 +38,11 @@ function App() {
           path="/sessions/create"
           element={<URLVerification />}
           />
+
+        <Route
+          path="/Salaries"
+          element={<SalaryData />}
+        />
         
         <Route
           path="/tipsandadvice"
