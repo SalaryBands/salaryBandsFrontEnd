@@ -389,7 +389,7 @@ function ProfessionalDetails() {
                   </div>
                 </>
 
-                : <PromoteTransparency
+                ) : <PromoteTransparency 
                   userProfessionalDetails={professionalDetails}
                   userWorkType={type}
                   userWorkArrangement={workArrangement}
