@@ -48,6 +48,9 @@ function UserSubmissionChart () {
                             <label htmlFor="search"></label>
                             <input className='searchFilter' type="text" name='search' placeholder='Search title, company, city, ect' value={searchTerm} onChange={handleChange}/>
                         </div>
+                        <div className="filterContainer">
+                            <button>Filter</button>
+                        </div>
                         <div className="recentData">
                             <div className="recentDataTextContainer">
                                 <h3 className='recentDataText'>Recent Data</h3>
