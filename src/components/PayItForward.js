@@ -16,16 +16,16 @@ function PayItForward (props) {
 
     let tokenAccess = localStorage.getItem('token')
 
-    function handleInput(e) {
-        const value = e.target.value;
+    const handleInput = useCallback((e) => {
+        const value = e.target.value
         setPayItForward({
             ...payItForward, 
             [e.target.name]: value
         })
-    }
-
-    console.log(tokenAccess);
-
+    }, [payItForward.adviceBreak, payItForward.adviceNegotiate])
+    console.log(payItForward.adviceBreak)
+    console.log(payItForward.adviceNegotiate)
+    
     const setTrue = useCallback((e) => {
         e.preventDefault();
         setSubmitInfo(true);
@@ -46,11 +46,13 @@ function PayItForward (props) {
             advice_break: payItForward.adviceBreak,
             advice_negotiate: payItForward.adviceNegotiate,
             industry: props.userI
-        }, {headers: {
+        }, { headers: {
             'Authorization': tokenAccess
         }})
-
-    }, [submitInfo])
+        console.log(payItForward.adviceBreak)
+        console.log(payItForward.adviceNegotiate)
+        
+    }, [submitInfo, payItForward])
 
     return (
     
@@ -72,12 +74,12 @@ function PayItForward (props) {
 
                     <div className="adviceContainer">
                         <label htmlFor="adviceBreak">What advice can you share with others looking to break into your field or role?</label>
-                        <textarea onInput={handleInput} name='adviceBreak' value={payItForward.adviceBreak} />
+                        <textarea onInput={handleInput} name='adviceBreak' />
                     </div>
 
                     <div className="negotiateContainer">
                         <label htmlFor="adviceNegotiate">What advice can you share about negotiating compensation in tech?</label>
-                        <textarea onInput={handleInput} name='adviceNegotiate' value={payItForward.adviceNegotiate}/>
+                        <textarea onInput={handleInput} name='adviceNegotiate'/>
                     </div>
 
                     <button type="submit">Submit</button>

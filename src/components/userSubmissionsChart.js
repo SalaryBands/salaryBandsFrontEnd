@@ -86,12 +86,12 @@ function UserSubmissionChart () {
                         </thead>
                         <tbody>
                             {userSubmissionData
-                            // .filter((userData) => 
-                            //     userData.job_title.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            //     userData.company.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            //     userData.country.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            //     userData.work_arrangement.toString().toLowerCase().includes(searchTerm.toLowerCase())
-                            //     )
+                            .filter((userData) => 
+                                userData.job_title.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                userData.company.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                userData.country.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                userData.work_arrangement.toString().toLowerCase().includes(searchTerm.toLowerCase())
+                                )
                             .reverse().map( (val, key) => {
                                 return (
                                     <tr  className='tableRow'key={key}>

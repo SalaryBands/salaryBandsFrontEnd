@@ -5,6 +5,21 @@ function TipsAndAdvice() {
     
 
     const [userData, setUserData] = useState([])
+
+    useEffect(() => {
+        axios({
+            method: 'get',
+            url: 'https://salarybandsapi.onrender.com/contributions'
+        }).then((apiData) => {
+            setUserData(apiData.data)
+        })
+    }, [])
+
+    const filteredData = userData.filter(data => {
+        return userData.advice_break && userData.advice_negotiate
+    })
+
+    console.log(filteredData);
     
     return (
         <div className="wrapper">
@@ -28,9 +43,6 @@ function TipsAndAdvice() {
                     </div>
                 </div>
                 <div className="adviceCardContainer">
-                    <div className="cardContainer">
-
-                    </div>
                 </div>
             </div>
         </div>
