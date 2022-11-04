@@ -9,7 +9,8 @@ function SalaryData () {
     const [searchTerm, setSearchTerm] = useState("")
     const [advancedFilter, setAdvancedFilter] = useState(false)
     const [userGender, setUserGender] = useState('')
-    const [negotiateToggle, setNegotiateToggle] = useState(null)
+    const [userRace, setUserRace] = useState('')
+    const [negotiateToggle, setNegotiateToggle] = useState(false)
 
     useEffect(() => {
         axios({
@@ -25,7 +26,7 @@ function SalaryData () {
     }
 
     const handleClick = function () {
-        setAdvancedFilter(true)
+        setAdvancedFilter(!advancedFilter)
     }
 
     const handleSwitch = function (e) {
@@ -40,6 +41,17 @@ function SalaryData () {
         { value: 'prefer', label: 'Prefer not to say' }
     ]
 
+    const races = [
+        { value: 'caucasian', label: 'Caucasian' },
+        { value: 'native', label: 'Native American or Alaska Native' },
+        { value: 'black', label: 'Black or African American' },
+        { value: 'asian', label: 'Asian' },
+        { value: 'latino', label: 'Hispanic or Latino' },
+        { value: 'two', label: 'Two or more races' },
+        { value: 'other', label: 'Other' }
+    ]
+
+
 
     return (
         <div className="wrapper">
@@ -51,17 +63,42 @@ function SalaryData () {
                     <input className='searchFilter' type="text" name='search' placeholder='Search title, company, city, ect' value={searchTerm} onChange={handleChange} />
                     <div className="advancedFilterContainer">
                         <button onClick={handleClick} className='advancedFilter'>Filter</button>
+                        {
+                            advancedFilter ?
                         <div className="filterOptionsContainer">
-                            <label htmlFor="">What is your gender?</label>
-                            <Select options={genders} onChange={(genderType) => setUserGender(genderType.label)} required />
-                            <label>
-                                <Toggle
-                                    defaultChecked={negotiateToggle}
-                                    icons={false}
-                                    onChange={handleSwitch} />
-                                    <span>Negotiated</span>
-                            </label>
+                            <div className="submissionsContainer">
+                                <p>Salary</p>
+                                <div className="salaryFilters">
+                                    <label>
+                                        <Toggle
+                                            defaultChecked={negotiateToggle}
+                                            icons={false}
+                                            onChange={handleSwitch} />
+                                    </label>
+                                    <span className='toggleSpan'>Negotiated</span>
+                                </div>
+                                <div className="salaryFilters">
+                                    <label>
+                                        <Toggle
+                                            defaultChecked={negotiateToggle}
+                                            icons={false}
+                                            onChange={handleSwitch} />
+                                    </label>
+                                    <span className='toggleSpan'>Disabled</span>
+                                </div>
+                            </div>
+                            <div className="genderContainer">
+                                <label htmlFor="">Gender</label>
+                                <Select options={genders} onChange={(genderType) => setUserGender(genderType.label)}/>
+                            </div>
+                            <div className="raceContainer">
+                                <label htmlFor="">Race/Ethnicity</label>
+                                <Select options={races} onChange={(raceType) => setUserRace(raceType.label)}/>
+                            </div>
                         </div>
+
+                        : null
+                        }
                     </div>
 
                 </div>
@@ -112,9 +149,9 @@ function SalaryData () {
                         .filter((userData) => 
                             userData.gender.toString().toLowerCase().includes(userGender.toLowerCase())
                         )
-                        .filter((userData) => 
-                            !userData.negotiate_check === negotiateToggle 
-                        )
+                        // .filter((userData) => 
+                        //     !userData.negotiate_check === negotiateToggle 
+                        // )
                         .reverse().map((val, key) => {
                             return (
                                 <tr className='tableRow' key={key}>
