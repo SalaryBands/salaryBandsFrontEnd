@@ -30,7 +30,12 @@ function SalaryData () {
     }
 
     const handleSwitch = function (e) {
-        setNegotiateToggle(e.target.checked)
+        setNegotiateToggle(e.target.checked);
+    }
+
+    const handleGender = function (e) {
+        setUserGender(e.label)
+        setUserSubmissionData([...userSubmissionData.filter((submission) => { return submission.gender.toString().toLowerCase().match(regex) && submission.gender.length === userGender.length })])
     }
 
     const genders = [
@@ -50,6 +55,9 @@ function SalaryData () {
         { value: 'two', label: 'Two or more races' },
         { value: 'other', label: 'Other' }
     ]
+
+    const regex = new RegExp(`${userGender.toLocaleLowerCase()}`);
+
 
 
 
@@ -89,7 +97,7 @@ function SalaryData () {
                             </div>
                             <div className="genderContainer">
                                 <label htmlFor="">Gender</label>
-                                <Select options={genders} onChange={(genderType) => setUserGender(genderType.label)}/>
+                                <Select options={genders} onChange={(e) => handleGender(e)}/>
                             </div>
                             <div className="raceContainer">
                                 <label htmlFor="">Race/Ethnicity</label>
@@ -129,6 +137,7 @@ function SalaryData () {
                         </th>
                         <th className='tableHeadContainer years'><p className='tableHeadText'>YoE</p></th>
                         <th className='tableHeadContainer gender'><p className='tableHeadText'>Gender</p></th>
+                        <th className='tableHeadContainer race'><p className='tableHeadText'>Race</p></th>
                         <th className='compensation'>
                             <div className='tableHeadContainer'>
                                 <div><p className='tableHeadText'>Compensation</p></div>
@@ -146,9 +155,9 @@ function SalaryData () {
                             userData.country.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
                             userData.work_arrangement.toString().toLowerCase().includes(searchTerm.toLowerCase())
                         )
-                        .filter((userData) => 
-                            userData.gender.toString().toLowerCase().includes(userGender.toLowerCase())
-                        )
+                        // .filter((userData) => 
+                        //     userData.gender.toString().toLowerCase().match(regex) && userData.gender.length === userGender.length
+                        // )
                         // .filter((userData) => 
                         //     !userData.negotiate_check === negotiateToggle 
                         // )
@@ -169,6 +178,7 @@ function SalaryData () {
                                     </td>
                                     <td>{val.years_of_experience}</td>
                                     <td><span className='genderText'>{val.gender}</span></td>
+                                    <td><span className='raceText'>{val.race}</span></td>
                                     <td>
                                         <div className="salaryNegotiationContainer">
                                             <div className="salaryNumber">${val.salary}</div>

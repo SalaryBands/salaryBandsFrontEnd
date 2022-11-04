@@ -5,6 +5,7 @@ function TipsAndAdvice() {
     
 
     const [userData, setUserData] = useState([])
+    const [searchTerm, setSearchTerm] = useState("")
 
     useEffect(() => {
         axios({
@@ -19,6 +20,10 @@ function TipsAndAdvice() {
         return data.advice_break || data.advice_negotiate
     })
 
+    const handleChange = function (e) {
+        setSearchTerm(e.target.value)
+    }
+
     console.log(filteredData);
     
     return (
@@ -31,7 +36,8 @@ function TipsAndAdvice() {
                     <div className="searchAndFilterContainer">
                         <div className="searchContainer">
                             <label htmlFor="searchAdvice"></label>
-                            <input type="text" name="searchAdvice" placeholder="Search title, city, ect."/>
+                            <input type="text" name="searchAdvice" placeholder="Search title, city, ect." 
+                            value={searchTerm} onChange={handleChange} />
                         </div>
                         <div className="filterContainer">
                             <button className="filterTips">Filters</button>
@@ -45,7 +51,9 @@ function TipsAndAdvice() {
                 <div className="adviceCardContainer">
                     {
                         filteredData
-                        
+                        .filter((userData) => 
+                            userData.job_title.toString().toLowerCase().includes(searchTerm.toLowerCase())
+                        )
                         .reverse().map( (val) => {
                             return(
                                 <div className="adviceCard">
