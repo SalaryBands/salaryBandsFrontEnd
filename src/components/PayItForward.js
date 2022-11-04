@@ -55,8 +55,6 @@ const handleInput = useCallback((e) => {
          }, { headers: {
             'Authorization': tokenAccess
         }})
-        console.log(payItForward.adviceBreak)
-        console.log(payItForward.adviceNegotiate)
         
     }, [submitInfo, payItForward])
 

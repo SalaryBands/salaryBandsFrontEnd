@@ -1,10 +1,15 @@
 import axios from 'axios';
+import Select from 'react-select'
+import Toggle from 'react-toggle' 
 import { useState, useEffect } from 'react';
+import "react-toggle/style.css"
 
 function SalaryData () {
     const [userSubmissionData, setUserSubmissionData] = useState([])
-
     const [searchTerm, setSearchTerm] = useState("")
+    const [advancedFilter, setAdvancedFilter] = useState(false)
+    const [userGender, setUserGender] = useState('')
+    const [negotiateToggle, setNegotiateToggle] = useState(null)
 
     useEffect(() => {
         axios({
@@ -19,6 +24,22 @@ function SalaryData () {
         setSearchTerm(e.target.value)
     }
 
+    const handleClick = function () {
+        setAdvancedFilter(true)
+    }
+
+    const handleSwitch = function (e) {
+        setNegotiateToggle(e.target.checked)
+    }
+
+    const genders = [
+        { value: 'male', label: 'Male' },
+        { value: 'female', label: 'Female' },
+        { value: 'transgender', label: 'Transgender' },
+        { value: 'nonBinary', label: 'Non Binary' },
+        { value: 'prefer', label: 'Prefer not to say' }
+    ]
+
 
     return (
         <div className="wrapper">
@@ -28,8 +49,20 @@ function SalaryData () {
                 <div className="searchContainer">
                     <label htmlFor="search"></label>
                     <input className='searchFilter' type="text" name='search' placeholder='Search title, company, city, ect' value={searchTerm} onChange={handleChange} />
-
-                    <label htmlFor="gender"></label>
+                    <div className="advancedFilterContainer">
+                        <button onClick={handleClick} className='advancedFilter'>Filter</button>
+                        <div className="filterOptionsContainer">
+                            <label htmlFor="">What is your gender?</label>
+                            <Select options={genders} onChange={(genderType) => setUserGender(genderType.label)} required />
+                            <label>
+                                <Toggle
+                                    defaultChecked={negotiateToggle}
+                                    icons={false}
+                                    onChange={handleSwitch} />
+                                    <span>Negotiated</span>
+                            </label>
+                        </div>
+                    </div>
 
                 </div>
                 <div className="recentData">
@@ -75,6 +108,12 @@ function SalaryData () {
                             userData.company.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
                             userData.country.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
                             userData.work_arrangement.toString().toLowerCase().includes(searchTerm.toLowerCase())
+                        )
+                        .filter((userData) => 
+                            userData.gender.toString().toLowerCase().includes(userGender.toLowerCase())
+                        )
+                        .filter((userData) => 
+                            !userData.negotiate_check === negotiateToggle 
                         )
                         .reverse().map((val, key) => {
                             return (
