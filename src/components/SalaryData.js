@@ -2,6 +2,7 @@ import axios from "axios";
 import Select from "react-select";
 import Toggle from "react-toggle";
 import { useState, useEffect } from "react";
+import { Country, State } from "country-state-city";
 import "react-toggle/style.css";
 
 function SalaryData() {
@@ -57,6 +58,17 @@ function SalaryData() {
     { value: "two", label: "Two or more races" },
     { value: "other", label: "Other" },
   ];
+
+  const checkCountry = (countryCode) => {
+    let myCountry = Country.getAllCountries().filter(
+      (country) => country.isoCode === countryCode
+    );
+    if (myCountry.length === 0) {
+      return countryCode;
+    } else {
+      return myCountry[0].name;
+    }
+  };
 
   return (
     <div className="wrapper">
@@ -253,7 +265,9 @@ function SalaryData() {
                     <td>
                       <div className="">
                         <div className="topText">{val.job_title}</div>
-                        <div className="bottomText">{val.country}</div>
+                        <div className="bottomText">
+                          {val.city}, {checkCountry(val.country)}
+                        </div>
                       </div>
                     </td>
                     <td>
