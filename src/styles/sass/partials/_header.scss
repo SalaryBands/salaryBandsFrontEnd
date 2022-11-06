@@ -2,6 +2,7 @@ nav {
     padding: 15px 0px 15px 0px; 
     border-bottom: 1px solid #F2F4F7;
     ul {
+        padding-left: 0px; 
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -42,5 +43,15 @@ nav {
         .salarySubmit {
             margin-left: auto;
         }
+    }
+}
+
+.logo {
+    .logoText {
+        text-transform: lowercase;
+        font-family: 'Changa', sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        color: #164C63;
     }
 }

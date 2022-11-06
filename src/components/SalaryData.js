@@ -39,6 +39,8 @@ function SalaryData() {
     setDisabilityToggle(e.target.checked);
   };
 
+  console.log(userSubmissionData);
+
   const genders = [
     { value: "all", label: "All" },
     { value: "male", label: "Male" },

@@ -7,13 +7,13 @@ function Header() {
         <nav>
             <ul>
                 <li className='logo'>
+                    <Link to={'/'} className='logoText'>salarybands</Link>
                     <div className='logoImageContainer'>
                         <img src={Logo} alt="" />
                     </div>
-                    <Link to={'/'}><img src={LogoText} alt=""/></Link>
                 </li>
                 <li className='headerLinks'>
-                    <Link to={'/Salaries'}>Salaries</Link>
+                    <Link to={'/SalaryData'}>Salaries</Link>
                 </li>
                 <li className='headerLinks'>
                     <Link to={'/TipsAndAdvice'}>Tips & Advice</Link>

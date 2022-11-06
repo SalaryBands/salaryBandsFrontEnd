@@ -205,7 +205,7 @@ function ProfessionalDetails() {
                     </div>
                     <div className="titleAndLocationContainer">
                       <div className="locationContainer countryStateCityContainer largerWidth">
-                        <label htmlFor="country" className="locationSelect">Which country do you work in?</label>
+                        <label htmlFor="country" className="locationSelect">Where do you work?</label>
                         <select
                           className="locationInputs"
                           placeholder="Choose Country"
@@ -225,7 +225,7 @@ function ProfessionalDetails() {
                         </select>
                       </div>
                       <div className="locationContainer countryStateCityContainer middle">
-                        <label htmlFor="state" className="locationSelect">Which state do you work in?</label>
+                        <label htmlFor="state" className="locationSelect stateLabel">Select your state</label>
                         <select
                           className="locationInputs"
                           placeholder="State"
@@ -245,7 +245,7 @@ function ProfessionalDetails() {
                         </select>
                       </div>
                       <div className="locationContainer countryStateCityContainer">
-                        <label htmlFor="city" className="locationSelect">Which city do you work in?</label>
+                        <label htmlFor="city" className="locationSelect stateLabel">Select your city</label>
                         <select
                           className="locationInputs"
                           placeholder="City"
