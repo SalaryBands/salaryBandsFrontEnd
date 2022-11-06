@@ -18,6 +18,21 @@
             height: 90%;
             .userPathwayComponentContainer {
                 height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .detailsTextContainer {
+                    h2 {
+                        font-weight: 600;
+                        font-size: 36px;
+                        line-height: 44px;
+                    }
+                    p {
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }
                 .professionalDetails {
                     display: flex; 
                     flex-direction: column;
@@ -35,8 +50,10 @@
                     .orContainer {
                         width: 100%;
                         text-align: center;
-                        text-transform: uppercase;
                         margin: 20px 0px;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 28px;
                     }
                 }
                 .contactContainer {
@@ -51,6 +68,11 @@
             }
         }  
     }
+}
+
+
+.success {
+    color: #039855; 
 }
 
 

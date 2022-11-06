@@ -820,6 +820,19 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 }
 .userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .detailsTextContainer h2 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+}
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .detailsTextContainer p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
 }
 .userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .professionalDetails {
   display: flex;
@@ -839,8 +852,10 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 .userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .professionalDetails .orContainer {
   width: 100%;
   text-align: center;
-  text-transform: uppercase;
   margin: 20px 0px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
 }
 .userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .contactContainer {
   height: 25%;
@@ -850,6 +865,10 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 }
 .userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .contactContainer .contactEmail {
   align-self: end;
+}
+
+.success {
+  color: #039855;
 }
 
 .professionalDetailsContainer {
@@ -879,7 +898,7 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .professionalDetails .companyAndLocationContainer .companyContainer {
   display: flex;
@@ -897,12 +916,12 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 .professionalDetails .jobTitleContainer {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .professionalDetails .salaryQuestionContainer {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   width: 100%;
   justify-content: space-between;
 }
@@ -920,7 +939,7 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .professionalDetails .yearsAndWorkContainer .yearsContainer {
   display: flex;
@@ -935,7 +954,7 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 .professionalDetails .negotiateContainer {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .professionalDetails .negotiateContainer .negotiateQuestionContainer {
   display: flex;
@@ -975,13 +994,12 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 .professionalDetails .titleAndLocationContainer .locationContainer {
   display: flex;
   flex-direction: column;
-  width: 50%;
 }
 .professionalDetails .titleAndLocationContainer .jobTitleContainer {
   display: flex;
   flex-direction: column;
-  width: 45%;
-  margin-bottom: 20px;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 .detailsCard .contactContainer {
@@ -991,6 +1009,38 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 .professionalDetailsCardandImageContainer {
   display: flex;
   width: 100%;
+}
+
+.countryStateCityContainer {
+  margin-bottom: 15px;
+}
+
+.locationInputs {
+  background: #FFFFFF;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.locationSelect {
+  margin-bottom: 5px;
+}
+
+.detailsTextContainer h2 {
+  margin: 0;
+}
+
+.countryStateCityContainer {
+  width: calc(33.3333333333% - 20px);
+}
+
+.middle {
+  margin: 0px 10px;
+}
+
+.largerWidth {
+  width: 35%;
 }
 
 .payItForwardFormContainer form {
@@ -1019,6 +1069,20 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+}
+
+.payItForwardTextContainer .optionalText {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: #98A2B3;
+}
+.payItForwardTextContainer p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #475467;
+  margin-bottom: 25px;
 }
 
 .userCard {
@@ -1067,6 +1131,10 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.css-3iigni-container {
+  margin-top: 5px;
 }
 
 .tipsAndAdviceContainer {

@@ -204,31 +204,17 @@ function ProfessionalDetails() {
                       </div>
                     </div>
                     <div className="titleAndLocationContainer">
-                      <div className="jobTitleContainer">
-                        <label htmlFor="title">What is your job title?</label>
-                        <CreatableSelect
-                          options={jobTitles}
-                          onChange={(userTitle) =>
-                            setUserJobTitle(userTitle.label)
-                          }
-                          type="text"
-                          name="title"
-                          placeholder="Type or Select a Title"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="titleAndLocationContainer">
-                      <div className="locationContainer">
-                        <label htmlFor="country">Where do you work?</label>
+                      <div className="locationContainer countryStateCityContainer largerWidth">
+                        <label htmlFor="country" className="locationSelect">Which country do you work in?</label>
                         <select
-                          placeholder="Country"
+                          className="locationInputs"
+                          placeholder="Choose Country"
                           name="country"
                           value={selectedCountry}
                           onChange={(e) => setSelectedCountry(e.target.value)}
                           onInput={handleInput}
                         >
-                          <option>--Choose Country--</option>
+                          <option><p className="locationInputText">Choose Country</p></option>
                           {Country.getAllCountries().map((value, key) => {
                             return (
                               <option value={value.isoCode} key={key}>
@@ -238,16 +224,17 @@ function ProfessionalDetails() {
                           })}
                         </select>
                       </div>
-                      <div className="locationContainer">
-                        <label htmlFor="state">Where do you work?</label>
+                      <div className="locationContainer countryStateCityContainer middle">
+                        <label htmlFor="state" className="locationSelect">Which state do you work in?</label>
                         <select
+                          className="locationInputs"
                           placeholder="State"
                           name="state"
                           value={selectedState}
                           onChange={(e) => setSelectedState(e.target.value)}
                           onInput={handleInput}
                         >
-                          <option>--Choose State--</option>
+                          <option>Choose State</option>
                           {availableState.map((e, key) => {
                             return (
                               <option value={e.isoCode} key={key}>
@@ -257,16 +244,17 @@ function ProfessionalDetails() {
                           })}
                         </select>
                       </div>
-                      <div className="locationContainer">
-                        <label htmlFor="city">Where do you work?</label>
+                      <div className="locationContainer countryStateCityContainer">
+                        <label htmlFor="city" className="locationSelect">Which city do you work in?</label>
                         <select
+                          className="locationInputs"
                           placeholder="City"
                           name="city"
                           value={selectedCity}
                           onChange={(e) => setSelectedCity(e.target.value)}
                           onInput={handleInput}
                         >
-                          <option>--Choose City--</option>
+                          <option>Choose City</option>
                           {availableCities.map((e, key) => {
                             return (
                               <option value={e.name} key={key}>
@@ -275,6 +263,21 @@ function ProfessionalDetails() {
                             );
                           })}
                         </select>
+                      </div>
+                    </div>
+
+                    <div className="titleAndLocationContainer">
+                      <div className="jobTitleContainer">
+                        <label htmlFor="title" className="locationSelect">What is your job title?</label>
+                        <CreatableSelect
+                          options={jobTitles}
+                          onChange={(userTitle) =>
+                            setUserJobTitle(userTitle.label)
+                          }
+                          type="text"
+                          name="title"
+                          placeholder="Type or Select a Title"
+                        />
                       </div>
                     </div>
 
@@ -366,14 +369,6 @@ function ProfessionalDetails() {
                       Next Step
                     </button>
                   </form>
-                </div>
-                <div className="contactContainer">
-                  <div className="salaryBandTrademark">
-                    <p>&copy; SalaryBands 2022</p>
-                  </div>
-                  <div className="contactEmail">
-                    <p>help@salarybands.com</p>
-                  </div>
                 </div>
               </div>
             </div>

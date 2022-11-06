@@ -64,10 +64,9 @@ const handleInput = useCallback((e) => {
         {!submitInfo ? (
           <>
             <div className="payItForwardTextContainer">
-              <h2>Pay it foward</h2>
+              <h2>Pay it foward <span className="optionalText">(optional)</span></h2>
               <p>
-                You can provide as much information as you feel comfortable
-                sharing.
+                By sharing your personal advice and tips, you can help someone set their own salary expectations and raise their negotiating power. You can provide as much or as little information as you feel fit.
               </p>
             </div>
 

@@ -12,12 +12,6 @@ function EmailVerification() {
 
     const emailRef = useRef(null)
 
-    
-    // const handleInput = function(e) {
-    //     setUserEmail(e.target.value)
-    //     console.log(userEmail);
-    // }
-
     console.log(emailRef);
     
     const setTrue = useCallback( (e) => {
@@ -77,7 +71,6 @@ function EmailVerification() {
                             <img src={verifyEmail} alt="" />
                         </div>
                         <div className="infoCardTextContainer">
-                            <h3>Lorem ipsum dolor sit amet</h3>
                             <p>By verifying your email, you help ensure that SalaryBands provides an accurate and comprehensive database worth trusting.</p>
                         </div>
                     </>
@@ -87,10 +80,6 @@ function EmailVerification() {
                             <div className="infoImgContainer">
                                 <img src={emailSuccess} alt="" />
                             </div>
-                            <div className="infoCardTextContainer">
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet modi nulla rem magni explicabo deserunt, et unde in ullam necessitatibus eius ipsa esse autem sunt natus sapiente libero dolorem labore!</p>
-                            </div>       
                         </>
 
                     }

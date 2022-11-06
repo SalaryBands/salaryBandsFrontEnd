@@ -28,7 +28,7 @@ function UserPathway () {
                         <div className='userPathwayComponentContainer'>
                             <div className="detailsTextContainer">
                                 <h2>Help build an accurate database</h2>
-                                <p>Upload a PDF of your OFFER LETTER to get <span>verified</span>.</p>
+                                <p>Upload a PDF of your OFFER LETTER to get <span className='success'>verified</span>.</p>
                             </div>
                             <div className="professionalDetails">
                                 <form action="#">
