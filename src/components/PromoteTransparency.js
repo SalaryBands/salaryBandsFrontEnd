@@ -106,14 +106,14 @@ function PromoteTransparency (props) {
                                 <Select options={disabilities} isMulti onChange={handleMultiDisability} isDisabled={inputDisabled} value={disabilities.filter(obj => userDisability.includes(obj.label))} />
                             </div>
 
-                            <button type="submit">Next Step</button>
+                            <button type="submit">Last Step</button>
                         </form>
                     </div>
                 </div>
-                <div className="contactContainer">
+                {/* <div className="contactContainer">
                     <div className="salaryBandTrademark"><p>&copy; SalaryBands 2022</p></div>
                     <div className="contactEmail"><p>help@salarybands.com</p></div>
-                </div>
+                </div> */}
                 </div>
 
                 <div className="infoCard">
