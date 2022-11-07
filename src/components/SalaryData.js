@@ -119,7 +119,7 @@ function SalaryData() {
                     <label htmlFor="">Gender</label>
                     <Select
                       options={genders}
-                      onChange={(e) => setUserGender(e.value)}
+                      onChange={(e) => setUserGender(e.label)}
                     />
                   </div>
                   <div className="raceContainer">
@@ -219,7 +219,7 @@ function SalaryData() {
                     .includes(searchTerm.toLowerCase())
               )
               .filter((userData) => {
-                if (userGender === "" || userGender === "all") {
+                if (userGender === "" || userGender === "All") {
                   return true;
                 } else {
                   console.log(userGender);
