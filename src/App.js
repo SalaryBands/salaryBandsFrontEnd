@@ -9,6 +9,8 @@ import Home from './pages/Home';
 import URLVerification from './components/URLVerification';
 import TipsAndAdvice from './pages/TipsAndAdvice';
 import SalaryData from './components/SalaryData';
+import AllData from './pages/AllData';
+ 
 
 
 
@@ -40,8 +42,8 @@ function App() {
           />
 
         <Route
-          path="/Salaries"
-          element={<SalaryData />}
+          path="/AllData"
+          element={<AllData />}
         />
         
         <Route

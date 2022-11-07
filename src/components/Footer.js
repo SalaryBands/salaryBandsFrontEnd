@@ -15,13 +15,13 @@ function Footer() {
                             <nav className='footerNav'>
                                 <ul>
                                     <li>
-                                        <Link className='footerNavLinks'>Home</Link>
+                                        <Link to={'/'} className='footerNavLinks'>Home</Link>
                                     </li>
                                     <li>
-                                        <Link className='footerNavLinks'>Salaries</Link>
+                                        <Link to={'/AllData'} className='footerNavLinks'>Salaries</Link>
                                     </li>
                                     <li>
-                                        <Link className='footerNavLinks'>Tips & Advice</Link>
+                                        <Link to={'TipsAndAdvice'} className='footerNavLinks'>Tips & Advice</Link>
                                     </li>
                                     <li>
                                         <Link className='footerNavLinks'>Resources</Link>

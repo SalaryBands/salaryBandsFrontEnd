@@ -1,4 +1,7 @@
 import axios from "axios";
+import Toggle from "react-toggle";
+import Select from 'react-select';
+import { FiSearch } from 'react-icons/fi';  
 import {useState, useEffect} from 'react';
 
 function TipsAndAdvice() {
@@ -6,6 +9,9 @@ function TipsAndAdvice() {
 
     const [userData, setUserData] = useState([])
     const [searchTerm, setSearchTerm] = useState("")
+    const [advancedFilter, setAdvancedFilter] = useState(false);
+    const [userGender, setUserGender] = useState("");
+    const [userRace, setUserRace] = useState("");
 
     useEffect(() => {
         axios({
@@ -24,7 +30,31 @@ function TipsAndAdvice() {
         setSearchTerm(e.target.value)
     }
 
+    const handleClick = function () {
+        setAdvancedFilter(!advancedFilter);
+    };
+
     console.log(filteredData);
+
+    const races = [
+        { value: "all", label: "All" },
+        { value: "caucasian", label: "Caucasian" },
+        { value: "native", label: "Native American or Alaska Native" },
+        { value: "black", label: "Black or African American" },
+        { value: "asian", label: "Asian" },
+        { value: "latino", label: "Hispanic or Latino" },
+        { value: "two", label: "Two or more races" },
+        { value: "other", label: "Other" },
+    ];
+
+    const genders = [
+        { value: "all", label: "All" },
+        { value: "male", label: "Male" },
+        { value: "female", label: "Female" },
+        { value: "transgender", label: "Transgender" },
+        { value: "nonBinary", label: "Non Binary" },
+        { value: "prefer", label: "Prefer not to say" },
+    ];
     
     return (
         <div className="wrapper">
@@ -32,20 +62,53 @@ function TipsAndAdvice() {
                 <div className="tipsTitleContainer">
                     <h2>Learn from others who have successfully negotiated their salary and made it in tech.</h2>
                 </div>
-                <div className="tipsSearchFilterResultsContainer">
-                    <div className="searchAndFilterContainer">
-                        <div className="searchContainer">
-                            <label htmlFor="searchAdvice"></label>
-                            <input type="text" name="searchAdvice" placeholder="Search title, city, ect." 
-                            value={searchTerm} onChange={handleChange} />
+                <div className="sRContainer">
+                    <div className="searchContainer">
+                        <div className="iconContainer">
+                            <FiSearch />
                         </div>
-                        <div className="filterContainer">
-                            <button className="filterTips">Filter</button>
+                        <label htmlFor="search"></label>
+                        <input
+                            className="searchFilter"
+                            type="text"
+                            name="search"
+                            placeholder="Search title, company, city, ect"
+                            value={searchTerm}
+                            onChange={handleChange}
+                        />
+                        <div className="advancedFilterContainer">
+                            <button onClick={handleClick} className="advancedFilter">
+                                Filter
+                            </button>
+                            {advancedFilter ? (
+                                <div className="filterOptionsContainer">
+                                    <div className="genderContainer">
+                                        <label htmlFor="">Gender</label>
+                                        <Select
+                                            options={genders}
+                                            onChange={(e) => setUserGender(e.label)}
+                                        />
+                                    </div>
+                                    <div className="raceContainer">
+                                        <label htmlFor="">Race/Ethnicity</label>
+                                        <Select
+                                            options={races}
+                                            onChange={(raceType) => setUserRace(raceType.label)}
+                                        />
+                                    </div>
+                                </div>
+                            ) : null}
                         </div>
                     </div>
-                    <div className="recentDataContainer">
-                        <h4>Recent Data</h4>
-                        <p><span className="totalSubmissions">{filteredData.length} total submissions</span></p>
+                    <div className="recentData">
+                        <div className="recentDataTextContainer">
+                            <h3 className="recentDataText">Recent Data</h3>
+                            <p>
+                                <span className="totalSubmissions">
+                                    {filteredData.length} total submissions
+                                </span>
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div className="adviceCardContainer">
@@ -54,6 +117,34 @@ function TipsAndAdvice() {
                         .filter((userData) => 
                             userData.job_title.toString().toLowerCase().includes(searchTerm.toLowerCase())
                         )
+                            .filter((userData) => {
+                                if (userGender === "" || userGender === "All") {
+                                    return true;
+                                } else {
+                                    console.log(userGender);
+                                    return (
+                                        userData.gender
+                                            .toString()
+                                            .toLowerCase()
+                                            .includes(userGender.toLowerCase()) &&
+                                        userData.gender.length === userGender.length
+                                    );
+                                }
+                            })
+                            .filter((userData) => {
+                                console.log(userData);
+                                if (userRace === "" || userRace === "All") {
+                                    return true;
+                                } else {
+                                    return (
+                                        userData.race
+                                            .toString()
+                                            .toLowerCase()
+                                            .includes(userRace.toLowerCase()) &&
+                                        userData.race.length === userRace.length
+                                    );
+                                }
+                            })
                         .reverse().map( (val) => {
                             return(
                                 <div className="adviceCard">

@@ -3,6 +3,7 @@ import Select from "react-select";
 import Toggle from "react-toggle";
 import { useState, useEffect } from "react";
 import { Country, State } from "country-state-city";
+import { FiSearch } from 'react-icons/fi'; 
 import "react-toggle/style.css";
 
 function SalaryData() {
@@ -40,6 +41,7 @@ function SalaryData() {
   };
 
   console.log(userSubmissionData);
+  
 
   const genders = [
     { value: "all", label: "All" },
@@ -77,6 +79,9 @@ function SalaryData() {
       <div className="userSubmissionTable" id="userSubmissionTable">
         <div className="searchAndRecentDataContainer">
           <div className="searchContainer">
+            <div className="iconContainer">
+              <FiSearch />
+            </div>
             <label htmlFor="search"></label>
             <input
               className="searchFilter"

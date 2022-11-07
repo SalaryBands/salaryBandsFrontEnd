@@ -459,15 +459,22 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   width: 50%;
   align-self: center;
   display: flex;
+  position: relative;
 }
 .userSubmissionTable .searchAndRecentDataContainer .searchContainer .searchFilter {
-  padding: 10px 14px;
+  padding: 10px 35px;
   border: 1px solid #D0D5DD;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   font-size: 14px;
   width: 70%;
   margin-right: 10px;
+}
+.userSubmissionTable .searchAndRecentDataContainer .searchContainer .iconContainer {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #667085;
 }
 .userSubmissionTable .searchAndRecentDataContainer .searchContainer .advancedFilterContainer {
   width: 30%;
@@ -1201,58 +1208,6 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   letter-spacing: -0.02em;
   color: #101828;
 }
-.tipsAndAdviceContainer .tipsSearchFilterResultsContainer {
-  display: flex;
-}
-.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .searchAndFilterContainer {
-  display: flex;
-  width: 50%;
-  align-items: center;
-}
-.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .searchAndFilterContainer .searchContainer {
-  width: 70%;
-}
-.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .searchAndFilterContainer .searchContainer input {
-  background: #FFFFFF;
-  border: 1px solid #D0D5DD;
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-  border-radius: 8px;
-  padding: 10px 14px;
-  width: 100%;
-}
-.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .searchAndFilterContainer .filterContainer {
-  width: 30%;
-  margin-left: 50px;
-}
-.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .searchAndFilterContainer .filterContainer .filterTips {
-  padding: 10px 14px;
-  background: #FFFFFF;
-  border: 1px solid #D0D5DD;
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  color: #344054;
-  width: 100%;
-}
-.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .recentDataContainer {
-  display: flex;
-  align-items: center;
-  width: 50%;
-  justify-content: flex-end;
-}
-.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .recentDataContainer h4 {
-  margin: 0px 15px 0px 0px;
-}
-.tipsAndAdviceContainer .tipsSearchFilterResultsContainer .recentDataContainer .totalSubmissions {
-  padding: 2px 8px;
-  background-color: #ECFDFF;
-  color: #0E7090;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
-  text-align: center;
-}
 
 .adviceCardContainer {
   display: flex;
@@ -1326,6 +1281,223 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   font-size: 16px;
   line-height: 24px;
   color: #475467;
+}
+
+.sRContainer {
+  display: flex;
+  padding: 14px;
+}
+.sRContainer .searchContainer {
+  width: 50%;
+  align-self: center;
+  display: flex;
+  position: relative;
+}
+.sRContainer .searchContainer .searchFilter {
+  padding: 10px 35px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  font-size: 14px;
+  width: 70%;
+  margin-right: 10px;
+}
+.sRContainer .searchContainer .iconContainer {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #667085;
+}
+.sRContainer .searchContainer .advancedFilterContainer {
+  width: 30%;
+  background: #FFFFFF;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  width: 30%;
+  position: relative;
+}
+.sRContainer .searchContainer .advancedFilterContainer .advancedFilter {
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: #344054;
+  width: 100%;
+  box-shadow: none;
+  padding: 0;
+}
+.sRContainer .searchContainer .advancedFilterContainer .filterOptionsContainer {
+  position: absolute;
+  background: #FFFFFF;
+  border: 1px solid #D0D5DD;
+  border-top: none;
+  padding: 10px 14px;
+  width: 101%;
+  left: -1px;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+.sRContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .salaryFilters {
+  display: flex;
+  margin-bottom: 20px;
+}
+.sRContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .salaryFilters .toggleSpan {
+  margin-left: 10px;
+  align-self: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #344054;
+}
+.sRContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .genderContainer .css-b62m3t-container {
+  margin: 10px 0px 20px 0px;
+}
+.sRContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .raceContainer .css-b62m3t-container {
+  margin: 10px 0px 20px 0px;
+}
+.sRContainer .recentData {
+  width: 50%;
+}
+.sRContainer .recentData .recentDataTextContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.sRContainer .recentData .recentDataTextContainer .recentDataText {
+  margin: 0px 15px 0px 0px;
+}
+.sRContainer .recentData .recentDataTextContainer .totalSubmissions {
+  padding: 2px 8px;
+  background-color: #ECFDFF;
+  color: #0E7090;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.salaryTitleContainer {
+  display: flex;
+  width: 50%;
+}
+.salaryTitleContainer h2 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+  color: #101828;
+  margin-bottom: 0px;
+}
+
+.searchAndRecentDataContainer {
+  display: flex;
+  padding: 14px;
+}
+.searchAndRecentDataContainer .searchContainer {
+  width: 50%;
+  align-self: center;
+  display: flex;
+}
+.searchAndRecentDataContainer .searchContainer .searchFilter {
+  padding: 10px 14px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  font-size: 14px;
+  width: 70%;
+  margin-right: 10px;
+}
+.searchAndRecentDataContainer .searchContainer .advancedFilterContainer {
+  width: 30%;
+  background: #FFFFFF;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  width: 30%;
+  position: relative;
+}
+.searchAndRecentDataContainer .searchContainer .advancedFilterContainer .advancedFilter {
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: #344054;
+  width: 100%;
+  box-shadow: none;
+  padding: 0;
+}
+.searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer {
+  position: absolute;
+  background: #FFFFFF;
+  border: 1px solid #D0D5DD;
+  border-top: none;
+  padding: 10px 14px;
+  width: 101%;
+  left: -1px;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+.searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .salaryFilters {
+  display: flex;
+  margin-bottom: 20px;
+}
+.searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .salaryFilters .toggleSpan {
+  margin-left: 10px;
+  align-self: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #344054;
+}
+.searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .genderContainer .css-b62m3t-container {
+  margin: 10px 0px 20px 0px;
+}
+.searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .raceContainer .css-b62m3t-container {
+  margin: 10px 0px 20px 0px;
+}
+.searchAndRecentDataContainer .recentData {
+  width: 50%;
+}
+.searchAndRecentDataContainer .recentData .recentDataTextContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.searchAndRecentDataContainer .recentData .recentDataTextContainer .recentDataText {
+  margin: 0px 15px 0px 0px;
+}
+.searchAndRecentDataContainer .recentData .recentDataTextContainer .totalSubmissions {
+  padding: 2px 8px;
+  background-color: #ECFDFF;
+  color: #0E7090;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+.searchAndRecentDataContainer .recentData .paidWorthContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.searchAndRecentDataContainer .recentData .paidWorthContainer .paidWorth {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #475467;
+  margin: 0;
 }
 
 .finishContainer .finishTextContainer {
