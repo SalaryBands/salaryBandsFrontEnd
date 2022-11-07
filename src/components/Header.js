@@ -13,7 +13,7 @@ function Header() {
                     </div>
                 </li>
                 <li className='headerLinks'>
-                    <Link to={'/SalaryData'}>Salaries</Link>
+                    <Link to={'/Salaries'}>Salaries</Link>
                 </li>
                 <li className='headerLinks'>
                     <Link to={'/TipsAndAdvice'}>Tips & Advice</Link>
