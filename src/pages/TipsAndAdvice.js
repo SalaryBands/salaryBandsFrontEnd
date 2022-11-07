@@ -40,7 +40,7 @@ function TipsAndAdvice() {
                             value={searchTerm} onChange={handleChange} />
                         </div>
                         <div className="filterContainer">
-                            <button className="filterTips">Filters</button>
+                            <button className="filterTips">Filter</button>
                         </div>
                     </div>
                     <div className="recentDataContainer">

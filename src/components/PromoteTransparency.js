@@ -58,7 +58,7 @@ function PromoteTransparency (props) {
         { value: 'dyscalculia', label: 'Dyscalculia' },
         { value: 'fasd', label: 'FASD' },
         { value: 'hyperlexia', label: 'Hyperlexia' },
-        { value: 'ocd', label: 'Obsessive-compulsive disorder (OCD' },
+        { value: 'ocd', label: 'Obsessive-compulsive disorder (OCD)' },
         { value: 'tourettes', label: 'Tourettes' },
         { value: 'other', label: 'Other' },
         { value: 'prefer', label: 'Prefer not to say' },

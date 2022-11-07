@@ -1233,6 +1233,7 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   font-weight: 600;
   font-size: 14px;
   color: #344054;
+  width: 100%;
 }
 .tipsAndAdviceContainer .tipsSearchFilterResultsContainer .recentDataContainer {
   display: flex;
