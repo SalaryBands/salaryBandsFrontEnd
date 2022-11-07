@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
 import PromoteTransparency from "./PromoteTransparency";
@@ -364,10 +365,17 @@ function ProfessionalDetails() {
                         />
                       </div>
                     </div>
+                    <div className="nextAndBackContainer">
+                      <div className="backContainer">
+                        <Link to={'/'} className="backButton">Back</Link>
+                      </div>
+                      <div className="nextContainer">
+                        <button type="submit" className="verifyButton">
+                          Next Step
+                        </button>
+                      </div>
 
-                    <button type="submit" className="verifyButton">
-                      Next Step
-                    </button>
+                    </div>
                   </form>
                 </div>
               </div>

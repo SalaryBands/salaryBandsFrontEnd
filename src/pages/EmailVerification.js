@@ -42,7 +42,7 @@ function EmailVerification() {
                         <>
                         <div className="emailInputTextContainer">
                             <h2>Verify your work email</h2>
-                            <p>Your work email is <span>only</span> used for verification.</p>
+                            <p>In order to submit your salary, you need to confirm your work email. Your work email is <span>only</span> used for verification</p>
                         </div>
                         <div className="formContainer">
                             <form onSubmit={setTrue} action="#">
@@ -71,6 +71,7 @@ function EmailVerification() {
                             <img src={verifyEmail} alt="" />
                         </div>
                         <div className="infoCardTextContainer">
+                            <h3>Salaries published are verified for accuracy and correctness</h3>
                             <p>By verifying your email, you help ensure that SalaryBands provides an accurate and comprehensive database worth trusting.</p>
                         </div>
                     </>

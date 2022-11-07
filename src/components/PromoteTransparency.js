@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { Link } from 'react-router-dom';
 import Select from 'react-select'
 import PayItForward from './PayItForward';
 import MagLetter from '../assets/MagLetter.png';
@@ -106,7 +107,16 @@ function PromoteTransparency (props) {
                                 <Select options={disabilities} isMulti onChange={handleMultiDisability} isDisabled={inputDisabled} value={disabilities.filter(obj => userDisability.includes(obj.label))} />
                             </div>
 
-                            <button type="submit">Last Step</button>
+                            <div className="nextAndBackContainer">
+                                <div className="backContainer">
+                                    <Link className="backButton">Back</Link>
+                                </div>
+                                <div className="nextContainer">
+                                    <button type="submit" className="verifyButton">
+                                        Next Step
+                                    </button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

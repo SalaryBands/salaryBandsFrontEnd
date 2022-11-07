@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Finish from "./Finish";
 import Ladder from "../assets/ladder.png";
@@ -96,7 +97,16 @@ const handleInput = useCallback((e) => {
                   />
                 </div>
 
-                <button type="submit">Submit</button>
+                <div className="nextAndBackContainer">
+                    <div className="backContainer">
+                      <Link to={'/'} className="backButton">Back</Link>
+                    </div>
+                    <div className="nextContainer">
+                      <button type="submit" className="verifyButton">
+                        Submit
+                      </button>
+                    </div>
+                </div>
               </form>
             </div>
           </>
