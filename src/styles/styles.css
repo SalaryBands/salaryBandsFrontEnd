@@ -1257,6 +1257,7 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   display: flex;
   width: 100%;
   margin: 50px 0px;
+  flex-wrap: wrap;
 }
 .adviceCardContainer .adviceCard {
   background: #F9FAFB;
@@ -1266,6 +1267,7 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   width: calc(33.3333333333% - 15px);
   padding: 20px;
   margin-right: 15px;
+  height: 100%;
 }
 .adviceCardContainer .adviceCard .professionalDetailsContainer {
   display: flex;
