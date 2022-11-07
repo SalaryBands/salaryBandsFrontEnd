@@ -126,7 +126,7 @@ function SalaryData() {
                     <label htmlFor="">Race/Ethnicity</label>
                     <Select
                       options={races}
-                      onChange={(raceType) => setUserRace(raceType.value)}
+                      onChange={(raceType) => setUserRace(raceType.label)}
                     />
                   </div>
                 </div>
@@ -233,7 +233,8 @@ function SalaryData() {
                 }
               })
               .filter((userData) => {
-                if (userRace === "" || userRace === "all") {
+                console.log(userData);
+                if (userRace === "" || userRace === "All") {
                   return true;
                 } else {
                   return (
