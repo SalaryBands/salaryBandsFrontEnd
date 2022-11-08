@@ -9,10 +9,16 @@ function EmailVerification() {
 
     const [errors, setErrors] = useState({email: ''}); 
     const [userVerify, setUserVerify] = useState(false)
+    const [userError, setUserError] = useState(false)
 
     const emailRef = useRef(null)
 
     console.log(emailRef);
+
+    let errorStyling = {
+        border: '1px solid #F04438',
+        marginBottom: '5px'
+    }
     
     const setTrue = useCallback( (e) => {
         e.preventDefault();
@@ -29,7 +35,13 @@ function EmailVerification() {
 
         fetch("https://salarybandsapi.onrender.com/authentication/create", requestOptions)
             .then(response => response.text())
-            .then((result) => { setUserVerify(true); console.log('hello')})
+            .then((result) => { if(result) {
+                setUserVerify(false)
+                setUserError(true)
+            } else {
+                setUserVerify(true)
+            }})
+                
             .catch((error) => { setUserVerify(false); console.log(error)});
 
     }, [userVerify])
@@ -47,7 +59,20 @@ function EmailVerification() {
                         <div className="formContainer">
                             <form onSubmit={setTrue} action="#">
                                 <label htmlFor="workEmail">Work Email*</label>
-                                <input ref={emailRef} type="email" placeholder='Enter your work email' name="workEmail"/>
+                                <input ref={emailRef} type="email" placeholder='Enter your work email' name="workEmail"
+                                style={ 
+                                userError ? errorStyling : undefined
+                                }
+                                />
+                                {
+                                    userError ?
+                                        <div>
+                                            <p className='errorText'>This domain is not allowed to access submission features.</p>
+                                        </div>
+                                    
+
+                                    : null
+                                }
                                 <button type="submit" className='verifyButton'>Verify</button>
                             </form>
                         </div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Select from 'react-select'
 import PayItForward from './PayItForward';
 import MagLetter from '../assets/MagLetter.png';
+import ProfessionalDetails from './ProfessionalDetails';
 
 
 
@@ -10,6 +11,7 @@ import MagLetter from '../assets/MagLetter.png';
 function PromoteTransparency (props) {
 
     const [nextStep, setNextStep] = useState(false)
+    const [back, setBack] = useState(false)
     const [userGender, setUserGender] = useState({})
     const [userRace, setUserRace] = useState({})
     const [userDisability, setUserDisability] = useState([])
@@ -27,6 +29,11 @@ function PromoteTransparency (props) {
 
     const handleMultiDisability = (e) => {
         setUserDisability(Array.isArray(e) ? e.map(x => x.label) : []);
+    }
+
+    const handleBack = function (e) {
+        e.preventDefault()
+        setBack(!back)
     }
 
     console.log(userDisability)
@@ -108,8 +115,8 @@ function PromoteTransparency (props) {
                             </div>
 
                             <div className="nextAndBackContainer">
-                                <div className="backContainer">
-                                    <Link className="backButton">Back</Link>
+                                <div className='backContainer'>
+                                    <button type="button" className='backButton' onClick={handleBack}>Back</button>
                                 </div>
                                 <div className="nextContainer">
                                     <button type="submit" className="verifyButton">
@@ -151,8 +158,9 @@ function PromoteTransparency (props) {
                 userR={userRace}/>
 
                 : null
+                
+
             }
-        
         </>
     )
 }

@@ -367,7 +367,7 @@ function ProfessionalDetails() {
                     </div>
                     <div className="nextAndBackContainer">
                       <div className="backContainer">
-                        <Link to={'/'} className="backButton">Back</Link>
+                        <button className="backButton">Back</button>
                       </div>
                       <div className="nextContainer">
                         <button type="submit" className="verifyButton">

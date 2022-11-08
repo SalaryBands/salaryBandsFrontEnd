@@ -1,33 +1,56 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from '../assets/salaryBandsLogo.png';
 import LogoText from '../assets/salarybandstext.png';
 
 function Header() {
+
+    let activeStyle = {
+        textDecortation: 'none',
+        color: '#0E7090'
+    }
     return (
         <nav>
             <ul>
                 <li className='logo'>
-                    <Link to={'/'} className='logoText'>salarybands</Link>
+                    <NavLink to={'/'} className='logoText'>salarybands</NavLink>
                     <div className='logoImageContainer'>
                         <img src={Logo} alt="" />
                     </div>
                 </li>
                 <li className='headerLinks'>
-                    <Link to={'/AllData'}>Salaries</Link>
+                    <NavLink to={'/AllData'}
+                    style={({isActive}) => 
+                    isActive ? activeStyle : undefined
+                    }
+                    >Salaries</NavLink>
                 </li>
                 <li className='headerLinks'>
-                    <Link to={'/TipsAndAdvice'}>Tips & Advice</Link>
+                    <NavLink to={'/TipsAndAdvice'}
+                    style={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                    }
+                    >Tips & Advice</NavLink>
                 </li>
                 <li className='headerLinks'>
-                    <Link>Resources</Link>
+                    <NavLink
+                    to={'/Resources'}
+                    style={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                    }
+                    >Resources</NavLink>
                 </li>
                 <li className='headerLinks'>
-                    <Link>About Us</Link>
+                    <NavLink
+                    to={'AboutUs'}
+                    style={({ isActive }) =>
+                        isActive ? activeStyle : undefined
+                    }
+                    >About Us</NavLink>
                 </li>
                 <li className='salarySubmit'>
-                    <Link to={'/EmailVerification'}>
+                    <NavLink to={'/EmailVerification'}>
                         <button type="button" className='salaryButton'>Submit Your Salary</button>
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>
         </nav>
