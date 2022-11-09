@@ -155,7 +155,9 @@ function PromoteTransparency (props) {
                 userI={props.usersIndustry}
                 userG={userGender}
                 userD={userDisability}
-                userR={userRace}/>
+                userR={userRace}
+                userDCheck={inputDisabled}
+                />
 
                 : null
                 

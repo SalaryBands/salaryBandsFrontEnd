@@ -5,7 +5,7 @@ import Finish from "./Finish";
 import Ladder from "../assets/ladder.png";
 
 function PayItForward(props) {
-  const baseURL = "https://salarybandsapi.onrender.com/contributions";
+  const baseURL = "https://salarybandsapi.fly.dev/contributions";
 
   const [submitInfo, setSubmitInfo] = useState(false);
 
@@ -48,7 +48,7 @@ const handleInput = useCallback((e) => {
           negotiation_percentage: props.userDe.negotiatePercent,
           gender: props.userG,
           race: props.userR,
-          disability_check: "",
+          disability_check: props.UserDCheck,
           disability: props.userD,
           advice_break: payItForward.adviceBreak,
           advice_negotiate: payItForward.adviceNegotiate,

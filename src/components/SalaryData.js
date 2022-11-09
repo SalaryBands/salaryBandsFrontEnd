@@ -1,10 +1,14 @@
 import axios from "axios";
 import Select from "react-select";
 import Toggle from "react-toggle";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Country, State } from "country-state-city";
 import { FiSearch } from 'react-icons/fi'; 
 import "react-toggle/style.css";
+import Pagination from "./Pagination";
+
+let PageSize = 2;
+
 
 function SalaryData() {
   const [userSubmissionData, setUserSubmissionData] = useState([]);
@@ -14,11 +18,12 @@ function SalaryData() {
   const [userRace, setUserRace] = useState("");
   const [negotiateToggle, setNegotiateToggle] = useState(false);
   const [disabilityToggle, setDisabilityToggle] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     axios({
       method: "get",
-      url: "https://salarybandsapi.onrender.com/contributions",
+      url: "https://salarybandsapi.fly.dev/contributions",
     }).then((apiData) => {
       setUserSubmissionData(apiData.data);
     });
@@ -39,6 +44,12 @@ function SalaryData() {
   const handleDisability = function (e) {
     setDisabilityToggle(e.target.checked);
   };
+
+  const currentTableData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * PageSize;
+    const lastPageIndex = firstPageIndex + PageSize;
+    return userSubmissionData.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage]);
 
   console.log(userSubmissionData);
   

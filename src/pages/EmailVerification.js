@@ -33,7 +33,7 @@ function EmailVerification() {
             redirect: 'follow'
         };
 
-        fetch("https://salarybandsapi.onrender.com/authentication/create", requestOptions)
+        fetch("https://salarybandsapi.fly.dev/authentication/create", requestOptions)
             .then(response => response.text())
             .then((result) => { if(result) {
                 setUserVerify(false)
@@ -44,7 +44,9 @@ function EmailVerification() {
                 
             .catch((error) => { setUserVerify(false); console.log(error)});
 
-    }, [userVerify])
+            
+        }, [userVerify])
+        
     
     return (
         <section className='emailVerification'>
