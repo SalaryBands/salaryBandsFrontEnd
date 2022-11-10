@@ -1,11 +1,20 @@
 import {useState} from 'react';
 import ProfessionalDetails from '../../src/components/ProfessionalDetails';
+import { useDropzone } from 'react-dropzone';
 import magnifyingglass from '../assets/magnifyingglass.png'
+import { AiOutlineCloudUpload } from 'react-icons/ai'
 
 function UserPathway () {
 
     const [upload, setUpload] = useState(false)
     const [manual, setManual] = useState(false)
+    const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
+
+    const files = acceptedFiles.map(file => (
+        <li key={file.path}>
+            {file.path} - {file.size} bytes
+        </li>
+    ));
 
     const handlePDF = function (e) {
         e.preventDefault()
@@ -33,7 +42,17 @@ function UserPathway () {
                             <div className="professionalDetails">
                                 <form action="#">
 
-                                    <div className="uploadContainer"></div>
+                                    <div className="uploadContainer">
+                                        <div {...getRootProps({ className: 'dropzone' })}>
+                                            <input {...getInputProps()} />
+                                            <div className="uploadText">
+                                                <span className='iconContainer'><AiOutlineCloudUpload /></span>
+                                                <p><span className='boldUpload'>Click to Upload</span> or drag and drop</p>
+                                                <p>SVG, PNG, JPG or GIF (max. 800x400px)</p>
+                                            </div>
+                                            <p></p>
+                                        </div>
+                                    </div>
 
                                     <button onClick={handlePDF} className='verifyButton'>Upload a PDF</button>
 

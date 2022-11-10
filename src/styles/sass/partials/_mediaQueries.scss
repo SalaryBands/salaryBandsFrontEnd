@@ -2,6 +2,51 @@
 // Media Query --> Screen size : 480px
 @media screen and (max-width: 480px) {
 
+    //Navigation
+
+    .desktopNav {
+        display: none;
+    }
+
+    .mobileNav {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        width: 100%; 
+
+        .hamburgerContainer {
+            padding-right: 10px; 
+            .hamburgerMenu {
+                color: #344054;
+                background-color: transparent;
+                border: none; 
+                box-shadow: none;
+                font-size: 24px; 
+                padding: 0px;  
+    
+            }
+        }
+        .slideOutNav {
+            position: absolute;
+            width: 100%;
+            top: 51px; 
+            right: 0px; 
+            background-color: #fff;
+            z-index: 2;
+
+            ul {
+                display: flex; 
+                flex-direction: column;
+                margin: 0; 
+                li {
+                    margin-left: 0px; 
+                    margin-bottom: 20px;;
+                }
+
+            }
+        }
+    }
+
     //Hero 
     header {
         .wrapper {
@@ -35,6 +80,322 @@
                 }
             }
         }
+    }
+
+    //SalaryData 
+
+    .userSubmissionTable {
+        display: none;
+    }
+    .wrapper {
+        width: 98%; 
+        .mobileTableView {
+            display: block;
+            margin: 50px 0px;
+            border: 1px solid #EAECF0;
+            .userSubmissionTextContainer {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    align-items: center;
+            
+                    h4 {
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: #088AB2
+                    }
+            
+                    h2 {
+                        font-weight: 600;
+                        font-size: 48px;
+                        line-height: 60px;
+                        color: #101828;
+                        margin: 0px
+                    }
+            
+                    p {
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 30px;
+                        color: #475467;
+                    }
+                }
+                
+                .searchAndRecentDataContainer {
+                    display: flex;
+                    padding: 14px;
+                    flex-direction: column-reverse;
+                
+                    .searchContainer {
+                        width: 50%;
+                        align-self: center;
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+                        width: 100%; 
+                        .searchFilter {
+                            padding: 10px 35px;
+                            border: 1px solid #D0D5DD;
+                            box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                            border-radius: 8px;
+                            font-size: 14px;
+                            width: 100%;
+                            margin: 10px 0px;
+                        }
+                
+                                        .iconContainer {
+                                            position: absolute;
+                                            bottom: 10px;
+                                            left: 10px;
+                                            color: #667085
+                                        }
+                
+                                        .advancedFilterContainer {
+                                            width: 100%;
+                                            background: #FFFFFF;
+                                            border: 1px solid #D0D5DD;
+                                            box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                                            border-radius: 8px;
+                                            padding: 10px 14px;
+                                            font-weight: 600;
+                                            font-size: 14px;
+                                            position: relative;
+                
+                                            .advancedFilter {
+                                                text-align: center;
+                                                background: transparent;
+                                                border: none;
+                                                color: #344054;
+                                                width: 100%;
+                                                box-shadow: none;
+                                                padding: 0;
+                                            }
+                
+                                            .filterOptionsContainer {
+                                                position: absolute;
+                                                background: #FFFFFF;
+                                                border: 1px solid #D0D5DD;
+                                                border-top: none;
+                                                padding: 10px 14px;
+                                                width: 100.5%;
+                                                left: -1px;
+                                                box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+                                                border-bottom-right-radius: 8px;
+                                                border-bottom-left-radius: 8px;
+                                                z-index: 10;
+                                                display: flex;
+                                                flex-direction: column;
+                                                animation: scrollDown 3ms ease-in;
+                
+                                                .salaryFilters {
+                                                    display: flex;
+                                                    margin-bottom: 20px;
+                
+                                                    .toggleSpan {
+                                                        margin-left: 10px;
+                                                        align-self: center;
+                                                        font-weight: 400;
+                                                        font-size: 14px;
+                                                        line-height: 20px;
+                                                        color: #344054;
+                                                    }
+                                                }
+                
+                                                .genderContainer {
+                                                    .css-b62m3t-container {
+                                                        margin: 10px 0px 20px 0px;
+                                                    }
+                                                }
+                
+                                                .raceContainer {
+                                                    .css-b62m3t-container {
+                                                        margin: 10px 0px 20px 0px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                
+                                    .recentData {
+                                        width: 100%;
+                
+                                        .recentDataTextContainer {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: flex-start;
+                
+                                            .recentDataText {
+                                                margin: 0px 15px 0px 0px;
+                                            }
+                
+                                            .totalSubmissions {
+                                                padding: 2px 8px;
+                                                background-color: #ECFDFF;
+                                                color: #0E7090;
+                                                font-weight: 500;
+                                                font-size: 12px;
+                                                line-height: 18px;
+                                                text-align: center;
+                                            }
+                                        }
+                
+                                        .paidWorthContainer {
+                                            display: flex;
+                                            justify-content: flex-end;
+                
+                                            .paidWorth {
+                                                font-weight: 400;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #475467;
+                                                margin: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                
+                                table {
+                                    width: 100%;
+                                    border-collapse: collapse;
+                
+                                    thead {
+                                        background-color: #164C63;
+                                        color: #EAECF0;
+                                        font-size: 12px;
+                                        text-align: left;
+                
+                                        tr {
+                                            .tableHeadContainer {
+                                                padding-left: 0px
+                                            }
+                                        }
+                                    }
+                
+                                    tbody {
+                                        .tableRow {
+                                            border-bottom: 1px solid #EAECF0;
+                                        }
+                                        .titleRow {
+                                            width: 30%;
+                                        }
+                
+                                        td {
+                                            padding: 15px 5px;
+                                            text-align: left;
+                                            font-size: 14px;
+                                            color: #475467;
+                
+                                            .topText {
+                                                font-weight: 400;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #101828;
+                                            }
+                
+                                            .bottomText {
+                                                font-weight: 400;
+                                                font-size: 14px;
+                                                line-height: 20px;
+                                                color: #475467;
+                                            }
+                
+                                            .salaryNegotiationContainer {
+                                                display: flex;
+                
+                                                .salaryNumber {
+                                                    margin-right: 5px;
+                                                }
+                
+                                                .increasedPercentage {
+                                                    padding: 0px 8px 0px 6px;
+                                                    background: #ECFDF3;
+                                                    mix-blend-mode: multiply;
+                                                    border-radius: 16px;
+                                                    color: #027A48;
+                                                    text-align: center;
+                                                    line-height: 18px;
+                                                    font-size: 12px;
+                                                    display: flex;
+                                                }
+                                            }
+                
+                                            .genderText {
+                                                padding: 2px 8px;
+                                                background: #ECFDFF;
+                                                mix-blend-mode: multiply;
+                                                border-radius: 16px;
+                                                font-weight: 500;
+                                                font-size: 12px;
+                                                line-height: 18px;
+                                                text-align: center;
+                                                color: #0E7090;
+                                                text-transform: capitalize;
+                                            }
+                
+                                            .tagsContainer {
+                                                display: flex;
+                                                flex-wrap: wrap;
+                
+                                                .negotiateContainer {
+                                                    margin: 0px 5px 5px 0px;
+                
+                                                    .negotiateText {
+                                                        background: #ECFDF3;
+                                                        mix-blend-mode: multiply;
+                                                        border-radius: 16px;
+                                                        padding: 2px 8px;
+                                                        font-weight: 500;
+                                                        font-size: 12px;
+                                                        line-height: 18px;
+                                                        color: #027A48;
+                                                    }
+                                                }
+                
+                                                .workArrangementContainer {
+                                                    margin: 0px 5px 5px 0px;
+                
+                                                    .workArr {
+                                                        padding: 2px 8px;
+                                                        background: #EEF4FF;
+                                                        mix-blend-mode: multiply;
+                                                        border-radius: 16px;
+                                                        font-weight: 500;
+                                                        font-size: 12px;
+                                                        line-height: 18px;
+                                                        color: #3538CD;
+                                                        text-transform: capitalize;
+                                                    }
+                                                }
+                
+                                                .disabilityContainer {
+                                                    margin: 0px 5px 5px 0px;
+                
+                                                    .disabilityText {
+                                                        background: #EFF8FF;
+                                                        mix-blend-mode: multiply;
+                                                        border-radius: 16px;
+                                                        padding: 2px 8px;
+                                                        font-weight: 500;
+                                                        font-size: 12px;
+                                                        line-height: 18px;
+                                                        color: #175CD3;
+                                                    }
+                                                }
+                                            }
+                                        }
+                
+                                    }
+                            }
+                            .company {
+                                width: 5%; 
+                            }
+
+
+                            .titleContainer {
+                                padding-left: 10px; 
+                            }
+            }
     }
 
     //Email Verification
@@ -136,6 +497,16 @@
                     width: 100%; 
                     margin-right: 0px; 
                 }
+            }
+        }
+    }
+
+    //All Data 
+    .wrapper {
+        .salaryTitleContainer {
+            width: 100%; 
+            h2 {
+                font-size: 30px;
             }
         }
     }

@@ -339,6 +339,10 @@ nav ul .salarySubmit {
   color: #164C63;
 }
 
+.mobileNav {
+  display: none;
+}
+
 header {
   height: 90vh;
   background-color: #155B75;
@@ -492,7 +496,6 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   padding: 10px 14px;
   font-weight: 600;
   font-size: 14px;
-  width: 30%;
   position: relative;
 }
 .userSubmissionTable .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .advancedFilter {
@@ -518,6 +521,8 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   z-index: 10;
   display: flex;
   flex-direction: column;
+  -webkit-animation: scrollDown 3ms ease-in;
+          animation: scrollDown 3ms ease-in;
 }
 .userSubmissionTable .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .salaryFilters {
   display: flex;
@@ -703,6 +708,33 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   width: 15%;
 }
 
+@-webkit-keyframes scrollDown {
+  0% {
+    height: 0%;
+  }
+  50% {
+    height: 50%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    height: 0%;
+  }
+  50% {
+    height: 50%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+.mobileTableView {
+  display: none;
+}
+
 .emailVerification {
   width: 100vw;
   height: 90vh;
@@ -880,6 +912,27 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   border: 1px solid #EAECF0;
   box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
   border-radius: 12px;
+  display: flex;
+}
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .professionalDetails .uploadContainer .uploadText {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .professionalDetails .uploadContainer .uploadText .iconContainer svg {
+  font-size: 25px;
+  color: #475467;
+}
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .professionalDetails .uploadContainer .uploadText p {
+  margin: 5px 0px;
+}
+.userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .professionalDetails .uploadContainer .uploadText p .boldUpload {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
 }
 .userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .professionalDetails .verifyButton {
   width: 100%;
@@ -900,6 +953,10 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 }
 .userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer .contactContainer .contactEmail {
   align-self: end;
+}
+
+.dropzone {
+  width: 100%;
 }
 
 .success {
@@ -1699,6 +1756,43 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
 }
 
 @media screen and (max-width: 480px) {
+  .desktopNav {
+    display: none;
+  }
+  .mobileNav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+  }
+  .mobileNav .hamburgerContainer {
+    padding-right: 10px;
+  }
+  .mobileNav .hamburgerContainer .hamburgerMenu {
+    color: #344054;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 24px;
+    padding: 0px;
+  }
+  .mobileNav .slideOutNav {
+    position: absolute;
+    width: 100%;
+    top: 51px;
+    right: 0px;
+    background-color: #fff;
+    z-index: 2;
+  }
+  .mobileNav .slideOutNav ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .mobileNav .slideOutNav ul li {
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
   header .wrapper .heroContainer .heroTextContainer {
     width: 100%;
   }
@@ -1724,6 +1818,272 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   }
   header .wrapper .heroContainer .heroImageContainer {
     display: none;
+  }
+  .userSubmissionTable {
+    display: none;
+  }
+  .wrapper {
+    width: 98%;
+  }
+  .wrapper .mobileTableView {
+    display: block;
+    margin: 50px 0px;
+    border: 1px solid #EAECF0;
+  }
+  .wrapper .mobileTableView .userSubmissionTextContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .wrapper .mobileTableView .userSubmissionTextContainer h4 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #088AB2;
+  }
+  .wrapper .mobileTableView .userSubmissionTextContainer h2 {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 60px;
+    color: #101828;
+    margin: 0px;
+  }
+  .wrapper .mobileTableView .userSubmissionTextContainer p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #475467;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer {
+    display: flex;
+    padding: 14px;
+    flex-direction: column-reverse;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer {
+    width: 50%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .searchFilter {
+    padding: 10px 35px;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    font-size: 14px;
+    width: 100%;
+    margin: 10px 0px;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .iconContainer {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #667085;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .advancedFilter {
+    text-align: center;
+    background: transparent;
+    border: none;
+    color: #344054;
+    width: 100%;
+    box-shadow: none;
+    padding: 0;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer {
+    position: absolute;
+    background: #FFFFFF;
+    border: 1px solid #D0D5DD;
+    border-top: none;
+    padding: 10px 14px;
+    width: 100.5%;
+    left: -1px;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    -webkit-animation: scrollDown 3ms ease-in;
+            animation: scrollDown 3ms ease-in;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .salaryFilters {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .salaryFilters .toggleSpan {
+    margin-left: 10px;
+    align-self: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #344054;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .genderContainer .css-b62m3t-container {
+    margin: 10px 0px 20px 0px;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .raceContainer .css-b62m3t-container {
+    margin: 10px 0px 20px 0px;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .recentData {
+    width: 100%;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .recentData .recentDataTextContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .recentData .recentDataTextContainer .recentDataText {
+    margin: 0px 15px 0px 0px;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .recentData .recentDataTextContainer .totalSubmissions {
+    padding: 2px 8px;
+    background-color: #ECFDFF;
+    color: #0E7090;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .recentData .paidWorthContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .wrapper .mobileTableView .searchAndRecentDataContainer .recentData .paidWorthContainer .paidWorth {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #475467;
+    margin: 0;
+  }
+  .wrapper .mobileTableView table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .wrapper .mobileTableView table thead {
+    background-color: #164C63;
+    color: #EAECF0;
+    font-size: 12px;
+    text-align: left;
+  }
+  .wrapper .mobileTableView table thead tr .tableHeadContainer {
+    padding-left: 0px;
+  }
+  .wrapper .mobileTableView table tbody .tableRow {
+    border-bottom: 1px solid #EAECF0;
+  }
+  .wrapper .mobileTableView table tbody .titleRow {
+    width: 30%;
+  }
+  .wrapper .mobileTableView table tbody td {
+    padding: 15px 5px;
+    text-align: left;
+    font-size: 14px;
+    color: #475467;
+  }
+  .wrapper .mobileTableView table tbody td .topText {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #101828;
+  }
+  .wrapper .mobileTableView table tbody td .bottomText {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #475467;
+  }
+  .wrapper .mobileTableView table tbody td .salaryNegotiationContainer {
+    display: flex;
+  }
+  .wrapper .mobileTableView table tbody td .salaryNegotiationContainer .salaryNumber {
+    margin-right: 5px;
+  }
+  .wrapper .mobileTableView table tbody td .salaryNegotiationContainer .increasedPercentage {
+    padding: 0px 8px 0px 6px;
+    background: #ECFDF3;
+    mix-blend-mode: multiply;
+    border-radius: 16px;
+    color: #027A48;
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    display: flex;
+  }
+  .wrapper .mobileTableView table tbody td .genderText {
+    padding: 2px 8px;
+    background: #ECFDFF;
+    mix-blend-mode: multiply;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    color: #0E7090;
+    text-transform: capitalize;
+  }
+  .wrapper .mobileTableView table tbody td .tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .wrapper .mobileTableView table tbody td .tagsContainer .negotiateContainer {
+    margin: 0px 5px 5px 0px;
+  }
+  .wrapper .mobileTableView table tbody td .tagsContainer .negotiateContainer .negotiateText {
+    background: #ECFDF3;
+    mix-blend-mode: multiply;
+    border-radius: 16px;
+    padding: 2px 8px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #027A48;
+  }
+  .wrapper .mobileTableView table tbody td .tagsContainer .workArrangementContainer {
+    margin: 0px 5px 5px 0px;
+  }
+  .wrapper .mobileTableView table tbody td .tagsContainer .workArrangementContainer .workArr {
+    padding: 2px 8px;
+    background: #EEF4FF;
+    mix-blend-mode: multiply;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #3538CD;
+    text-transform: capitalize;
+  }
+  .wrapper .mobileTableView table tbody td .tagsContainer .disabilityContainer {
+    margin: 0px 5px 5px 0px;
+  }
+  .wrapper .mobileTableView table tbody td .tagsContainer .disabilityContainer .disabilityText {
+    background: #EFF8FF;
+    mix-blend-mode: multiply;
+    border-radius: 16px;
+    padding: 2px 8px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #175CD3;
+  }
+  .wrapper .mobileTableView .company {
+    width: 5%;
+  }
+  .wrapper .mobileTableView .titleContainer {
+    padding-left: 10px;
   }
   .emailVerification {
     height: auto;
@@ -1799,6 +2159,12 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   .wrapper .tipsAndAdviceContainer .adviceCardContainer .adviceCard {
     width: 100%;
     margin-right: 0px;
+  }
+  .wrapper .salaryTitleContainer {
+    width: 100%;
+  }
+  .wrapper .salaryTitleContainer h2 {
+    font-size: 30px;
   }
   footer .wrapper .footerNavNewsletterContainer {
     display: flex;

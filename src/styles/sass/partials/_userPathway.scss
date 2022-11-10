@@ -43,6 +43,29 @@
                         border: 1px solid #EAECF0;
                         box-shadow: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
                         border-radius: 12px;
+                        display: flex;
+                        .uploadText {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            height: 100%; 
+                            .iconContainer {
+                                svg {
+                                    font-size: 25px;
+                                    color: #475467;
+                                }
+                            }
+                            p {
+                                margin: 5px 0px; 
+                                .boldUpload {
+                                    font-weight: 600;
+                                    font-size: 14px; 
+                                    line-height: 20px;
+                                }
+                            }
+                        }
                     }
                     .verifyButton {
                         width: 100%;
@@ -68,6 +91,10 @@
             }
         }  
     }
+}
+
+.dropzone {
+    width: 100%; 
 }
 
 
