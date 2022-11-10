@@ -88,6 +88,7 @@ function SalaryData() {
   };
 
   return (
+    <>
     <div className="wrapper">
       <div className="userSubmissionTable" id="userSubmissionTable">
         <div className="searchAndRecentDataContainer">
@@ -355,6 +356,10 @@ function SalaryData() {
         />
       </div>
 
+    </div>
+      
+      <div className="mobileWrapper">
+
       <div className="mobileTableView" id="userSubmissionTable">
         <div className="searchAndRecentDataContainer">
           <div className="searchContainer">
@@ -576,7 +581,8 @@ function SalaryData() {
           onPageChange={page => setCurrentPage(page)}
         />
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

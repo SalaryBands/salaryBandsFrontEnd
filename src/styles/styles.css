@@ -864,6 +864,13 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   margin-top: 0;
 }
 
+.loadingAnimation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
 .userFlowContainer {
   width: 100vw;
   height: 100vh;
@@ -1822,45 +1829,46 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   .userSubmissionTable {
     display: none;
   }
-  .wrapper {
-    width: 98%;
+  .mobileWrapper {
+    width: 97%;
+    margin: 0 auto;
   }
-  .wrapper .mobileTableView {
+  .mobileWrapper .mobileTableView {
     display: block;
     margin: 50px 0px;
     border: 1px solid #EAECF0;
   }
-  .wrapper .mobileTableView .userSubmissionTextContainer {
+  .mobileWrapper .mobileTableView .userSubmissionTextContainer {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
   }
-  .wrapper .mobileTableView .userSubmissionTextContainer h4 {
+  .mobileWrapper .mobileTableView .userSubmissionTextContainer h4 {
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
     color: #088AB2;
   }
-  .wrapper .mobileTableView .userSubmissionTextContainer h2 {
+  .mobileWrapper .mobileTableView .userSubmissionTextContainer h2 {
     font-weight: 600;
     font-size: 48px;
     line-height: 60px;
     color: #101828;
     margin: 0px;
   }
-  .wrapper .mobileTableView .userSubmissionTextContainer p {
+  .mobileWrapper .mobileTableView .userSubmissionTextContainer p {
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
     color: #475467;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer {
     display: flex;
     padding: 14px;
     flex-direction: column-reverse;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .searchContainer {
     width: 50%;
     align-self: center;
     display: flex;
@@ -1868,7 +1876,7 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     position: relative;
     width: 100%;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .searchFilter {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .searchFilter {
     padding: 10px 35px;
     border: 1px solid #D0D5DD;
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
@@ -1877,13 +1885,13 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     width: 100%;
     margin: 10px 0px;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .iconContainer {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .iconContainer {
     position: absolute;
     bottom: 10px;
     left: 10px;
     color: #667085;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer {
     width: 100%;
     background: #FFFFFF;
     border: 1px solid #D0D5DD;
@@ -1894,7 +1902,7 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     font-size: 14px;
     position: relative;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .advancedFilter {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .advancedFilter {
     text-align: center;
     background: transparent;
     border: none;
@@ -1903,7 +1911,7 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     box-shadow: none;
     padding: 0;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer {
     position: absolute;
     background: #FFFFFF;
     border: 1px solid #D0D5DD;
@@ -1920,11 +1928,11 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     -webkit-animation: scrollDown 3ms ease-in;
             animation: scrollDown 3ms ease-in;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .salaryFilters {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .salaryFilters {
     display: flex;
     margin-bottom: 20px;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .salaryFilters .toggleSpan {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .salaryFilters .toggleSpan {
     margin-left: 10px;
     align-self: center;
     font-weight: 400;
@@ -1932,24 +1940,24 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     line-height: 20px;
     color: #344054;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .genderContainer .css-b62m3t-container {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .genderContainer .css-b62m3t-container {
     margin: 10px 0px 20px 0px;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .raceContainer .css-b62m3t-container {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .advancedFilterContainer .filterOptionsContainer .raceContainer .css-b62m3t-container {
     margin: 10px 0px 20px 0px;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .recentData {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .recentData {
     width: 100%;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .recentData .recentDataTextContainer {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .recentData .recentDataTextContainer {
     display: flex;
     align-items: center;
     justify-content: flex-start;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .recentData .recentDataTextContainer .recentDataText {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .recentData .recentDataTextContainer .recentDataText {
     margin: 0px 15px 0px 0px;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .recentData .recentDataTextContainer .totalSubmissions {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .recentData .recentDataTextContainer .totalSubmissions {
     padding: 2px 8px;
     background-color: #ECFDFF;
     color: #0E7090;
@@ -1958,61 +1966,63 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     line-height: 18px;
     text-align: center;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .recentData .paidWorthContainer {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .recentData .paidWorthContainer {
     display: flex;
     justify-content: flex-end;
   }
-  .wrapper .mobileTableView .searchAndRecentDataContainer .recentData .paidWorthContainer .paidWorth {
+  .mobileWrapper .mobileTableView .searchAndRecentDataContainer .recentData .paidWorthContainer .paidWorth {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #475467;
     margin: 0;
   }
-  .wrapper .mobileTableView table {
+  .mobileWrapper .mobileTableView table {
     width: 100%;
     border-collapse: collapse;
   }
-  .wrapper .mobileTableView table thead {
+  .mobileWrapper .mobileTableView table thead {
     background-color: #164C63;
     color: #EAECF0;
     font-size: 12px;
     text-align: left;
   }
-  .wrapper .mobileTableView table thead tr .tableHeadContainer {
+  .mobileWrapper .mobileTableView table thead tr .tableHeadContainer {
     padding-left: 0px;
   }
-  .wrapper .mobileTableView table tbody .tableRow {
+  .mobileWrapper .mobileTableView table tbody .tableRow {
     border-bottom: 1px solid #EAECF0;
   }
-  .wrapper .mobileTableView table tbody .titleRow {
+  .mobileWrapper .mobileTableView table tbody .titleRow {
     width: 30%;
   }
-  .wrapper .mobileTableView table tbody td {
+  .mobileWrapper .mobileTableView table tbody td {
     padding: 15px 5px;
     text-align: left;
     font-size: 14px;
     color: #475467;
   }
-  .wrapper .mobileTableView table tbody td .topText {
+  .mobileWrapper .mobileTableView table tbody td .topText {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #101828;
   }
-  .wrapper .mobileTableView table tbody td .bottomText {
+  .mobileWrapper .mobileTableView table tbody td .bottomText {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #475467;
   }
-  .wrapper .mobileTableView table tbody td .salaryNegotiationContainer {
+  .mobileWrapper .mobileTableView table tbody td .salaryNegotiationContainer {
     display: flex;
+    flex-direction: column;
   }
-  .wrapper .mobileTableView table tbody td .salaryNegotiationContainer .salaryNumber {
+  .mobileWrapper .mobileTableView table tbody td .salaryNegotiationContainer .salaryNumber {
     margin-right: 5px;
+    margin-bottom: 5px;
   }
-  .wrapper .mobileTableView table tbody td .salaryNegotiationContainer .increasedPercentage {
+  .mobileWrapper .mobileTableView table tbody td .salaryNegotiationContainer .increasedPercentage {
     padding: 0px 8px 0px 6px;
     background: #ECFDF3;
     mix-blend-mode: multiply;
@@ -2021,9 +2031,8 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     text-align: center;
     line-height: 18px;
     font-size: 12px;
-    display: flex;
   }
-  .wrapper .mobileTableView table tbody td .genderText {
+  .mobileWrapper .mobileTableView table tbody td .genderText {
     padding: 2px 8px;
     background: #ECFDFF;
     mix-blend-mode: multiply;
@@ -2035,14 +2044,14 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     color: #0E7090;
     text-transform: capitalize;
   }
-  .wrapper .mobileTableView table tbody td .tagsContainer {
+  .mobileWrapper .mobileTableView table tbody td .tagsContainer {
     display: flex;
     flex-wrap: wrap;
   }
-  .wrapper .mobileTableView table tbody td .tagsContainer .negotiateContainer {
+  .mobileWrapper .mobileTableView table tbody td .tagsContainer .negotiateContainer {
     margin: 0px 5px 5px 0px;
   }
-  .wrapper .mobileTableView table tbody td .tagsContainer .negotiateContainer .negotiateText {
+  .mobileWrapper .mobileTableView table tbody td .tagsContainer .negotiateContainer .negotiateText {
     background: #ECFDF3;
     mix-blend-mode: multiply;
     border-radius: 16px;
@@ -2052,10 +2061,10 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     line-height: 18px;
     color: #027A48;
   }
-  .wrapper .mobileTableView table tbody td .tagsContainer .workArrangementContainer {
+  .mobileWrapper .mobileTableView table tbody td .tagsContainer .workArrangementContainer {
     margin: 0px 5px 5px 0px;
   }
-  .wrapper .mobileTableView table tbody td .tagsContainer .workArrangementContainer .workArr {
+  .mobileWrapper .mobileTableView table tbody td .tagsContainer .workArrangementContainer .workArr {
     padding: 2px 8px;
     background: #EEF4FF;
     mix-blend-mode: multiply;
@@ -2066,10 +2075,10 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     color: #3538CD;
     text-transform: capitalize;
   }
-  .wrapper .mobileTableView table tbody td .tagsContainer .disabilityContainer {
+  .mobileWrapper .mobileTableView table tbody td .tagsContainer .disabilityContainer {
     margin: 0px 5px 5px 0px;
   }
-  .wrapper .mobileTableView table tbody td .tagsContainer .disabilityContainer .disabilityText {
+  .mobileWrapper .mobileTableView table tbody td .tagsContainer .disabilityContainer .disabilityText {
     background: #EFF8FF;
     mix-blend-mode: multiply;
     border-radius: 16px;
@@ -2079,10 +2088,10 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     line-height: 18px;
     color: #175CD3;
   }
-  .wrapper .mobileTableView .company {
+  .mobileWrapper .mobileTableView .company {
     width: 5%;
   }
-  .wrapper .mobileTableView .titleContainer {
+  .mobileWrapper .mobileTableView .titleContainer {
     padding-left: 10px;
   }
   .emailVerification {
@@ -2115,7 +2124,7 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     width: 100%;
   }
   .userSubmissionChartContainer .wrapper .userSubmissionTextContainer h2 {
-    font-size: 36px;
+    font-size: 34px;
   }
   .userSubmissionChartContainer .wrapper .userSubmissionTextContainer p {
     text-align: center;

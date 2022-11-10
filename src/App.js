@@ -51,6 +51,11 @@ function App() {
           element={<TipsAndAdvice />}
         />
 
+        <Route
+          path="/Resources"
+          element={<TipsAndAdvice />}
+        />
+
       </Routes>
       <Footer/>
     </div>

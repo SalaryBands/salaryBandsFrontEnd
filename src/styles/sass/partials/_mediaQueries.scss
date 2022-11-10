@@ -87,8 +87,9 @@
     .userSubmissionTable {
         display: none;
     }
-    .wrapper {
-        width: 98%; 
+    .mobileWrapper {
+        width: 97%;
+        margin: 0 auto; 
         .mobileTableView {
             display: block;
             margin: 50px 0px;
@@ -302,9 +303,11 @@
                 
                                             .salaryNegotiationContainer {
                                                 display: flex;
+                                                flex-direction: column;
                 
                                                 .salaryNumber {
                                                     margin-right: 5px;
+                                                    margin-bottom: 5px; 
                                                 }
                 
                                                 .increasedPercentage {
@@ -316,7 +319,6 @@
                                                     text-align: center;
                                                     line-height: 18px;
                                                     font-size: 12px;
-                                                    display: flex;
                                                 }
                                             }
                 
@@ -437,7 +439,7 @@
         .wrapper {
             .userSubmissionTextContainer {
                 h2 {
-                    font-size: 36px;
+                    font-size: 34px;
                 }
                 p {
                     text-align: center;
