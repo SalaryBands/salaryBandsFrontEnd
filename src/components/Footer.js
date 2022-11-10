@@ -14,24 +14,28 @@ function Footer() {
                         <div className="footerNavContainer">
                             <nav className='footerNav'>
                                 <ul>
-                                    <li>
-                                        <Link to={'/'} className='footerNavLinks'>Home</Link>
-                                    </li>
-                                    <li>
-                                        <Link to={'/AllData'} className='footerNavLinks'>Salaries</Link>
-                                    </li>
-                                    <li>
-                                        <Link to={'TipsAndAdvice'} className='footerNavLinks'>Tips & Advice</Link>
-                                    </li>
-                                    <li>
-                                        <Link className='footerNavLinks'>Resources</Link>
-                                    </li>
-                                    <li>
-                                        <Link className='footerNavLinks'>About Us</Link>
-                                    </li>
-                                    <li>
-                                        <Link className='footerNavLinks'>Privacy</Link>
-                                    </li>
+                                    <div className="mediaFooterOne">
+                                        <li>
+                                            <Link to={'/'} className='footerNavLinks'>Home</Link>
+                                        </li>
+                                        <li>
+                                            <Link to={'/AllData'} className='footerNavLinks'>Salaries</Link>
+                                        </li>
+                                        <li>
+                                            <Link to={'TipsAndAdvice'} className='footerNavLinks'>Tips & Advice</Link>
+                                        </li>
+                                    </div>
+                                    <div className="mediaFooterTwo">
+                                        <li>
+                                            <Link className='footerNavLinks'>Resources</Link>
+                                        </li>
+                                        <li>
+                                            <Link className='footerNavLinks'>About Us</Link>
+                                        </li>
+                                        <li>
+                                            <Link className='footerNavLinks'>Privacy</Link>
+                                        </li>
+                                    </div>
                                 </ul>
                             </nav>
                         </div>

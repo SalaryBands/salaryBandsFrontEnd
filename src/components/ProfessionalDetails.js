@@ -144,6 +144,7 @@ function ProfessionalDetails() {
   const handleVerifyDetails = function (e) {
     e.preventDefault();
     setVerifyDetails(true);
+
   };
 
   function handleInput(e) {

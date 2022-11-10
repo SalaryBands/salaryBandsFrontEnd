@@ -29,13 +29,16 @@ footer {
                         ul {
                             margin: 0;
                             padding-left: 0;
-                            li {
-                                margin-right: 30px;
-                                .footerNavLinks {
-                                    font-weight: 600;
-                                    font-size: 14px;
-                                    line-height: 24px;
-                                    color: #EAECF0;
+                            .mediaFooterOne, .mediaFooterTwo {
+                                display: flex;
+                                li {
+                                    margin-right: 30px;
+                                    .footerNavLinks {
+                                        font-weight: 600;
+                                        font-size: 14px;
+                                        line-height: 24px;
+                                        color: #EAECF0;
+                                    }
                                 }
                             }
                         }

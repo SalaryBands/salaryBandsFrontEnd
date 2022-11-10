@@ -42,7 +42,7 @@ const Pagination = props => {
                 })}
                 onClick={onPrevious}
             >
-                <div className="arrow left" />
+                <button className='paginationButton'>Previous</button>
             </li>
             {paginationRange.map(pageNumber => {
 
@@ -70,7 +70,7 @@ const Pagination = props => {
                 })}
                 onClick={onNext}
             >
-                <div className="arrow right" />
+                <button className='paginationButton'>Next</button>
             </li>
         </ul>
     );

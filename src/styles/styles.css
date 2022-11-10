@@ -296,6 +296,9 @@ nav ul li a {
   text-decoration: none;
   color: #475467;
 }
+nav ul li a:hover {
+  color: #0E7090;
+}
 nav ul li .activeStyle {
   text-decoration: none;
   color: #0E7090;
@@ -1515,6 +1518,75 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   margin: 0;
 }
 
+.pagination-container {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  padding-left: 0px;
+}
+.pagination-container .pagination-item {
+  padding: 0 12px;
+  height: 32px;
+  text-align: center;
+  margin: auto 4px;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  letter-spacing: 0.01071em;
+  border-radius: 16px;
+  line-height: 1.43;
+  font-size: 13px;
+  min-width: 32px;
+}
+.pagination-container .pagination-item.dots:hover {
+  background-color: transparent;
+  cursor: default;
+}
+.pagination-container .pagination-item:hover {
+  cursor: pointer;
+}
+.pagination-container .pagination-item.selected {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.pagination-container .pagination-item .arrow::before {
+  position: relative;
+  /* top: 3pt; Uncomment this to lower the icons as requested in comments*/
+  content: "";
+  /* By using an em scale, the arrows will size with the font */
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  border-right: 0.12em solid rgba(0, 0, 0, 0.87);
+  border-top: 0.12em solid rgba(0, 0, 0, 0.87);
+}
+.pagination-container .pagination-item .arrow.left {
+  transform: rotate(-135deg) translate(-50%);
+}
+.pagination-container .pagination-item .arrow.right {
+  transform: rotate(45deg);
+}
+.pagination-container .pagination-item.disabled {
+  pointer-events: none;
+}
+.pagination-container .pagination-item.disabled .arrow::before {
+  border-right: 0.12em solid rgba(0, 0, 0, 0.43);
+  border-top: 0.12em solid rgba(0, 0, 0, 0.43);
+}
+.pagination-container .pagination-item.disabled:hover {
+  background-color: transparent;
+  cursor: default;
+}
+
+.paginationButton {
+  background: #FFFFFF;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  padding: 8px 14px;
+  color: #344054;
+}
+
 .finishContainer .finishTextContainer {
   display: flex;
   flex-direction: column;
@@ -1572,10 +1644,13 @@ footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavCon
   margin: 0;
   padding-left: 0;
 }
-footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul li {
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterOne, footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterTwo {
+  display: flex;
+}
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterOne li, footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterTwo li {
   margin-right: 30px;
 }
-footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul li .footerNavLinks {
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterOne li .footerNavLinks, footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterTwo li .footerNavLinks {
   font-weight: 600;
   font-size: 14px;
   line-height: 24px;
@@ -1621,4 +1696,142 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   line-height: 24px;
   color: #667085;
   text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+  header .wrapper .heroContainer .heroTextContainer {
+    width: 100%;
+  }
+  header .wrapper .heroContainer .heroTextContainer h1 {
+    font-size: 30px;
+    line-height: 38px;
+    margin-top: 0px;
+  }
+  header .wrapper .heroContainer .heroTextContainer h4 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  header .wrapper .heroContainer .heroTextContainer .buttonLinksContainer {
+    flex-direction: column;
+  }
+  header .wrapper .heroContainer .heroTextContainer .buttonLinksContainer .heroSubmitSalary {
+    margin-right: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  header .wrapper .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData {
+    text-align: center;
+  }
+  header .wrapper .heroContainer .heroImageContainer {
+    display: none;
+  }
+  .emailVerification {
+    height: auto;
+  }
+  .emailVerification .userCard {
+    flex-direction: column;
+    width: 100%;
+  }
+  .emailVerification .userCard .emailInput {
+    width: 100%;
+  }
+  .emailVerification .userCard .infoCard {
+    width: 100%;
+  }
+  .emailVerification .userCard .infoCard .infoImgContainer {
+    padding: 10%;
+  }
+  .userFlowContainer {
+    height: auto;
+  }
+  .userFlowContainer .userCard {
+    flex-direction: column;
+    width: 100%;
+  }
+  .userFlowContainer .userCard .userPathwayCard {
+    width: 100%;
+  }
+  .userFlowContainer .userCard .infoCard {
+    width: 100%;
+  }
+  .userSubmissionChartContainer .wrapper .userSubmissionTextContainer h2 {
+    font-size: 36px;
+  }
+  .userSubmissionChartContainer .wrapper .userSubmissionTextContainer p {
+    text-align: center;
+    font-size: 18px;
+  }
+  .userCard .professionalDetailsCardandImageContainer {
+    flex-direction: column;
+  }
+  .userCard .professionalDetailsCardandImageContainer .professionalDetailsContainer {
+    width: 100%;
+  }
+  .transparencyContainer {
+    width: 100%;
+  }
+  .wrapper .tipsAndAdviceContainer .tipsTitleContainer {
+    width: 100%;
+  }
+  .wrapper .tipsAndAdviceContainer .tipsTitleContainer h2 {
+    font-size: 30px;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer {
+    padding: 0px;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer .searchContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer .searchContainer .searchFilter {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer .searchContainer .advancedFilterContainer {
+    width: 100%;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer .searchContainer .advancedFilterContainer .filterOptionsContainer {
+    width: 100.5%;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer .recentData {
+    display: none;
+  }
+  .wrapper .tipsAndAdviceContainer .adviceCardContainer .adviceCard {
+    width: 100%;
+    margin-right: 0px;
+  }
+  footer .wrapper .footerNavNewsletterContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer {
+    width: 80%;
+  }
+  footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterOne, footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterTwo {
+    display: flex;
+    flex-direction: column;
+  }
+  footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterOne li, footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterTwo li {
+    margin-bottom: 10px;
+  }
+  footer .wrapper .footerNavNewsletterContainer .newsletterContainer .signUp {
+    display: flex;
+    flex-direction: column;
+  }
+  footer .wrapper .footerNavNewsletterContainer .newsletterContainer .signUp input {
+    margin: 0px 0px 10px 0px;
+  }
+  footer .wrapper .copyrightContainer {
+    flex-direction: column-reverse;
+  }
+  footer .wrapper .copyrightContainer .copyright {
+    align-self: start;
+  }
+  footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
+    margin: 0px 10px 0px 0px;
+  }
 }

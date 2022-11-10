@@ -10,10 +10,17 @@ function EmailVerification() {
     const [errors, setErrors] = useState({email: ''}); 
     const [userVerify, setUserVerify] = useState(false)
     const [userError, setUserError] = useState(false)
+    const [userEmail, setUserEmail] = useState('')
+    const [errorMessage, setErrorMessage] = useState({})
 
-    const emailRef = useRef(null)
+    const handleEmail = function (e) {
+        setUserEmail(e.target.value)
+    }
 
-    console.log(emailRef);
+
+    // const emailRef = useRef(null)
+
+    // console.log(emailRef);
 
     let errorStyling = {
         border: '1px solid #F04438',
@@ -23,9 +30,9 @@ function EmailVerification() {
     const setTrue = useCallback( (e) => {
         e.preventDefault();
         var formdata = new FormData();
-        formdata.append("user[email]", emailRef.current.value);
+        formdata.append("user[email]", userEmail);
 
-        console.log(emailRef.current.value);
+        // console.log(emailRef.current.value);
 
         var requestOptions = {
             method: 'POST',
@@ -35,18 +42,21 @@ function EmailVerification() {
 
         fetch("https://salarybandsapi.fly.dev/authentication/create", requestOptions)
             .then(response => response.text())
-            .then((result) => { if(result) {
-                setUserVerify(false)
-                setUserError(true)
-            } else {
-                setUserVerify(true)
-            }})
-                
+            .then((result) => {
+                if (result) {
+                    setErrorMessage(result)
+                    setUserError(true)
+                    setUserVerify(false)
+                } else {
+                    setUserVerify(true)
+                }
+            })
             .catch((error) => { setUserVerify(false); console.log(error)});
-
             
-        }, [userVerify])
+            
+        }, [userVerify, userEmail])
         
+        console.log(errorMessage.message);
     
     return (
         <section className='emailVerification'>
@@ -61,7 +71,7 @@ function EmailVerification() {
                         <div className="formContainer">
                             <form onSubmit={setTrue} action="#">
                                 <label htmlFor="workEmail">Work Email*</label>
-                                <input ref={emailRef} type="email" placeholder='Enter your work email' name="workEmail"
+                                <input onInput={handleEmail} type="email" placeholder='Enter your work email' name="workEmail"
                                 style={ 
                                 userError ? errorStyling : undefined
                                 }

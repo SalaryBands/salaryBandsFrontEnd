@@ -1,0 +1,195 @@
+
+// Media Query --> Screen size : 480px
+@media screen and (max-width: 480px) {
+
+    //Hero 
+    header {
+        .wrapper {
+            .heroContainer {
+                .heroTextContainer {
+                    width: 100%;
+                    h1 {
+                        font-size: 30px;
+                        line-height: 38px;
+                        margin-top: 0px; 
+                    }
+                    h4 {
+                        font-size: 18px;
+                        line-height: 28px;
+                    }
+                    .buttonLinksContainer {
+                        flex-direction: column;
+
+                        .heroSubmitSalary {
+                            margin-right: 0px; 
+                            margin-bottom: 20px; 
+                            text-align: center;
+                        }
+                        .heroExploreData {
+                            text-align: center;
+                        }
+                    }
+                }
+                .heroImageContainer {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    //Email Verification
+    .emailVerification {
+        height: auto; 
+        .userCard {
+            flex-direction: column;
+            width: 100%; 
+            .emailInput {
+                width: 100%;
+            }
+            .infoCard {
+                width: 100%; 
+                .infoImgContainer {
+                    padding: 10%; 
+                }
+            }
+
+        }
+    }
+
+    //UserPathway
+    .userFlowContainer {
+        height: auto; 
+        .userCard {
+            flex-direction: column;
+            width: 100%;
+            .userPathwayCard {
+                width: 100%; 
+            }
+            .infoCard {
+                width: 100%; 
+            }
+        }
+    }
+
+    //UserSubmissionChart.js 
+    .userSubmissionChartContainer {
+        .wrapper {
+            .userSubmissionTextContainer {
+                h2 {
+                    font-size: 36px;
+                }
+                p {
+                    text-align: center;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    //Professional Details
+    .userCard {
+        .professionalDetailsCardandImageContainer {
+            flex-direction: column;
+            .professionalDetailsContainer {
+                width: 100%; 
+            }
+        }
+    }
+
+    //Promote Transparency 
+
+    .transparencyContainer {
+        width: 100%; 
+    }
+
+    //Tips and Advice
+    .wrapper {
+        .tipsAndAdviceContainer  {
+            .tipsTitleContainer {
+                width: 100%; 
+                h2 {
+                    font-size: 30px; 
+                }
+            }
+            .sRContainer {
+                padding: 0px; 
+                .searchContainer {
+                    flex-direction: column;
+                    width: 100%; 
+                    .searchFilter {
+                        width: 100%; 
+                        margin-bottom: 10px; 
+                    }
+                    .advancedFilterContainer {
+                        width: 100%; 
+                        .filterOptionsContainer {
+                            width: 100.5%; 
+                        }
+                    }
+                }
+                .recentData {
+                    display: none;
+                }
+            }
+            .adviceCardContainer {
+                .adviceCard {
+                    width: 100%; 
+                    margin-right: 0px; 
+                }
+            }
+        }
+    }
+
+    // Footer
+    footer {
+        .wrapper {
+            .footerNavNewsletterContainer {
+                display: flex;
+                flex-direction: column;
+                .logoAndNavContainer {
+                    width: 80%; 
+                    .footerNavContainer {
+                        .footerNav{
+                            ul {
+                                display: flex;
+                                justify-content: space-between;
+                                .mediaFooterOne, .mediaFooterTwo {
+                                    display: flex;
+                                    flex-direction: column;
+                                    li {
+                                        margin-bottom: 10px; 
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+        
+                .newsletterContainer {
+                    .signUp {
+                        display: flex;
+                        flex-direction: column;
+                        input {
+                            margin: 0px 0px 10px 0px; 
+                        }
+                    }
+                }
+            }
+            .copyrightContainer {
+                flex-direction: column-reverse;
+                .copyright {
+                    align-self: start;
+                }
+                .privacyTerms {
+                    ul {
+                        li {
+                            .footerPrivacyLinks {
+                                margin: 0px 10px 0px 0px; 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

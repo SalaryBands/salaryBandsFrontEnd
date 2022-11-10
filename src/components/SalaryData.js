@@ -7,7 +7,7 @@ import { FiSearch } from 'react-icons/fi';
 import "react-toggle/style.css";
 import Pagination from "./Pagination";
 
-let PageSize = 2;
+let PageSize = 30;
 
 
 function SalaryData() {
@@ -19,7 +19,7 @@ function SalaryData() {
   const [negotiateToggle, setNegotiateToggle] = useState(false);
   const [disabilityToggle, setDisabilityToggle] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-
+  
   useEffect(() => {
     axios({
       method: "get",
@@ -46,10 +46,12 @@ function SalaryData() {
   };
 
   const currentTableData = useMemo(() => {
+
+
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
     return userSubmissionData.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage]);
+  }, [currentPage, userSubmissionData]);
 
   console.log(userSubmissionData);
   
@@ -214,7 +216,7 @@ function SalaryData() {
             </tr>
           </thead>
           <tbody>
-            {userSubmissionData
+            {currentTableData
               .filter(
                 (userData) =>
                   userData.job_title
@@ -304,7 +306,7 @@ function SalaryData() {
                     </td>
                     <td>
                       <div className="salaryNegotiationContainer">
-                        <div className="salaryNumber">${val.salary}</div>
+                        <div className="salaryNumber">${val.salary.toLocaleString()}</div>
                         {val.negotiation_percentage ? (
                           <div className="percentIncrease">
                             <span className="increasedPercentage">
@@ -329,7 +331,6 @@ function SalaryData() {
                           </span>
                         </div>
                         {val.disability.map((userDisability) => {
-                          console.log(userDisability);
                           return (
                             <div className="disabilityContainer">
                               <span className="disabilityText">
@@ -345,6 +346,13 @@ function SalaryData() {
               })}
           </tbody>
         </table>
+        <Pagination 
+          className="pagination-bar"
+          currentPage={currentPage}
+          totalCount={userSubmissionData.length}
+          pageSize={PageSize}
+          onPageChange={page => setCurrentPage(page)}
+        />
       </div>
     </div>
   );
