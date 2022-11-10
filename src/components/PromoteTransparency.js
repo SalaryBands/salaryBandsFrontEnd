@@ -115,9 +115,9 @@ function PromoteTransparency (props) {
                             </div>
 
                             <div className="nextAndBackContainer">
-                                <div className='backContainer'>
+                                {/* <div className='backContainer'>
                                     <button type="button" className='backButton' onClick={handleBack}>Back</button>
-                                </div>
+                                </div> */}
                                 <div className="nextContainer">
                                     <button type="submit" className="verifyButton">
                                         Next Step

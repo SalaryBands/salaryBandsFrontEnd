@@ -1157,7 +1157,7 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   justify-content: space-between;
 }
 .nextAndBackContainer .nextContainer {
-  width: 45%;
+  width: 100%;
 }
 .nextAndBackContainer .nextContainer .verifyButton {
   width: 100%;

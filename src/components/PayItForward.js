@@ -98,9 +98,9 @@ const handleInput = useCallback((e) => {
                 </div>
 
                 <div className="nextAndBackContainer">
-                    <div className="backContainer">
+                    {/* <div className="backContainer">
                       <button className="backButton">Back</button>
-                    </div>
+                    </div> */}
                     <div className="nextContainer">
                       <button type="submit" className="verifyButton">
                         Submit
