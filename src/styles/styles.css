@@ -737,11 +737,11 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 
 .emailVerification {
   width: 100vw;
-  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 50px 0px;
 }
 
 .userCard {
@@ -873,7 +873,7 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 
 .userFlowContainer {
   width: 100vw;
-  height: 100vh;
+  margin: 50px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -890,7 +890,9 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 .userFlowContainer .userCard .userPathwayCard {
   width: 55%;
   padding: 15px;
-  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .userFlowContainer .userCard .userPathwayCard .userPathwayComponentContainer {
   height: 100%;
@@ -973,6 +975,9 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
 .professionalDetailsContainer {
   height: 100%;
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .professionalDetails {
