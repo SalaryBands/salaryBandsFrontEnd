@@ -47,14 +47,10 @@ function SalaryData() {
 
   const currentTableData = useMemo(() => {
 
-
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
     return userSubmissionData.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, userSubmissionData]);
-
-  console.log(userSubmissionData);
-  
 
   const genders = [
     { value: "all", label: "All" },
@@ -241,7 +237,6 @@ function SalaryData() {
                 if (userGender === "" || userGender === "All") {
                   return true;
                 } else {
-                  console.log(userGender);
                   return (
                     userData.gender
                       .toString()
@@ -252,7 +247,6 @@ function SalaryData() {
                 }
               })
               .filter((userData) => {
-                console.log(userData);
                 if (userRace === "" || userRace === "All") {
                   return true;
                 } else {
@@ -276,14 +270,13 @@ function SalaryData() {
                 if (disabilityToggle === false) {
                   return true;
                 } else {
-                  console.log(userData);
                   return userData.disability.length >= 1;
                 }
               })
               .reverse()
-              .map((val, key) => {
+              .map((val) => {
                 return (
-                  <tr className="tableRow" key={key}>
+                  <tr className="tableRow" key={val.id}>
                     <td>
                       <div className="">
                         <div className="topText">{val.job_title}</div>
@@ -317,7 +310,7 @@ function SalaryData() {
                         ) : null}
                       </div>
                     </td>
-                    <td>
+                    <td key={val.id}>
                       <div className="tagsContainer">
                         {!val.negotiate_check ? (
                           <div className="negotiateContainer">
@@ -498,7 +491,6 @@ function SalaryData() {
                 if (userGender === "" || userGender === "All") {
                   return true;
                 } else {
-                  console.log(userGender);
                   return (
                     userData.gender
                       .toString()
@@ -509,7 +501,6 @@ function SalaryData() {
                 }
               })
               .filter((userData) => {
-                console.log(userData);
                 if (userRace === "" || userRace === "All") {
                   return true;
                 } else {
@@ -533,14 +524,13 @@ function SalaryData() {
                 if (disabilityToggle === false) {
                   return true;
                 } else {
-                  console.log(userData);
                   return userData.disability.length >= 1;
                 }
               })
               .reverse()
-              .map((val, key) => {
+              .map((val) => {
                 return (
-                  <tr className="tableRow" key={key}>
+                  <tr className="tableRow" key={val.id}>
                     <td className="titleRow">
                       <div className="">
                         <div className="topText">{val.job_title}</div>

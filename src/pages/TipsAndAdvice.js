@@ -1,5 +1,4 @@
 import axios from "axios";
-import Toggle from "react-toggle";
 import Select from 'react-select';
 import { FiSearch } from 'react-icons/fi';  
 import {useState, useEffect} from 'react';
@@ -33,8 +32,6 @@ function TipsAndAdvice() {
     const handleClick = function () {
         setAdvancedFilter(!advancedFilter);
     };
-
-    console.log(filteredData);
 
     const races = [
         { value: "all", label: "All" },
@@ -72,7 +69,7 @@ function TipsAndAdvice() {
                             className="searchFilter"
                             type="text"
                             name="search"
-                            placeholder="Search title, company, city, ect"
+                            placeholder="Search title, city, ect"
                             value={searchTerm}
                             onChange={handleChange}
                         />
@@ -115,8 +112,9 @@ function TipsAndAdvice() {
                     {
                         filteredData
                         .filter((userData) => 
-                            userData.job_title.toString().toLowerCase().includes(searchTerm.toLowerCase())
-                        )
+                            userData.job_title.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            userData.city.toString().toLowerCase().includes(searchTerm.toLowerCase())
+                        ) 
                             .filter((userData) => {
                                 if (userGender === "" || userGender === "All") {
                                     return true;
@@ -147,8 +145,8 @@ function TipsAndAdvice() {
                             })
                         .reverse().map( (val) => {
                             return(
-                                <div className="adviceCard">
-                                    <div className="professionalDetailsContainer">
+                                <div key={val.id}className="adviceCard">
+                                    <div className="professionalDetailContainer">
                                         <div className="titleAndLocationContainer">
                                             <div className="titleContainer">
                                                 <h3>{val.job_title}</h3>

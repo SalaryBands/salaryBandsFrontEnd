@@ -1,3 +1,171 @@
+// Media Query --> Screen size : 768px
+@media screen and (max-width: 768px) {
+    //Navigation 
+    .desktopNav {
+            display: none;
+        }
+    
+    .mobileNav {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+    
+            .hamburgerContainer {
+                padding-right: 10px;
+    
+                .hamburgerMenu {
+                    color: #344054;
+                    background-color: transparent;
+                    border: none;
+                    box-shadow: none;
+                    font-size: 28px;
+                    padding: 0px;
+    
+                }
+            }
+    
+            .slideOutNav {
+                position: absolute;
+                width: 100%;
+                top: 51px;
+                right: 0px;
+                background-color: #fff;
+                z-index: 2;
+    
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;
+    
+                    li {
+                        margin-left: 0px;
+                        margin-bottom: 20px;
+                        ;
+                    }
+    
+                }
+            }
+        }
+
+    //Hero
+        header {
+            .wrapper {
+                .heroContainer {
+                    justify-content: center;
+                    .heroTextContainer {
+                        width: 90%;
+    
+                        h1 {
+                            font-size: 40px;
+                            line-height: 45px;
+                            margin-top: 0px;
+                        }
+    
+                        h4 {
+                            font-size: 18px;
+                            line-height: 28px;
+                        }
+    
+                        .buttonLinksContainer {
+                            flex-direction: column;
+    
+                            .heroSubmitSalary {
+                                margin-right: 0px;
+                                margin-bottom: 20px;
+                                text-align: center;
+                            }
+    
+                            .heroExploreData {
+                                text-align: center;
+                            }
+                        }
+                    }
+    
+                    .heroImageContainer {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+    // UserSubmissionChart.js
+    .userSubmissionChartContainer {
+        .wrapper {
+            .userSubmissionTextContainer {
+                    h2 {
+                        font-size: 36px;
+                    }
+    
+                    p {
+                        text-align: center;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        //Tips and Advice
+        .wrapper {
+            .tipsAndAdviceContainer {
+                .tipsTitleContainer {
+                    width: 100%;
+    
+                    h2 {
+                        font-size: 30px;
+                    }
+                }
+    
+                .sRContainer {
+                    padding: 0px;
+    
+                    .searchContainer {
+                        flex-direction: column;
+                        width: 100%;
+    
+                        .searchFilter {
+                            width: 100%;
+                            margin-bottom: 10px;
+                        }
+    
+                        .advancedFilterContainer {
+                            width: 100%;
+    
+                            .filterOptionsContainer {
+                                width: 100.5%;
+                            }
+                        }
+                    }
+    
+                    .recentData {
+                        display: none;
+                    }
+                }
+    
+                .adviceCardContainer {
+                    .adviceCard {
+                        width: 100%; 
+                        margin-right: 0px; 
+                        
+                    }
+                }
+            }
+        }
+
+        // AllData.js
+        .wrapper {
+            .salaryTitleContainer {
+                width: 100%;
+        
+                h2 {
+                    font-size: 30px;
+                    }
+                }
+            }
+    }
+        
+        
+
 
 // Media Query --> Screen size : 480px
 @media screen and (max-width: 480px) {
@@ -422,6 +590,7 @@
     //UserPathway
     .userFlowContainer {
         height: auto; 
+        margin: 0; 
         .userCard {
             flex-direction: column;
             width: 100%;
@@ -430,6 +599,7 @@
             }
             .infoCard {
                 width: 100%; 
+                border-radius: 0px;
             }
         }
     }
@@ -565,4 +735,18 @@
             }
         }
     }
+}
+
+// Media Query --> Screen size : 400px
+@media screen and (max-width: 400px) {
+    // UserSubmissionChart 
+    .userSubmissionChartContainer {
+            .wrapper {
+                .userSubmissionTextContainer {
+                    h2 {
+                        font-size: 29px;
+                    }
+                }
+            }
+        }
 }

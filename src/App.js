@@ -10,6 +10,7 @@ import URLVerification from './components/URLVerification';
 import TipsAndAdvice from './pages/TipsAndAdvice';
 import SalaryData from './components/SalaryData';
 import AllData from './pages/AllData';
+import Resources from './pages/Resources';
  
 
 
@@ -53,7 +54,12 @@ function App() {
 
         <Route
           path="/Resources"
-          element={<TipsAndAdvice />}
+          element={<Resources />}
+        />
+
+        <Route
+          path="/AboutUs"
+          element={<Resources />}
         />
 
       </Routes>

@@ -1312,33 +1312,33 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   margin: 0px 15px 15px 0px;
   height: 100%;
 }
-.adviceCardContainer .adviceCard .professionalDetailsContainer {
+.adviceCardContainer .adviceCard .professionalDetailContainer {
   display: flex;
   width: 100%;
   height: 30%;
 }
-.adviceCardContainer .adviceCard .professionalDetailsContainer .titleAndLocationContainer {
+.adviceCardContainer .adviceCard .professionalDetailContainer .titleAndLocationContainer {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
-.adviceCardContainer .adviceCard .professionalDetailsContainer .titleAndLocationContainer .titleContainer h3 {
+.adviceCardContainer .adviceCard .professionalDetailContainer .titleAndLocationContainer .titleContainer h3 {
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
   color: #101828;
   margin: 0;
 }
-.adviceCardContainer .adviceCard .professionalDetailsContainer .titleAndLocationContainer .locationContainer {
+.adviceCardContainer .adviceCard .professionalDetailContainer .titleAndLocationContainer .locationContainer {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #475467;
 }
-.adviceCardContainer .adviceCard .professionalDetailsContainer .titleAndLocationContainer .locationContainer p {
+.adviceCardContainer .adviceCard .professionalDetailContainer .titleAndLocationContainer .locationContainer p {
   margin-top: 5px;
 }
-.adviceCardContainer .adviceCard .professionalDetailsContainer .yearsGenderRaceContainer {
+.adviceCardContainer .adviceCard .professionalDetailContainer .yearsGenderRaceContainer {
   display: flex;
   flex-direction: column;
   font-weight: 400;
@@ -1348,10 +1348,10 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   align-items: flex-end;
   width: 50%;
 }
-.adviceCardContainer .adviceCard .professionalDetailsContainer .yearsGenderRaceContainer p {
+.adviceCardContainer .adviceCard .professionalDetailContainer .yearsGenderRaceContainer p {
   margin: 0;
 }
-.adviceCardContainer .adviceCard .professionalDetailsContainer .yearsGenderRaceContainer .boldAdvice {
+.adviceCardContainer .adviceCard .professionalDetailContainer .yearsGenderRaceContainer .boldAdvice {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
@@ -1767,6 +1767,128 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   text-decoration: none;
 }
 
+.resourcesContainer {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.resourcesContainer .textContainer h1 {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+  .mobileNav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+  }
+  .mobileNav .hamburgerContainer {
+    padding-right: 10px;
+  }
+  .mobileNav .hamburgerContainer .hamburgerMenu {
+    color: #344054;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 28px;
+    padding: 0px;
+  }
+  .mobileNav .slideOutNav {
+    position: absolute;
+    width: 100%;
+    top: 51px;
+    right: 0px;
+    background-color: #fff;
+    z-index: 2;
+  }
+  .mobileNav .slideOutNav ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .mobileNav .slideOutNav ul li {
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
+  header .wrapper .heroContainer {
+    justify-content: center;
+  }
+  header .wrapper .heroContainer .heroTextContainer {
+    width: 90%;
+  }
+  header .wrapper .heroContainer .heroTextContainer h1 {
+    font-size: 40px;
+    line-height: 45px;
+    margin-top: 0px;
+  }
+  header .wrapper .heroContainer .heroTextContainer h4 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  header .wrapper .heroContainer .heroTextContainer .buttonLinksContainer {
+    flex-direction: column;
+  }
+  header .wrapper .heroContainer .heroTextContainer .buttonLinksContainer .heroSubmitSalary {
+    margin-right: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  header .wrapper .heroContainer .heroTextContainer .buttonLinksContainer .heroExploreData {
+    text-align: center;
+  }
+  header .wrapper .heroContainer .heroImageContainer {
+    display: none;
+  }
+  .userSubmissionChartContainer .wrapper .userSubmissionTextContainer h2 {
+    font-size: 36px;
+  }
+  .userSubmissionChartContainer .wrapper .userSubmissionTextContainer p {
+    text-align: center;
+    font-size: 18px;
+  }
+  .wrapper .tipsAndAdviceContainer .tipsTitleContainer {
+    width: 100%;
+  }
+  .wrapper .tipsAndAdviceContainer .tipsTitleContainer h2 {
+    font-size: 30px;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer {
+    padding: 0px;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer .searchContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer .searchContainer .searchFilter {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer .searchContainer .advancedFilterContainer {
+    width: 100%;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer .searchContainer .advancedFilterContainer .filterOptionsContainer {
+    width: 100.5%;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer .recentData {
+    display: none;
+  }
+  .wrapper .tipsAndAdviceContainer .adviceCardContainer .adviceCard {
+    width: 100%;
+    margin-right: 0px;
+  }
+  .wrapper .salaryTitleContainer {
+    width: 100%;
+  }
+  .wrapper .salaryTitleContainer h2 {
+    font-size: 30px;
+  }
+}
 @media screen and (max-width: 480px) {
   .desktopNav {
     display: none;
@@ -2117,6 +2239,7 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   }
   .userFlowContainer {
     height: auto;
+    margin: 0;
   }
   .userFlowContainer .userCard {
     flex-direction: column;
@@ -2127,6 +2250,7 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   }
   .userFlowContainer .userCard .infoCard {
     width: 100%;
+    border-radius: 0px;
   }
   .userSubmissionChartContainer .wrapper .userSubmissionTextContainer h2 {
     font-size: 34px;
@@ -2213,5 +2337,10 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   }
   footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     margin: 0px 10px 0px 0px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .userSubmissionChartContainer .wrapper .userSubmissionTextContainer h2 {
+    font-size: 29px;
   }
 }
