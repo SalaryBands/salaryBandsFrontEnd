@@ -11,6 +11,7 @@ let PageSize = 30;
 
 
 function SalaryData() {
+  const [currentPage, setCurrentPage] = useState(1);
   const [userSubmissionData, setUserSubmissionData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [advancedFilter, setAdvancedFilter] = useState(false);
@@ -18,8 +19,27 @@ function SalaryData() {
   const [userRace, setUserRace] = useState("");
   const [negotiateToggle, setNegotiateToggle] = useState(false);
   const [disabilityToggle, setDisabilityToggle] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
   
+  const genders = [
+    { value: "all", label: "All" },
+    { value: "male", label: "Male" },
+    { value: "female", label: "Female" },
+    { value: "transgender", label: "Transgender" },
+    { value: "nonBinary", label: "Non Binary" },
+    { value: "prefer", label: "Prefer not to say" },
+  ];
+
+  const races = [
+    { value: "all", label: "All" },
+    { value: "caucasian", label: "Caucasian" },
+    { value: "native", label: "Native American or Alaska Native" },
+    { value: "black", label: "Black or African American" },
+    { value: "asian", label: "Asian" },
+    { value: "latino", label: "Hispanic or Latino" },
+    { value: "two", label: "Two or more races" },
+    { value: "other", label: "Other" },
+  ];
+
   useEffect(() => {
     axios({
       method: "get",
@@ -27,6 +47,7 @@ function SalaryData() {
     }).then((apiData) => {
       setUserSubmissionData(apiData.data);
     });
+
   }, []);
 
   const handleChange = function (e) {
@@ -49,28 +70,11 @@ function SalaryData() {
 
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
-    return userSubmissionData.slice(firstPageIndex, lastPageIndex);
+    return userSubmissionData.reverse().slice(firstPageIndex, lastPageIndex);
   }, [currentPage, userSubmissionData]);
 
-  const genders = [
-    { value: "all", label: "All" },
-    { value: "male", label: "Male" },
-    { value: "female", label: "Female" },
-    { value: "transgender", label: "Transgender" },
-    { value: "nonBinary", label: "Non Binary" },
-    { value: "prefer", label: "Prefer not to say" },
-  ];
+  console.log(userSubmissionData);
 
-  const races = [
-    { value: "all", label: "All" },
-    { value: "caucasian", label: "Caucasian" },
-    { value: "native", label: "Native American or Alaska Native" },
-    { value: "black", label: "Black or African American" },
-    { value: "asian", label: "Asian" },
-    { value: "latino", label: "Hispanic or Latino" },
-    { value: "two", label: "Two or more races" },
-    { value: "other", label: "Other" },
-  ];
 
   const checkCountry = (countryCode) => {
     let myCountry = Country.getAllCountries().filter(
@@ -273,7 +277,6 @@ function SalaryData() {
                   return userData.disability.length >= 1;
                 }
               })
-              .reverse()
               .map((val) => {
                 return (
                   <tr className="tableRow" key={val.id}>
@@ -563,13 +566,6 @@ function SalaryData() {
               })}
           </tbody>
         </table>
-        <Pagination
-          className="pagination-bar"
-          currentPage={currentPage}
-          totalCount={userSubmissionData.length}
-          pageSize={PageSize}
-          onPageChange={page => setCurrentPage(page)}
-        />
       </div>
       </div>
     </>

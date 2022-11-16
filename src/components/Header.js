@@ -27,31 +27,31 @@ function Header() {
                 </li>
                 <li className='headerLinks'>
                     <NavLink to={'/AllData'}
-                    style={({isactive}) => 
-                    isactive ? activeStyle : undefined
+                    style={({isActive}) => 
+                    isActive ? activeStyle : undefined
                     }
                     >Salaries</NavLink>
                 </li>
                 <li className='headerLinks'>
                     <NavLink to={'/TipsAndAdvice'}
-                    style={({ isactive }) =>
-                        isactive ? activeStyle : undefined
+                    style={({ isActive }) =>
+                        isActive ? activeStyle : undefined
                     }
                     >Tips & Advice</NavLink>
                 </li>
                 <li className='headerLinks'>
                     <NavLink
                     to={'/Resources'}
-                    style={({ isactive }) =>
-                        isactive ? activeStyle : undefined
+                    style={({ isActive }) =>
+                        isActive ? activeStyle : undefined
                     }
                     >Resources</NavLink>
                 </li>
                 <li className='headerLinks'>
                     <NavLink
                     to={'AboutUs'}
-                    style={({ isactive }) =>
-                        isactive ? activeStyle : undefined
+                    style={({ isActive }) =>
+                        isActive ? activeStyle : undefined
                     }
                     >About Us</NavLink>
                 </li>
@@ -82,16 +82,16 @@ function Header() {
                         <ul>
                                 <li className='headerLinks'>
                                     <NavLink to={'/AllData'}
-                                        style={({ isactive }) =>
-                                            isactive ? activeStyle : undefined
+                                        style={({ isActive }) =>
+                                            isActive ? activeStyle : undefined
                                         }
                                         onClick={handleClick}
                                     >Salaries</NavLink>
                                 </li>
                                 <li className='headerLinks'>
                                     <NavLink to={'/TipsAndAdvice'}
-                                        style={({ isactive }) =>
-                                            isactive ? activeStyle : undefined
+                                        style={({ isActive }) =>
+                                            isActive ? activeStyle : undefined
                                         }
                                         onClick={handleClick}
                                     >Tips & Advice</NavLink>
@@ -99,8 +99,8 @@ function Header() {
                                 <li className='headerLinks'>
                                     <NavLink
                                         to={'/Resources'}
-                                        style={({ isactive }) =>
-                                            isactive ? activeStyle : undefined
+                                        style={({ isActive }) =>
+                                            isActive ? activeStyle : undefined
                                         }
                                         onClick={handleClick}
                                     >Resources</NavLink>
@@ -108,8 +108,8 @@ function Header() {
                                 <li className='headerLinks'>
                                     <NavLink
                                         to={'AboutUs'}
-                                        style={({ isactive }) =>
-                                            isactive ? activeStyle : undefined
+                                        style={({ isActive }) =>
+                                            isActive ? activeStyle : undefined
                                         }
                                         onClick={handleClick}
                                     >About Us</NavLink>

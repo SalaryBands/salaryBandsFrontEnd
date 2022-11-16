@@ -245,6 +245,11 @@ button {
   font-weight: 600;
 }
 
+button:disabled {
+  background-color: gray;
+  border-color: gray;
+}
+
 .contactContainer {
   display: flex;
   flex-direction: row;
@@ -1334,9 +1339,12 @@ header .heroContainer .heroImageContainer .secondLineImages .imgFour {
   font-size: 16px;
   line-height: 24px;
   color: #475467;
+  display: flex;
+  align-items: center;
 }
 .adviceCardContainer .adviceCard .professionalDetailContainer .titleAndLocationContainer .locationContainer p {
-  margin-top: 5px;
+  margin-top: 10px;
+  margin-left: 3px;
 }
 .adviceCardContainer .adviceCard .professionalDetailContainer .yearsGenderRaceContainer {
   display: flex;
@@ -1852,6 +1860,33 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
     text-align: center;
     font-size: 18px;
   }
+  .userSubmissionChartContainer .wrapper .userSubmissionTable .searchAndRecentDataContainer {
+    flex-direction: column-reverse;
+  }
+  .userSubmissionChartContainer .wrapper .userSubmissionTable .searchAndRecentDataContainer .searchContainer {
+    width: 100%;
+    flex-direction: column;
+  }
+  .userSubmissionChartContainer .wrapper .userSubmissionTable .searchAndRecentDataContainer .searchContainer .iconContainer {
+    bottom: 60px;
+  }
+  .userSubmissionChartContainer .wrapper .userSubmissionTable .searchAndRecentDataContainer .searchContainer .searchFilter {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .userSubmissionChartContainer .wrapper .userSubmissionTable .searchAndRecentDataContainer .searchContainer .advancedFilterContainer {
+    width: 100%;
+  }
+  .userSubmissionChartContainer .wrapper .userSubmissionTable .searchAndRecentDataContainer .recentData {
+    width: 100%;
+  }
+  .userSubmissionChartContainer .wrapper .userSubmissionTable .searchAndRecentDataContainer .recentData .recentDataTextContainer {
+    justify-content: flex-start;
+  }
+  .userSubmissionChartContainer .wrapper .userSubmissionTable .searchAndRecentDataContainer .recentData .paidWorthContainer {
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
   .wrapper .tipsAndAdviceContainer .tipsTitleContainer {
     width: 100%;
   }
@@ -1887,6 +1922,42 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   }
   .wrapper .salaryTitleContainer h2 {
     font-size: 30px;
+  }
+  footer .wrapper .footerNavNewsletterContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer {
+    width: 80%;
+  }
+  footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterOne,
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterTwo {
+    display: flex;
+    flex-direction: column;
+  }
+  footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterOne li,
+footer .wrapper .footerNavNewsletterContainer .logoAndNavContainer .footerNavContainer .footerNav ul .mediaFooterTwo li {
+    margin-bottom: 10px;
+  }
+  footer .wrapper .footerNavNewsletterContainer .newsletterContainer .signUp {
+    display: flex;
+    flex-direction: column;
+  }
+  footer .wrapper .footerNavNewsletterContainer .newsletterContainer .signUp input {
+    margin: 0px 0px 10px 0px;
+  }
+  footer .wrapper .copyrightContainer {
+    flex-direction: column-reverse;
+  }
+  footer .wrapper .copyrightContainer .copyright {
+    align-self: start;
+  }
+  footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
+    margin: 0px 10px 0px 0px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2014,7 +2085,7 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   }
   .mobileWrapper .mobileTableView .searchAndRecentDataContainer .searchContainer .iconContainer {
     position: absolute;
-    bottom: 10px;
+    bottom: 60px;
     left: 10px;
     color: #667085;
   }
@@ -2223,6 +2294,7 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   }
   .emailVerification {
     height: auto;
+    margin: 0;
   }
   .emailVerification .userCard {
     flex-direction: column;
@@ -2231,8 +2303,12 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   .emailVerification .userCard .emailInput {
     width: 100%;
   }
+  .emailVerification .userCard .emailInput .emailInputTextContainer {
+    padding-top: 0px;
+  }
   .emailVerification .userCard .infoCard {
     width: 100%;
+    border-radius: 0px;
   }
   .emailVerification .userCard .infoCard .infoImgContainer {
     padding: 10%;
@@ -2280,6 +2356,9 @@ footer .wrapper .copyrightContainer .privacyTerms ul li .footerPrivacyLinks {
   .wrapper .tipsAndAdviceContainer .sRContainer .searchContainer {
     flex-direction: column;
     width: 100%;
+  }
+  .wrapper .tipsAndAdviceContainer .sRContainer .searchContainer .iconContainer {
+    bottom: 60px;
   }
   .wrapper .tipsAndAdviceContainer .sRContainer .searchContainer .searchFilter {
     width: 100%;

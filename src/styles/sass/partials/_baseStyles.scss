@@ -17,6 +17,11 @@ button {
     font-weight: 600; 
 }
 
+button:disabled {
+    background-color: gray;
+    border-color: gray;
+}
+
 .contactContainer {
     display: flex;
     flex-direction: row;

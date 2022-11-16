@@ -1,9 +1,10 @@
-import {useState} from 'react'
+import {useState, useCallback} from 'react'
 import { Link } from 'react-router-dom';
 import Select from 'react-select'
 import PayItForward from './PayItForward';
 import MagLetter from '../assets/MagLetter.png';
 import ProfessionalDetails from './ProfessionalDetails';
+import { useEffect } from 'react';
 
 
 
@@ -11,33 +12,17 @@ import ProfessionalDetails from './ProfessionalDetails';
 function PromoteTransparency (props) {
 
     const [nextStep, setNextStep] = useState(false)
-    const [back, setBack] = useState(false)
-    const [userGender, setUserGender] = useState({})
-    const [userRace, setUserRace] = useState({})
+    const [userGender, setUserGender] = useState("")
+    const [userRace, setUserRace] = useState("")
     const [userDisability, setUserDisability] = useState([])
     const [inputDisabled, setInputDisabled] = useState(true)
-
-
-    const handleChecked = function () {
-        setInputDisabled(false)
-    }
-
-    const handleNextStep = function (e) {
-        e.preventDefault()
-        setNextStep(true)
-    }
-
-    const handleMultiDisability = (e) => {
-        setUserDisability(Array.isArray(e) ? e.map(x => x.label) : []);
-    }
-
-    const handleBack = function (e) {
-        e.preventDefault()
-        setBack(!back)
-    }
-
-    console.log(userDisability)
-
+    const [userError, setUserError] = useState({
+        errorGender: false,
+        errorRace: false,
+    })
+    const [verifyData, setVerifyData] = useState(true)
+    const [isChecked, setIsChecked] = useState(null)
+    
     const genders = [
         { value: 'male', label: 'Male'},
         { value: 'female', label: 'Female' },
@@ -45,7 +30,7 @@ function PromoteTransparency (props) {
         { value: 'nonBinary', label: 'Non Binary' },
         { value: 'prefer', label: 'Prefer not to say' }
     ]
-
+    
     const races = [
         { value: 'caucasian', label: 'Caucasian'},
         { value: 'native', label: 'Native American or Alaska Native' },
@@ -55,7 +40,7 @@ function PromoteTransparency (props) {
         { value: 'two', label: 'Two or more races' },
         { value: 'other', label: 'Other' }
     ]
-
+    
     const disabilities = [
         { value: 'autism', label: 'Autism' },
         { value: 'adhd', label: 'ADHD' },
@@ -70,6 +55,33 @@ function PromoteTransparency (props) {
         { value: 'other', label: 'Other' },
         { value: 'prefer', label: 'Prefer not to say' },
     ]
+
+    let errorStyling = {
+        border: '1px solid #F04438'
+    }
+
+
+    const handleChecked = () => {
+        setIsChecked(true)
+        setInputDisabled(false)
+    }
+    
+    const handleMultiDisability = (e) => {
+        setUserDisability(Array.isArray(e) ? e.map(x => x.label) : []);
+    }
+    
+    useEffect( () => {
+        if (userGender.length >= 1 && userRace.length >= 1) {
+            setVerifyData(false)
+        }
+    }, [userGender, userRace])
+
+    const handleNextStep = (e) => {
+
+        e.preventDefault()
+        setNextStep(true)
+    }
+
 
     return (
         <>
@@ -88,7 +100,11 @@ function PromoteTransparency (props) {
                         <form onSubmit={ handleNextStep } action="#">
                             <div className="genderContainer">
                                 <label htmlFor="">What is your gender?</label>
-                                <Select options={genders} onChange={(genderType) => setUserGender(genderType.label)} required/>
+                                <Select options={genders} onChange={(genderType) => setUserGender(genderType.label)} 
+                                style={
+                                userError ? errorStyling : undefined
+                                } 
+                                />
                             </div>
                             <div className="raceContainer">
                                 <label htmlFor="">What is your race?</label>
@@ -119,7 +135,7 @@ function PromoteTransparency (props) {
                                     <button type="button" className='backButton' onClick={handleBack}>Back</button>
                                 </div> */}
                                 <div className="nextContainer">
-                                    <button type="submit" className="verifyButton">
+                                    <button type="submit" className="verifyButton" disabled={verifyData}>
                                         Next Step
                                     </button>
                                 </div>

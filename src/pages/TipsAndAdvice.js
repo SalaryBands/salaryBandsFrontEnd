@@ -2,6 +2,7 @@ import axios from "axios";
 import Select from 'react-select';
 import { FiSearch } from 'react-icons/fi';  
 import {useState, useEffect} from 'react';
+import Pin from '../assets/pin.png'
 
 function TipsAndAdvice() {
     
@@ -152,6 +153,7 @@ function TipsAndAdvice() {
                                                 <h3>{val.job_title}</h3>
                                             </div>
                                             <div className="locationContainer">
+                                                <div className="iconContainer"><img src={Pin} alt="" /></div>
                                                 <p>{val.city}, {val.state}, {val.country}</p>
                                             </div>
                                         </div>

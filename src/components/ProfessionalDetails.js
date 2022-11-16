@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
 import PromoteTransparency from "./PromoteTransparency";
 import House from "../assets/house.png";
 import { Country, State, City } from "country-state-city";
+import UploadDetails from './UploadDetails';
+import UserPathway from "../pages/UserPathway";
 
 function ProfessionalDetails() {
   const [verifyDetails, setVerifyDetails] = useState(false);
   const [userJobTitle, setUserJobTitle] = useState({});
   const [userIndustry, setUserIndustry] = useState({});
+  const [verifyData, setVerifyData] = useState(true)
   const [type, setType] = useState({});
   const [didNegotiate, setDidNegotiate] = useState(true);
   const [workArrangement, setWorkArrangement] = useState({});
@@ -24,6 +27,12 @@ function ProfessionalDetails() {
     negotiate: "",
     negotiatePercent: 0,
   });
+  const [selectedCountry, setSelectedCountry] = useState();
+  const [selectedState, setSelectedState] = useState();
+  const [selectedCity, setSelectedCity] = useState();
+
+  const availableState = State.getStatesOfCountry(selectedCountry);
+  const availableCities = City.getCitiesOfState(selectedCountry, selectedState);
 
   const jobTitles = [
     { value: "Software Engineer", label: "Software Engineer" },
@@ -142,9 +151,13 @@ function ProfessionalDetails() {
   ];
 
   const handleVerifyDetails = function (e) {
+    if (!professionalDetails.company) {
+      setProfessionalDetails({
+        company : '--'
+      })
+    }
     e.preventDefault();
-    setVerifyDetails(true);
-
+    setVerifyDetails(true)
   };
 
   function handleInput(e) {
@@ -155,16 +168,16 @@ function ProfessionalDetails() {
     });
   }
 
-  const [selectedCountry, setSelectedCountry] = useState();
-  const [selectedState, setSelectedState] = useState();
-  const [selectedCity, setSelectedCity] = useState();
+  useEffect(() => {
+    if (userIndustry.length >= 1 && selectedCountry && professionalDetails.salary && professionalDetails.years.length >= 1 && userJobTitle.length >= 1 && type.length >= 1 && workArrangement.length >= 1) {
+      setVerifyData(false)
+    }
+  }, [selectedCountry, professionalDetails.salary, professionalDetails.years, userJobTitle, type, workArrangement, userIndustry])
 
-  const availableState = State.getStatesOfCountry(selectedCountry);
-  const availableCities = City.getCitiesOfState(selectedCountry, selectedState);
 
   return (
     <div className="professionalDetailsCardandImageContainer">
-      {!verifyDetails ? (
+      {!verifyDetails ?
         <>
           <div className="professionalDetailsContainer">
             <div className="tellUsCard">
@@ -368,10 +381,10 @@ function ProfessionalDetails() {
                     </div>
                     <div className="nextAndBackContainer">
                       {/* <div className="backContainer">
-                        <button className="backButton">Back</button>
+                        <button type="submit" className="backButton">Back</button>
                       </div> */}
                       <div className="nextContainer">
-                        <button type="submit" className="verifyButton">
+                        <button type="submit" className="verifyButton" disabled={verifyData}>
                           Next Step
                         </button>
                       </div>
@@ -382,7 +395,7 @@ function ProfessionalDetails() {
               </div>
             </div>
           </div>
-<div className="infoCard">
+          <div className="infoCard">
                     <div className="infoImgContainer">
                       <img src={House} alt="" />
                     </div>
@@ -393,7 +406,8 @@ function ProfessionalDetails() {
                   </div>
                 </>
 
-                ) : <PromoteTransparency 
+                : 
+                <PromoteTransparency 
                   userProfessionalDetails={professionalDetails}
                   userWorkType={type}
                   userWorkArrangement={workArrangement}
@@ -402,9 +416,11 @@ function ProfessionalDetails() {
                   usersJobTitle={userJobTitle}
                   usersIndustry={userIndustry}
                 />
-            }
-          </div>
-          )
+
+
+              }
+              </div>
+  )
 }
 
 export default ProfessionalDetails;

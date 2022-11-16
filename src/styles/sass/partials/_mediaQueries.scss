@@ -105,6 +105,41 @@
             }
         }
 
+        // SalaryData 
+        .userSubmissionChartContainer {
+            .wrapper {
+                .userSubmissionTable {
+                    .searchAndRecentDataContainer {
+                        flex-direction: column-reverse;
+                        .searchContainer {
+                            width: 100%; 
+                            flex-direction: column;
+                            .iconContainer {
+                                bottom: 60px; 
+                            }
+                            .searchFilter {
+                                width: 100%; 
+                                margin-bottom: 10px;
+                            }
+                            .advancedFilterContainer {
+                                width: 100%; 
+                            }
+                        }
+                        .recentData {
+                            width: 100%; 
+                            .recentDataTextContainer {
+                                justify-content: flex-start;
+                            }
+                            .paidWorthContainer {
+                                justify-content: flex-start;
+                                margin-bottom: 10px; 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         //Tips and Advice
         .wrapper {
             .tipsAndAdviceContainer {
@@ -162,7 +197,67 @@
                     }
                 }
             }
-    }
+        footer {
+            .wrapper {
+                .footerNavNewsletterContainer {
+                    display: flex;
+                    flex-direction: column;
+    
+                    .logoAndNavContainer {
+                        width: 80%;
+    
+                        .footerNavContainer {
+                            .footerNav {
+                                ul {
+                                    display: flex;
+                                    justify-content: space-between;
+    
+                                    .mediaFooterOne,
+                                    .mediaFooterTwo {
+                                        display: flex;
+                                        flex-direction: column;
+    
+                                        li {
+                                            margin-bottom: 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                    .newsletterContainer {
+                        .signUp {
+                            display: flex;
+                            flex-direction: column;
+    
+                            input {
+                                margin: 0px 0px 10px 0px;
+                            }
+                        }
+                    }
+                }
+    
+                .copyrightContainer {
+                    flex-direction: column-reverse;
+    
+                    .copyright {
+                        align-self: start;
+                    }
+    
+                    .privacyTerms {
+                        ul {
+                            li {
+                                .footerPrivacyLinks {
+                                    margin: 0px 10px 0px 0px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+}
         
         
 
@@ -315,7 +410,7 @@
                 
                                         .iconContainer {
                                             position: absolute;
-                                            bottom: 10px;
+                                            bottom: 60px;
                                             left: 10px;
                                             color: #667085
                                         }
@@ -571,14 +666,19 @@
     //Email Verification
     .emailVerification {
         height: auto; 
+        margin: 0; 
         .userCard {
             flex-direction: column;
             width: 100%; 
             .emailInput {
                 width: 100%;
+                .emailInputTextContainer {
+                    padding-top: 0px; 
+                }
             }
             .infoCard {
                 width: 100%; 
+                border-radius: 0px;
                 .infoImgContainer {
                     padding: 10%; 
                 }
@@ -649,6 +749,9 @@
                 .searchContainer {
                     flex-direction: column;
                     width: 100%; 
+                    .iconContainer {
+                        bottom: 60px;
+                    }
                     .searchFilter {
                         width: 100%; 
                         margin-bottom: 10px; 
