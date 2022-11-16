@@ -151,8 +151,9 @@ function ProfessionalDetails() {
   ];
 
   const handleVerifyDetails = function (e) {
-    if (!professionalDetails.company) {
+    if (professionalDetails.company.length <=0 ) {
       setProfessionalDetails({
+        ...professionalDetails,
         company : '--'
       })
     }

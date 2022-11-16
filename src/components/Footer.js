@@ -22,15 +22,15 @@ function Footer() {
                                             <Link to={'/AllData'} className='footerNavLinks'>Salaries</Link>
                                         </li>
                                         <li>
-                                            <Link to={'TipsAndAdvice'} className='footerNavLinks'>Tips & Advice</Link>
+                                            <Link to={'/TipsAndAdvice'} className='footerNavLinks'>Tips & Advice</Link>
                                         </li>
                                     </div>
                                     <div className="mediaFooterTwo">
                                         <li>
-                                            <Link className='footerNavLinks'>Resources</Link>
+                                            <Link className='footerNavLinks' to={'/Resources'}>Resources</Link>
                                         </li>
                                         <li>
-                                            <Link className='footerNavLinks'>About Us</Link>
+                                            <Link className='footerNavLinks' to={'/AboutUs'}>About Us</Link>
                                         </li>
                                         <li>
                                             <Link className='footerNavLinks'>Privacy</Link>

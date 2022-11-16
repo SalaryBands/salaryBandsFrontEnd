@@ -55,8 +55,7 @@ function EmailVerification() {
             
             
         }, [userVerify, userEmail])
-        
-        console.log(errorMessage.message);
+        console.log(errorMessage);
     
     return (
         <section className='emailVerification'>
@@ -79,10 +78,8 @@ function EmailVerification() {
                                 {
                                     userError ?
                                         <div>
-                                            <p className='errorText'>This domain is not allowed to access submission features.</p>
+                                            <p className='errorText'>This domain is not allowed access to submission features.</p>
                                         </div>
-                                    
-
                                     : null
                                 }
                                 <button type="submit" className='verifyButton'>Verify</button>
@@ -115,7 +112,7 @@ function EmailVerification() {
 
                         :
                         <>
-                            <div className="infoImgContainer">
+                            <div className="infoImgContainerSuccess">
                                 <img src={emailSuccess} alt="" />
                             </div>
                         </>
