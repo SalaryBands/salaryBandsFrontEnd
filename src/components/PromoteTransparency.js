@@ -16,12 +16,8 @@ function PromoteTransparency (props) {
     const [userRace, setUserRace] = useState("")
     const [userDisability, setUserDisability] = useState([])
     const [inputDisabled, setInputDisabled] = useState(true)
-    const [userError, setUserError] = useState({
-        errorGender: false,
-        errorRace: false,
-    })
     const [verifyData, setVerifyData] = useState(true)
-    const [isChecked, setIsChecked] = useState(null)
+    const [isChecked, setIsChecked] = useState(false)
     
     const genders = [
         { value: 'male', label: 'Male'},
@@ -56,14 +52,16 @@ function PromoteTransparency (props) {
         { value: 'prefer', label: 'Prefer not to say' },
     ]
 
-    let errorStyling = {
-        border: '1px solid #F04438'
-    }
 
+    const handleChecked = (e) => {
 
-    const handleChecked = () => {
-        setIsChecked(true)
-        setInputDisabled(false)
+        if(e.target.checked && e.target.value == "yes") {
+            setInputDisabled(false)
+            setIsChecked(true)
+        } else if (e.target.checked && e.target.value == "no") {
+            setInputDisabled(true)
+            setIsChecked(true)
+        }
     }
     
     const handleMultiDisability = (e) => {
@@ -71,10 +69,14 @@ function PromoteTransparency (props) {
     }
     
     useEffect( () => {
-        if (userGender.length >= 1 && userRace.length >= 1) {
+        if (userGender.length >= 1 && userRace.length >= 1 && isChecked && !inputDisabled && userDisability.length >= 1) {
             setVerifyData(false)
-        }
-    }, [userGender, userRace])
+        } else if 
+            (userGender.length >= 1 && userRace.length >= 1 && isChecked && inputDisabled) {
+                setVerifyData(false)
+            }
+        
+    }, [userGender, userRace, isChecked, inputDisabled, userDisability])
 
     const handleNextStep = (e) => {
 
@@ -101,9 +103,6 @@ function PromoteTransparency (props) {
                             <div className="genderContainer">
                                 <label htmlFor="">What is your gender?</label>
                                 <Select options={genders} onChange={(genderType) => setUserGender(genderType.label)} 
-                                style={
-                                userError ? errorStyling : undefined
-                                } 
                                 />
                             </div>
                             <div className="raceContainer">
@@ -115,11 +114,11 @@ function PromoteTransparency (props) {
                                 <label htmlFor="">Do you have a disability?</label>
                                 <div className="yesOrNoContainer">
                                     <div className="yesContainer">
-                                        <input type="radio" name="disability" value={inputDisabled} onChange={handleChecked}/>  
+                                        <input type="radio" name="disability" value="yes" onChange={handleChecked}/>  
                                         <label htmlFor="">Yes</label>                  
                                     </div>
                                     <div className="noContainer">
-                                        <input type="radio" name='disability' onChange={ () => setInputDisabled(true)}/>
+                                        <input type="radio" name='disability' value="no" onChange={handleChecked}/>
                                         <label htmlFor="">No</label>
                                     </div>
                                 </div>

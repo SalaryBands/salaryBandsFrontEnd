@@ -30,9 +30,9 @@ function ProfessionalDetails() {
   const [selectedCountry, setSelectedCountry] = useState();
   const [selectedState, setSelectedState] = useState();
   const [selectedCity, setSelectedCity] = useState();
-
   const availableState = State.getStatesOfCountry(selectedCountry);
   const availableCities = City.getCitiesOfState(selectedCountry, selectedState);
+  const [isChecked, setIsChecked] = useState(false)
 
   const jobTitles = [
     { value: "Software Engineer", label: "Software Engineer" },
@@ -168,13 +168,25 @@ function ProfessionalDetails() {
       [e.target.name]: value,
     });
   }
+  const handleChecked = (e) => {
 
+    if (e.target.checked && e.target.value == "yes") {
+      setDidNegotiate(false)
+      setIsChecked(true)
+    } else if (e.target.checked && e.target.value == "no") {
+      setDidNegotiate(true)
+      setIsChecked(true)
+    }
+  }
+  
   useEffect(() => {
-    if (userIndustry.length >= 1 && selectedCountry && professionalDetails.salary && professionalDetails.years.length >= 1 && userJobTitle.length >= 1 && type.length >= 1 && workArrangement.length >= 1) {
+    if (userIndustry.length >= 1 && selectedCountry && professionalDetails.salary && professionalDetails.years.length >= 1 && userJobTitle.length >= 1 && type.length >= 1 && workArrangement.length >= 1 && isChecked && !didNegotiate && professionalDetails.negotiatePercent.length >= 1) {
+      setVerifyData(false)
+    } else if (userIndustry.length >= 1 && selectedCountry && professionalDetails.salary && professionalDetails.years.length >= 1 && userJobTitle.length >= 1 && type.length >= 1 && workArrangement.length >= 1 && isChecked && didNegotiate) {
       setVerifyData(false)
     }
-  }, [selectedCountry, professionalDetails.salary, professionalDetails.years, userJobTitle, type, workArrangement, userIndustry])
-
+  }, [selectedCountry, professionalDetails.salary, professionalDetails.years, userJobTitle, type, workArrangement, userIndustry, isChecked, didNegotiate, professionalDetails.negotiatePercent])
+  
 
   return (
     <div className="professionalDetailsCardandImageContainer">
@@ -345,11 +357,11 @@ function ProfessionalDetails() {
                         <div className="yesOrNoContainer">
                           <div className="yesContainer">
                             <input
-                              onChange={() => setDidNegotiate(false)}
+                              onChange={handleChecked}
                               type="radio"
                               name="negotiate"
                               id="true"
-                              value={didNegotiate}
+                              value="yes"
                             />
                             <label htmlFor="true" value>
                               Yes
@@ -357,11 +369,11 @@ function ProfessionalDetails() {
                           </div>
                           <div className="noContainer">
                             <input
-                              onChange={() => setDidNegotiate(true)}
+                              onChange={handleChecked}
                               type="radio"
                               name="negotiate"
                               id="false"
-                              value="false"
+                              value="no"
                             />
                             <label htmlFor="false">No</label>
                           </div>

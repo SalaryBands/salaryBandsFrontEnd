@@ -481,7 +481,7 @@ function SalaryData() {
                     .toString()
                     .toLowerCase()
                     .includes(searchTerm.toLowerCase()) ||
-                  userData.country
+                  userData.city
                     .toString()
                     .toLowerCase()
                     .includes(searchTerm.toLowerCase()) ||
