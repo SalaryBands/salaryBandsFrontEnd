@@ -171,14 +171,26 @@ function TipsAndAdvice() {
 
                                     </div>
                                     <div className="userAdviceContainer">
-                                        <div className="breakRoleContainer">
-                                            <p className="questionText">What advice can you share with others looking to break into your field or role?</p>
-                                            <p className='answerText'>{val.advice_break}</p>
-                                        </div>
-                                        <div className="negotiateSalaryContainer">
-                                            <p className="questionText">What is an important tip people need to know when negotiating their salary?</p>
-                                            <p className='answerText'>{val.advice_negotiate}</p>
-                                        </div>
+                                        {
+                                            val.advice_break ?
+
+                                            <div className="breakRoleContainer">
+                                                <p className="questionText">What advice can you share with others looking to break into your field or role?</p>
+                                                <p className='answerText'>{val.advice_break}</p>
+                                            </div>
+
+                                            : null
+                                        }
+
+                                        {
+                                            val.advice_negotiate ?
+                                            <div className="negotiateSalaryContainer">
+                                                <p className="questionText">What is an important tip people need to know when negotiating their salary?</p>
+                                                <p className='answerText'>{val.advice_negotiate}</p>
+                                            </div>
+
+                                            : null
+                                        }
                                     </div>
                                 </div>
                             )
