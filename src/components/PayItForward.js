@@ -5,7 +5,7 @@ import Finish from "./Finish";
 import Ladder from "../assets/ladder.png";
 
 function PayItForward(props) {
-  const baseURL = "https://salarybandsapi.fly.dev/contributions";
+  const baseURL = "https://salarybands-api.fly.dev/contributions";
 
   const [submitInfo, setSubmitInfo] = useState(false);
 

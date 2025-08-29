@@ -5,13 +5,12 @@ import { useState, useEffect, useMemo } from "react";
 import { Country, State } from "country-state-city";
 import { FiSearch } from 'react-icons/fi'; 
 import "react-toggle/style.css";
-import Pagination from "./Pagination";
 
-let PageSize = 30;
 
 
 function SalaryData() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalSubmissions, setTotalSubmissions] = useState(0)
   const [userSubmissionData, setUserSubmissionData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [advancedFilter, setAdvancedFilter] = useState(false);
@@ -19,6 +18,7 @@ function SalaryData() {
   const [userRace, setUserRace] = useState("");
   const [negotiateToggle, setNegotiateToggle] = useState(false);
   const [disabilityToggle, setDisabilityToggle] = useState(false);
+  let submissionsPerPage = 2
   
   const genders = [
     { value: "all", label: "All" },
@@ -43,7 +43,7 @@ function SalaryData() {
   useEffect(() => {
     axios({
       method: "get",
-      url: "https://salarybandsapi.fly.dev/contributions",
+      url: "https://salarybands-api.fly.dev/contributions",
     }).then((apiData) => {
       setUserSubmissionData(apiData.data);
     });
@@ -66,12 +66,77 @@ function SalaryData() {
     setDisabilityToggle(e.target.checked);
   };
 
+  const pageNumbers = []
+
+  for (let i = 1; i <= Math.ceil(totalSubmissions / submissionsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+
   const currentTableData = useMemo(() => {
 
-    const firstPageIndex = (currentPage - 1) * PageSize;
-    const lastPageIndex = firstPageIndex + PageSize;
-    return userSubmissionData.reverse().slice(firstPageIndex, lastPageIndex);
-  }, [currentPage, userSubmissionData]);
+    let computedSubmissions = userSubmissionData
+
+    if (searchTerm) {
+      computedSubmissions = computedSubmissions.filter( (userData) =>
+                  userData.job_title
+                    .toString()
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase()) ||
+                  userData.company
+                    .toString()
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase()) ||
+                  userData.country
+                    .toString()
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase()) ||
+                  userData.work_arrangement
+                    .toString()
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase())
+      )
+    }
+
+
+    // if (userGender === "" || userGender === "All") {
+    //   return computedSubmissions;
+    //   } else {
+    //     computedSubmissions = computedSubmissions.filter( (userData) => {
+    //       return (
+    //         userData.gender
+    //           .toString()
+    //           .toLowerCase()
+    //           .includes(userGender.toLowerCase()) &&
+    //           userData.gender.length === userGender.length
+    //         );
+    //     } )
+    //     }
+    
+    // computedSubmissions.filter((userData) => {
+    //             if (negotiateToggle === false) {
+    //               return computedSubmissions;
+    //             } else {
+    //               return !userData.negotiate_check === negotiateToggle;
+    //             }
+    //           })
+
+    setTotalSubmissions(computedSubmissions.length)
+
+    console.log(computedSubmissions);
+
+
+    return computedSubmissions.slice(
+      (currentPage - 1) * submissionsPerPage,
+      (currentPage - 1) * submissionsPerPage + submissionsPerPage
+      ).reverse();
+
+
+  }, [currentPage, userSubmissionData, searchTerm, userGender]);
+
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
 
   console.log(userSubmissionData);
 
@@ -145,7 +210,9 @@ function SalaryData() {
                     <label htmlFor="">Race/Ethnicity</label>
                     <Select
                       options={races}
-                      onChange={(raceType) => setUserRace(raceType.label)}
+                      onChange={(raceType) => {
+                        setUserRace(raceType.label);
+                        setCurrentPage(1);}}
                     />
                   </div>
                 </div>
@@ -218,65 +285,7 @@ function SalaryData() {
           </thead>
           <tbody>
             {currentTableData
-              .filter(
-                (userData) =>
-                  userData.job_title
-                    .toString()
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase()) ||
-                  userData.company
-                    .toString()
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase()) ||
-                  userData.country
-                    .toString()
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase()) ||
-                  userData.work_arrangement
-                    .toString()
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase())
-              )
-              .filter((userData) => {
-                if (userGender === "" || userGender === "All") {
-                  return true;
-                } else {
-                  return (
-                    userData.gender
-                      .toString()
-                      .toLowerCase()
-                      .includes(userGender.toLowerCase()) &&
-                    userData.gender.length === userGender.length
-                  );
-                }
-              })
-              .filter((userData) => {
-                if (userRace === "" || userRace === "All") {
-                  return true;
-                } else {
-                  return (
-                    userData.race
-                      .toString()
-                      .toLowerCase()
-                      .includes(userRace.toLowerCase()) &&
-                    userData.race.length === userRace.length
-                  );
-                }
-              })
-              .filter((userData) => {
-                if (negotiateToggle === false) {
-                  return true;
-                } else {
-                  return !userData.negotiate_check === negotiateToggle;
-                }
-              })
-              .filter((userData) => {
-                if (disabilityToggle === false) {
-                  return true;
-                } else {
-                  return userData.disability.length >= 1;
-                }
-              })
+              
               .map((val) => {
                 return (
                   <tr className="tableRow" key={val.id}>
@@ -343,13 +352,18 @@ function SalaryData() {
               })}
           </tbody>
         </table>
-        <Pagination 
-          className="pagination-bar"
-          currentPage={currentPage}
-          totalCount={userSubmissionData.length}
-          pageSize={PageSize}
-          onPageChange={page => setCurrentPage(page)}
-        />
+          <nav>
+            <ul className="pagination">
+              {pageNumbers.map((number) => (
+                <li key={number} className="page-item">
+                  <button onClick={() => paginate(number)} className="page-link">
+                    {number}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
       </div>
 
     </div>
@@ -471,66 +485,7 @@ function SalaryData() {
           </thead>
           <tbody>
             {currentTableData
-              .filter(
-                (userData) =>
-                  userData.job_title
-                    .toString()
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase()) ||
-                  userData.company
-                    .toString()
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase()) ||
-                  userData.city
-                    .toString()
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase()) ||
-                  userData.work_arrangement
-                    .toString()
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase())
-              )
-              .filter((userData) => {
-                if (userGender === "" || userGender === "All") {
-                  return true;
-                } else {
-                  return (
-                    userData.gender
-                      .toString()
-                      .toLowerCase()
-                      .includes(userGender.toLowerCase()) &&
-                    userData.gender.length === userGender.length
-                  );
-                }
-              })
-              .filter((userData) => {
-                if (userRace === "" || userRace === "All") {
-                  return true;
-                } else {
-                  return (
-                    userData.race
-                      .toString()
-                      .toLowerCase()
-                      .includes(userRace.toLowerCase()) &&
-                    userData.race.length === userRace.length
-                  );
-                }
-              })
-              .filter((userData) => {
-                if (negotiateToggle === false) {
-                  return true;
-                } else {
-                  return !userData.negotiate_check === negotiateToggle;
-                }
-              })
-              .filter((userData) => {
-                if (disabilityToggle === false) {
-                  return true;
-                } else {
-                  return userData.disability.length >= 1;
-                }
-              })
-              .reverse()
+             
               .map((val) => {
                 return (
                   <tr className="tableRow" key={val.id}>

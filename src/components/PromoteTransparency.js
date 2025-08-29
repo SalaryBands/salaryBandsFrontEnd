@@ -87,11 +87,9 @@ function PromoteTransparency (props) {
 
     return (
         <>
-
             {
                 !nextStep ?
                 <>
-
             <div className="transparencyContainer">
                 <div className="detailsTextContainer">
                     <h2>Promote pay transparency</h2>
