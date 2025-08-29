@@ -15,7 +15,7 @@ function URLVerification () {
     console.log(token);
     
     useEffect(() => {
-        axios.post(`https://salarybandsapi.fly.dev/sessions/create?login_token=${token}`, {
+        axios.post(`https://salarybands-api.fly.dev/sessions/create?login_token=${token}`, {
 
         }).then( (response) => {
             console.log('this is the response', response.data);
