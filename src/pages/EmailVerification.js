@@ -32,7 +32,6 @@ function EmailVerification() {
         var formdata = new FormData();
         formdata.append("user[email]", userEmail);
 
-        // console.log(emailRef.current.value);
 
         var requestOptions = {
             method: 'POST',
