@@ -16,7 +16,7 @@ function TipsAndAdvice() {
     useEffect(() => {
         axios({
             method: 'get',
-            url: 'https://salarybandsapi.fly.dev/contributions'
+            url: 'https://salarybands-api.fly.dev/contributions'
         }).then((apiData) => {
             setUserData(apiData.data)
         })
